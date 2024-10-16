@@ -257,8 +257,6 @@ class InstreamFlowRequirement(Node):
                     f"sub-links ({len(self.sublinks)})."
                 )
             for i, sl in enumerate(self.sublinks):
-                print(values[i])
-
                 sl.max_flow = values[i]
 
         return locals()
