@@ -1,4 +1,4 @@
-from sierra.base_parameters import BaseParameter
+from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
 from dateutil.relativedelta import relativedelta
 from calendar import isleap
 import random
@@ -18,7 +18,7 @@ class HydropowerDemand(BaseParameter):
 
     def setup(self):
         super().setup()
-        self.price_threshold = np.zeros(self.num_scenarios, np.float)
+        self.price_threshold = np.zeros(self.num_scenarios, float)
 
     def _value(self, timestep, scenario_index):
 
