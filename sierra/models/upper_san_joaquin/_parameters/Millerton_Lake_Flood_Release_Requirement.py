@@ -142,7 +142,6 @@ class Millerton_Lake_Flood_Release_Requirement(BaseParameter):
             # else:
 
             supplemental_release_mcm = storage_difference_mcm
-            print("supplemental_release_mcm", supplemental_release_mcm)
 
             # 3.8. Calculate total release
             # Note that this differs from the example in the USACE manual, since we are only calculating instream
