@@ -3,7 +3,7 @@ import random
 from dateutil.relativedelta import relativedelta
 from math import log
 from datetime import datetime, timedelta
-from sierra.base_parameters import IFRParameter
+from cen_sierra_pywr_new.sierra.base_parameters import IFRParameter
 
 DRY = 'dry'
 WET = 'wet'
