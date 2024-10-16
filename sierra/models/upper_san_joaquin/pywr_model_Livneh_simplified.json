@@ -1,0 +1,3237 @@
+{
+    "metadata": {
+        "title": "Upper San Joaquin River",
+        "description": "Imported from WEAP Area",
+        "minimum_version": "1.0.0"
+    },
+    "timestepper": {
+        "start": "2010-10-01",
+        "end": "2012-09-30",
+        "timestep": 1
+    },
+    "solver": {
+        "name": "glpk"
+    },
+    "nodes": [
+        {
+            "name": "No. 1A Conduit Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "No. 1A Conduit Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Manzanita Diversion Dam Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Manzanita Diversion Dam Inflow/Runoff"
+        },
+        {
+            "name": "Millerton Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Millerton Lake Inflow/Runoff"
+        },
+        {
+            "name": "Below Kerckhoff 2 Tunnel Inflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Below Kerckhoff 2 Tunnel Inflow Inflow/Runoff"
+        },
+        {
+            "name": "Kerckhoff Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Kerckhoff Lake Inflow/Runoff"
+        },
+        {
+            "name": "Browns Creek Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Browns Creek Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Bass Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Bass Lake Inflow/Runoff"
+        },
+        {
+            "name": "Redinger Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Redinger Lake Inflow/Runoff"
+        },
+        {
+            "name": "Shaver Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Shaver Lake Inflow/Runoff"
+        },
+        {
+            "name": "Big Creek 3 Conduit Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Big Creek 3 Conduit Outflow Inflow/Runoff"
+        },
+        {
+            "name": "IFR above Shakeflat Creek Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "IFR above Shakeflat Creek Inflow/Runoff"
+        },
+        {
+            "name": "Mammoth Pool Reservoir Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Mammoth Pool Reservoir Inflow/Runoff"
+        },
+        {
+            "name": "Big Creek 8 Penstock Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Big Creek 8 Penstock Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Big Creek 2 Tunnel Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Big Creek 2 Tunnel Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Huntington Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Huntington Lake Inflow/Runoff"
+        },
+        {
+            "name": "Lake Thomas A Edison Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Lake Thomas A Edison Inflow/Runoff"
+        },
+        {
+            "name": "Portal Forebay Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Portal Forebay Inflow/Runoff"
+        },
+        {
+            "name": "Bolsillo Cr. Div. Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Bolsillo Cr. Div. Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Camp 62 Cr. Div. Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Camp 62 Cr. Div. Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Chinquapin Cr. Div. Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Chinquapin Cr. Div. Outflow Inflow/Runoff"
+        },
+        {
+            "name": "IFR bl Hooper Creek Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "IFR bl Hooper Creek Inflow/Runoff"
+        },
+        {
+            "name": "Florence Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Florence Lake Inflow/Runoff"
+        },
+        {
+            "name": "IFR No. Fk. Stevenson Creek above Shaver Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "IFR No. Fk. Stevenson Creek above Shaver Lake Inflow/Runoff"
+        },
+        {
+            "name": "IFR bl Big Creek 5 Div Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "IFR bl Big Creek 5 Div Inflow/Runoff"
+        },
+        {
+            "name": "Bear Diversion Tunnel Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Bear Diversion Tunnel Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Pitman Creek Diversion Dam Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Pitman Creek Diversion Dam Inflow/Runoff"
+        },
+        {
+            "name": "IFR bl San Joaquin R and Willow Cr confluence Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "IFR bl San Joaquin R and Willow Cr confluence Inflow/Runoff"
+        },
+        {
+            "name": "Bear Diversion Tunnel",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 1.1007359975343514,
+            "cost": 100
+        },
+        {
+            "name": "Below Balsam Meadows Tunnel Outflow",
+            "type": "Link",
+            "max_flow": 0.012,
+            "comment": "{\"resource_class\": \"link\"}",
+            "cost": -15000
+        },
+        {
+            "name": "Below Bear Diversion Tunnel Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 1.5906239964370021
+        },
+        {
+            "name": "Below Bolsillo Cr. Div. Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Bolsillo Cr. Div. Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Camp 62 Cr. Div. Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Camp 62 Cr. Div. Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Chinquapin Cr. Div. Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Chinquapin Cr. Div. Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below Kerckhoff 1 Tunnel Inflow",
+            "type": "River",
+            "cost": 800,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Below Kerckhoff 2 Tunnel Inflow",
+            "type": "River",
+            "cost": 150,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Below No. 1 Conduit Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 0.5140799988484608,
+            "cost": -2000
+        },
+        {
+            "name": "Below No. 2 Conduit Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 0.5140799988484608,
+            "cost": 30
+        },
+        {
+            "name": "Below Portal Aqueduct Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Below San Joaquin 1A Div Outflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 0.5140799988484608
+        },
+        {
+            "name": "Below Ward Tunnel Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 4.31
+        },
+        {
+            "name": "Browns Creek Ditch",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 0.19612799956067328
+        },
+        {
+            "name": "Friant-Kern Canal Demand",
+            "type": "Link",
+            "max_flow": "Friant-Kern Canal Demand/Demand",
+            "cost": -510
+        },
+        {
+            "name": "Madera Canal.1",
+            "type": "Link",
+            "max_flow": 3.132,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Mono Tunnel",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 1.5906239964370021,
+            "cost": -285
+        },
+        {
+            "name": "Pitman - Tunnel No. 7 Tunnel",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "cost": 1000
+        },
+        {
+            "name": "Tunnel No. 7.1",
+            "type": "Link",
+            "max_flow": 5.2,
+            "cost": 5,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Tunnel No. 7.2",
+            "type": "Link",
+            "max_flow": 5.2,
+            "cost": 5,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Balsam Forebay",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Balsam Meadows Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Bass Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": {
+                "type": "constant",
+                "table": "Initial Storage",
+                "index": "2000-09-30",
+                "column": "USGS 11243400 BASS LK NR BASS LAKE CA"
+            },
+            "max_volume": 55.61,
+            "min_volume": 27.0,
+            "cost": -140,
+            "gauge": "USGS 11243400 BASS LK NR BASS LAKE CA"
+        },
+        {
+            "name": "Bear Diversion Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Big Creek 1 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 586.0,
+            "turbine_capacity": 1.69,
+            "flow_capacity": 1.69,
+            "residual_flow": 0.2,
+            "residual_cost": -10000000000,
+            "costs": [
+                "Big Creek 1 PH/Cost/1",
+                "Big Creek 1 PH/Cost/2",
+                "Big Creek 1 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 1 PH/Water Demand/1",
+                "Big Creek 1 PH/Water Demand/2",
+                null
+            ], "nsteps" : 3
+        },
+        {
+            "name": "Big Creek 2 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 499.4,
+            "turbine_capacity": 2.5,
+            "flow_capacity": 2.5,
+            "residual_flow": 0.2,
+            "residual_cost": -10000000000,
+            "costs": [
+                "Big Creek 2 PH/Cost/1",
+                "Big Creek 2 PH/Cost/2",
+                "Big Creek 2 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 2 PH/Water Demand/1",
+                "Big Creek 2 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Big Creek 2 Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Big Creek 2A PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 670.6,
+            "turbine_capacity": 1.5708,
+            "flow_capacity": 1.7,
+            "residual_flow": 0.2,
+            "residual_cost": -1000000000,
+            "costs": [
+                "Big Creek 2A PH/Cost/1",
+                "Big Creek 2A PH/Cost/2",
+                "Big Creek 2A PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 2A PH/Water Demand/1",
+                "Big Creek 2A PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Big Creek 3 Conduit Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Big Creek 3 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 232.9,
+            "turbine_capacity": 7.83,
+            "flow_capacity": 7.83,
+            "residual_cost": 20000,
+            "residual_flow": 0.2,
+            "costs": [
+                "Big Creek 3 PH/Cost/1",
+                "Big Creek 3 PH/Cost/2",
+                "Big Creek 3 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 3 PH/Water Demand/1",
+                "Big Creek 3 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Big Creek 4 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 118.2,
+            "turbine_capacity": 8.9,
+            "flow_capacity": 8.9,
+            "residual_cost": 2000,
+            "residual_flow": 0.2,
+            "costs": [
+                "Big Creek 4 PH/Cost/1",
+                "Big Creek 4 PH/Cost/2",
+                "Big Creek 4 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 4 PH/Water Demand/1",
+                "Big Creek 4 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Big Creek 8 Penstock Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": 200
+        },
+        {
+            "name": "Big Creek 8 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 208.8,
+            "turbine_capacity": 3.38895497026,
+            "flow_capacity": 3.38895497026,
+            "residual_cost": -1,
+            "residual_flow": 0.15,
+            "costs": [
+                "Big Creek 8 PH/Cost/1",
+                "Big Creek 8 PH/Cost/2",
+                "Big Creek 8 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Big Creek 8 PH/Water Demand/1",
+                "Big Creek 8 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Bolsillo Cr. Div. Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Browns Creek Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Camp 62 Cr. Div. Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Chinquapin Cr. Div. Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "CVP Friant-Kern Canal",
+            "type": "Output",
+            "cost": -1000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "CVP Madera Canal",
+            "type": "Output",
+            "cost": -11,
+            "max_flow": 3.132
+        },
+        {
+            "name": "CVP Madera Canal Demand",
+            "type": "PiecewiseLink",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flows": [
+                "CVP Madera Canal/Demand",
+                1000
+            ],
+            "costs": [
+                -330,
+                1
+            ],"nsteps":2
+        },
+        {
+            "name": "Eastwood PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 400.0,
+            "turbine_capacity": 2.51,
+            "flow_capacity": 3.93,
+            "residual_flow": 0.15,
+            "residual_cost": -150,
+            "costs": [
+                "Eastwood PH/Cost/1",
+                "Eastwood PH/Cost/2",
+                "Eastwood PH/Cost/3"
+            ],
+            "max_flows": [
+                "Eastwood PH/Water Demand/1",
+                "Eastwood PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Florence Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 2,
+            "max_volume": 79.41,
+            "min_volume": 1.25,
+            "cost": -130,
+            "gauge": "USGS 11229600 FLORENCE LK NR BIG C CA"
+        },
+        {
+            "name": "Friant Dam Spillway",
+            "type": "Link",
+            "cost": 1000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Millerton Lake Flood Release",
+            "type": "PiecewiseLink",
+            "max_flows": [
+                "Millerton Lake Flood Release/Requirement",
+                null
+            ],
+            "costs": [
+                -50,
+                10
+            ], "nsteps":2
+        },
+        {
+            "name": "Friant PH",
+            "type": "Hydropower",
+            "water_elevation_reservoir": "Millerton Lake",
+            "tailwater_elevation": 0.0,
+            "costs": [
+                -1
+            ],
+            "max_flows": [
+                1
+            ],"nsteps":1,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Huntington Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 75,
+            "max_volume": 109.94,
+            "min_volume": 37.0,
+            "cost": "Huntington Lake/Cost",
+            "gauge": "USGS 11236000 HUNTINGTON LK NR BIG CREEK CA"
+        },
+        {
+            "name": "IFR above Shakeflat Creek",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR above Shakeflat Creek/Min Flow",
+            "max_flow_cost": 5000,
+            "min_flow_cost": 1,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Balsam Forebay",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Balsam Forebay/Min Flow",
+            "max_flow_cost": 750000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Bass Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Bass Lake/Min Flow",
+            "max_flow_cost": 10,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Bear Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Bear Div/Min Flow",
+            "max_flow_cost": 1800,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Big Creek 5 Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Big Creek 5 Div/Min Flow",
+            "max_flow_cost": 1,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Big Creek 6 Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Big Creek 6 Div/Min Flow",
+            "max_flow_cost": 1000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Bolsillo Creek Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Bolsillo Creek Div/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Browns Creek Ditch",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Browns Creek Ditch/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Camp 62 Creek Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Camp 62 Creek Div/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Chinquapin Creek Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Chinquapin Creek Div/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Hooper Creek",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Hooper Creek/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+
+        },
+        {
+            "name": "IFR bl Huntington Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Huntington Lake/Min Flow",
+            "max_flow_cost": 10000000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Kerckhoff Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Kerckhoff Lake/Min Flow",
+            "max_flow_cost": 12000,
+            "min_flow_cost": -50000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Lake Thomas A Edison",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Lake Thomas A Edison/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Manzanita Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Manzanita Div/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Millerton Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Millerton Lake/Min Flow",
+            "max_flow_cost": 500,
+            "min_flow_cost": -1550,
+            "ifr_type": "enhanced",
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Mono Creek Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Mono Creek Div/Min Flow",
+            "max_flow_cost": 2400,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Pitman Creek Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Pitman Creek Div/Min Flow",
+            "max_flow_cost": 900,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Redinger Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Redinger Lake/Min Flow",
+            "max_flow_cost": 200000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl San Joaquin 1 Div",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl San Joaquin 1 Div/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl San Joaquin R and Willow Cr confluence",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl San Joaquin R and Willow Cr confluence/Min Flow",
+            "max_flow_cost": 2000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR bl Shaver Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR bl Shaver Lake/Min Flow",
+            "max_flow_cost": 3000,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "IFR No. Fk. Stevenson Creek above Shaver Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flows": "IFR No. Fk. Stevenson Creek above Shaver Lake/Min Flow",
+            "max_flow_cost": 1,
+            "min_flow_cost": -1000000000,
+            "nsteps":3
+        },
+        {
+            "name": "Kerckhoff 1 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 106.7,
+            "turbine_capacity": 2.961,
+            "flow_capacity": 4,
+            "residual_cost": -1,
+            "residual_flow": 0.15,
+            "costs": [
+                "Kerckhoff 1 PH/Cost/1",
+                "Kerckhoff 1 PH/Cost/2",
+                "Kerckhoff 1 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Kerckhoff 1 PH/Water Demand/1",
+                "Kerckhoff 1 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Kerckhoff 1 Tunnel Inflow",
+            "type": "River",
+            "cost": 60,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Kerckhoff 2 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 128.3,
+            "turbine_capacity": 10.032,
+            "flow_capacity": 12,
+            "residual_cost": 800000,
+            "residual_flow": 0.2,
+            "costs": [
+                "Kerckhoff 2 PH/Cost/1",
+                "Kerckhoff 2 PH/Cost/2",
+                "Kerckhoff 2 PH/Cost/3"
+            ],
+            "max_flows": [
+                "Kerckhoff 2 PH/Water Demand/1",
+                "Kerckhoff 2 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Kerckhoff Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 4.3,
+            "level": "Kerckhoff Lake/Volume Elevation Curve",
+            "max_volume": 4.8,
+            "min_volume": 4.2,
+            "cost": -110,
+            "gauge": "USGS 11246650 KERCKHOFF RES NR AUBERRY CA"
+        },
+        {
+            "name": "Lake Thomas A Edison",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 75,
+            "max_volume": 154.17,
+            "min_volume": 10,
+            "cost": -50,
+            "gauge": "USGS 11231000 LK THOMAS A. EDISON NR BIG C CA"
+        },
+        {
+            "name": "Mammoth Pool PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 306.0,
+            "turbine_capacity": 4.278,
+            "flow_capacity": 4.806,
+            "residual_flow": 0.1,
+            "residual_cost": 1000000000,
+            "costs": [
+                "Mammoth Pool PH/Cost/1",
+                "Mammoth Pool PH/Cost/2",
+                "Mammoth Pool PH/Cost/3"
+            ],
+            "max_flows": [
+                "Mammoth Pool PH/Water Demand/1",
+                "Mammoth Pool PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Mammoth Pool Reservoir",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 65,
+            "max_volume": 147.89,
+            "min_volume": 5.0,
+            "cost": -85,
+            "gauge": "USGS 11234700 MAMMOTH POOL RE NR BIG CREEK CA"
+        },
+        {
+            "name": "Manzanita Diversion Dam",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Millerton Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 400,
+            "cost": -10,
+            "max_volume": 641.42,
+            "min_volume": 150,
+            "level": "Millerton Lake/Elevation",
+            "gauge": "USGS 11250100 MILLERTON LK A FRIANT CA"
+        },
+        {
+            "name": "Mono Diversion Reservoir",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "No. 1A Conduit Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "No. 3 Conduit Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Pitman Creek Diversion Dam",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Portal Forebay",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Portal PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 54.864000000000004,
+            "turbine_capacity": 1.334,
+            "flow_capacity": 4.31,
+            "residual_flow": 0.15,
+            "residual_cost": -9000,
+            "costs": [
+                "Portal PH/Cost/1",
+                "Portal PH/Cost/2",
+                "Portal PH/Cost/3"
+            ],
+            "max_flows": [
+                "Portal PH/Water Demand/1",
+                "Portal PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "Redinger Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 30.8,
+            "max_volume": 30.8,
+            "min_volume": 5.28,
+            "cost": -280,
+            "gauge": "USGS 11241950 REDINGER LK NR AUBERRY CA"
+        },
+        {
+            "name": "San Joaquin 1 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 397.8,
+            "turbine_capacity": 0.383,
+            "flow_capacity": 0.5,
+            "residual_cost": -1000000000,
+            "residual_flow": 0.15,
+            "costs": [
+                "San Joaquin 1 PH/Cost/1",
+                "San Joaquin 1 PH/Cost/2",
+                "San Joaquin 1 PH/Cost/3"
+            ],
+            "max_flows": [
+                "San Joaquin 1 PH/Water Demand/1",
+                "San Joaquin 1 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "San Joaquin 1A Div Inflow",
+            "type": "River",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": 180
+        },
+        {
+            "name": "San Joaquin 1A Div Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "San Joaquin 1A PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 12.2,
+            "turbine_capacity": 0.385,
+            "flow_capacity": 1,
+            "residual_cost": -1,
+            "residual_flow": 0.15,
+            "costs": [
+                "San Joaquin 1A PH/Cost/1",
+                "San Joaquin 1A PH/Cost/2",
+                "San Joaquin 1A PH/Cost/3"
+            ],
+            "max_flows": [
+                "San Joaquin 1A PH/Water Demand/1",
+                "San Joaquin 1A PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "San Joaquin 2 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 89.0,
+            "turbine_capacity": 0.38,
+            "flow_capacity": 0.38,
+            "residual_cost": -12000,
+            "residual_flow": 0.15,
+            "costs": [
+                "San Joaquin 2 PH/Cost/1",
+                "San Joaquin 2 PH/Cost/2",
+                "San Joaquin 2 PH/Cost/3"
+            ],
+            "max_flows": [
+                "San Joaquin 2 PH/Water Demand/1",
+                "San Joaquin 2 PH/Water Demand/2",
+                null
+            ],"nsteps":3 
+        },
+        {
+            "name": "San Joaquin 3 PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 115.2,
+            "turbine_capacity": 0.3,
+            "flow_capacity": 0.37,
+            "residual_cost": -10000,
+            "residual_flow": 0.15,
+            "costs": [
+                "San Joaquin 3 PH/Cost/1",
+                "San Joaquin 3 PH/Cost/2",
+                "San Joaquin 3 PH/Cost/3"
+            ],
+            "max_flows": [
+                "San Joaquin 3 PH/Water Demand/1",
+                "San Joaquin 3 PH/Water Demand/2",
+                null
+            ],"nsteps":3
+        },
+        {
+            "name": "San Joaquin River Outflow",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Shaver Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": {
+                "type": "constant",
+                "table": "Initial Storage",
+                "index": "2000-09-30",
+                "column": "USGS 11239500 SHAVER LK NR BIG C CA"
+            },
+            "max_volume": 167.16,
+            "min_volume": 92.5,
+            "cost": -80,
+            "gauge": "USGS 11239500 SHAVER LK NR BIG C CA"
+        }
+    ],
+    "edges": [
+        [
+            "Balsam Meadows Tunnel Outflow",
+            "Below Balsam Meadows Tunnel Outflow"
+        ],
+        [
+            "Bolsillo Cr. Div. Outflow",
+            "Below Bolsillo Cr. Div. Diverted Inflow"
+        ],
+        [
+            "Camp 62 Cr. Div. Outflow",
+            "Below Camp 62 Cr. Div. Diverted Inflow"
+        ],
+        [
+            "Chinquapin Cr. Div. Outflow",
+            "Below Chinquapin Cr. Div. Diverted Inflow"
+        ],
+        [
+            "No. 1A Conduit Outflow Inflow",
+            "No. 1A Conduit Outflow"
+        ],
+        [
+            "Manzanita Diversion Dam Inflow",
+            "Manzanita Diversion Dam"
+        ],
+        [
+            "Kerckhoff Lake",
+            "Below Kerckhoff 1 Tunnel Inflow"
+        ],
+        [
+            "Below Kerckhoff 1 Tunnel Inflow",
+            "IFR bl Kerckhoff Lake"
+        ],
+        [
+            "Below Kerckhoff 2 Tunnel Inflow",
+            "Kerckhoff 1 Tunnel Inflow"
+        ],
+        [
+            "No. 1A Conduit Outflow",
+            "Below No. 1 Conduit Diverted Inflow"
+        ],
+        [
+            "Below No. 2 Conduit Inflow",
+            "San Joaquin 1A Div Outflow"
+        ],
+        [
+            "San Joaquin 1A Div Outflow",
+            "Below San Joaquin 1A Div Outflow"
+        ],
+        [
+            "Below San Joaquin 1A Div Outflow",
+            "San Joaquin 1A Div Inflow"
+        ],
+        [
+            "Florence Lake",
+            "Below Ward Tunnel Diverted Inflow"
+        ],
+        [
+            "Millerton Lake",
+            "Madera Canal.1"
+        ],
+        [
+            "Madera Canal.1",
+            "CVP Madera Canal Demand"
+        ],
+        [
+            "Pitman Creek Diversion Dam",
+            "Pitman - Tunnel No. 7 Tunnel"
+        ],
+        [
+            "Huntington Lake",
+            "Tunnel No. 7.1"
+        ],
+        [
+            "Tunnel No. 7.2",
+            "Balsam Meadows Tunnel Outflow"
+        ],
+        [
+            "Balsam Meadows Tunnel Outflow",
+            "Balsam Forebay"
+        ],
+        [
+            "Balsam Forebay",
+            "IFR bl Balsam Forebay"
+        ],
+        [
+            "Big Creek 2 Tunnel Outflow",
+            "Big Creek 2 PH"
+        ],
+        [
+            "Big Creek 3 Conduit Outflow",
+            "Big Creek 3 PH"
+        ],
+        [
+            "Redinger Lake",
+            "Big Creek 4 PH"
+        ],
+        [
+            "Big Creek 8 Penstock Outflow",
+            "Big Creek 8 PH"
+        ],
+        [
+            "Bolsillo Cr. Div. Outflow",
+            "IFR bl Bolsillo Creek Div"
+        ],
+        [
+            "Browns Creek Outflow",
+            "IFR bl Browns Creek Ditch"
+        ],
+        [
+            "Camp 62 Cr. Div. Outflow",
+            "IFR bl Camp 62 Creek Div"
+        ],
+        [
+            "Chinquapin Cr. Div. Outflow",
+            "IFR bl Chinquapin Creek Div"
+        ],
+        [
+            "Huntington Lake",
+            "IFR bl Huntington Lake"
+        ],
+        [
+            "No. 3 Conduit Outflow",
+            "IFR bl Bass Lake"
+        ],
+        [
+            "Bear Diversion Tunnel Outflow",
+            "IFR bl Bear Div"
+        ],
+        [
+            "IFR bl Browns Creek Ditch",
+            "No. 1A Conduit Outflow"
+        ],
+        [
+            "Mono Diversion Reservoir",
+            "IFR bl Mono Creek Div"
+        ],
+        [
+            "Pitman Creek Diversion Dam",
+            "IFR bl Pitman Creek Div"
+        ],
+        [
+            "Kerckhoff Lake",
+            "Kerckhoff 1 PH"
+        ],
+        [
+            "Kerckhoff Lake",
+            "Kerckhoff 2 PH"
+        ],
+        [
+            "Lake Thomas A Edison",
+            "IFR bl Lake Thomas A Edison"
+        ],
+        [
+            "Mammoth Pool Reservoir",
+            "Mammoth Pool PH"
+        ],
+        [
+            "Manzanita Diversion Dam",
+            "San Joaquin 2 PH"
+        ],
+        [
+            "Bass Lake",
+            "No. 3 Conduit Outflow"
+        ],
+        [
+            "No. 1A Conduit Outflow",
+            "IFR bl San Joaquin 1 Div"
+        ],
+        [
+            "Shaver Lake",
+            "Big Creek 2A PH"
+        ],
+        [
+            "Portal Forebay",
+            "Portal PH"
+        ],
+        [
+            "San Joaquin 1A Div Outflow",
+            "San Joaquin 1A PH"
+        ],
+        [
+            "San Joaquin 1A Div Inflow",
+            "San Joaquin 1 PH"
+        ],
+        [
+            "Shaver Lake",
+            "IFR bl Shaver Lake"
+        ],
+        [
+            "Big Creek 3 Conduit Outflow",
+            "IFR bl Big Creek 6 Div"
+        ],
+        [
+            "Redinger Lake",
+            "IFR bl Redinger Lake"
+        ],
+        [
+            "Balsam Forebay",
+            "Eastwood PH"
+        ],
+        [
+            "Millerton Lake",
+            "Friant-Kern Canal Demand"
+        ],
+        [
+            "Manzanita Diversion Dam",
+            "IFR bl Manzanita Div"
+        ],
+        [
+            "Millerton Lake",
+            "Friant PH"
+        ],
+        [
+            "Millerton Lake",
+            "Friant Dam Spillway"
+        ],
+        [
+            "Huntington Lake",
+            "Big Creek 1 PH"
+        ],
+        [
+            "Millerton Lake Flood Release",
+            "IFR bl Millerton Lake"
+        ],
+        [
+            "Below Bolsillo Cr. Div. Diverted Inflow",
+            "Portal Forebay"
+        ],
+        [
+            "Below Bolsillo Cr. Div. Inflow",
+            "Portal Forebay"
+        ],
+        [
+            "Browns Creek Ditch",
+            "Bass Lake"
+        ],
+        [
+            "Below Camp 62 Cr. Div. Diverted Inflow",
+            "Below Bolsillo Cr. Div. Inflow"
+        ],
+        [
+            "Below Camp 62 Cr. Div. Inflow",
+            "Below Bolsillo Cr. Div. Inflow"
+        ],
+        [
+            "Below Chinquapin Cr. Div. Diverted Inflow",
+            "Below Portal Aqueduct Inflow"
+        ],
+        [
+            "Below Chinquapin Cr. Div. Inflow",
+            "Below Portal Aqueduct Inflow"
+        ],
+        [
+            "Bear Diversion Tunnel",
+            "Below Bear Diversion Tunnel Inflow"
+        ],
+        [
+            "Mono Tunnel",
+            "Below Bear Diversion Tunnel Inflow"
+        ],
+        [
+            "Below No. 1 Conduit Diverted Inflow",
+            "Below No. 2 Conduit Inflow"
+        ],
+        [
+            "Below Bear Diversion Tunnel Inflow",
+            "Below Camp 62 Cr. Div. Inflow"
+        ],
+        [
+            "Below Portal Aqueduct Inflow",
+            "Below Camp 62 Cr. Div. Inflow"
+        ],
+        [
+            "Millerton Lake Inflow",
+            "Millerton Lake"
+        ],
+        [
+            "Friant PH",
+            "Millerton Lake Flood Release"
+        ],
+        [
+            "Friant Dam Spillway",
+            "Millerton Lake Flood Release"
+        ],
+        [
+            "Millerton Lake",
+            "Millerton Lake Flood Release"
+        ],
+        [
+            "Pitman - Tunnel No. 7 Tunnel",
+            "Tunnel No. 7.2"
+        ],
+        [
+            "Tunnel No. 7.1",
+            "Tunnel No. 7.2"
+        ],
+        [
+            "Kerckhoff 1 Tunnel Inflow",
+            "Millerton Lake"
+        ],
+        [
+            "Below Kerckhoff 2 Tunnel Inflow Inflow",
+            "Below Kerckhoff 2 Tunnel Inflow"
+        ],
+        [
+            "Kerckhoff Lake Inflow",
+            "Kerckhoff Lake"
+        ],
+        [
+            "Browns Creek Outflow Inflow",
+            "Browns Creek Outflow"
+        ],
+        [
+            "Bass Lake Inflow",
+            "Bass Lake"
+        ],
+        [
+            "Redinger Lake Inflow",
+            "Redinger Lake"
+        ],
+        [
+            "Shaver Lake Inflow",
+            "Shaver Lake"
+        ],
+        [
+            "Big Creek 3 Conduit Outflow Inflow",
+            "Big Creek 3 Conduit Outflow"
+        ],
+        [
+            "Mammoth Pool Reservoir",
+            "IFR above Shakeflat Creek"
+        ],
+        [
+            "IFR above Shakeflat Creek Inflow",
+            "IFR above Shakeflat Creek"
+        ],
+        [
+            "Mammoth Pool Reservoir Inflow",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "Portal Forebay",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "Big Creek 8 Penstock Outflow Inflow",
+            "Big Creek 8 Penstock Outflow"
+        ],
+        [
+            "Big Creek 2 Tunnel Outflow",
+            "Big Creek 8 Penstock Outflow"
+        ],
+        [
+            "Big Creek 2 Tunnel Outflow Inflow",
+            "Big Creek 2 Tunnel Outflow"
+        ],
+        [
+            "Huntington Lake Inflow",
+            "Huntington Lake"
+        ],
+        [
+            "Lake Thomas A Edison Inflow",
+            "Lake Thomas A Edison"
+        ],
+        [
+            "Portal Forebay Inflow",
+            "Portal Forebay"
+        ],
+        [
+            "Bolsillo Cr. Div. Outflow Inflow",
+            "Bolsillo Cr. Div. Outflow"
+        ],
+        [
+            "Camp 62 Cr. Div. Outflow Inflow",
+            "Camp 62 Cr. Div. Outflow"
+        ],
+        [
+            "Chinquapin Cr. Div. Outflow Inflow",
+            "Chinquapin Cr. Div. Outflow"
+        ],
+        [
+            "IFR bl Hooper Creek Inflow",
+            "IFR bl Hooper Creek"
+        ],
+        [
+            "Florence Lake Inflow",
+            "Florence Lake"
+        ],
+        [
+            "IFR bl Big Creek 6 Div",
+            "Redinger Lake"
+        ],
+        [
+            "Below Balsam Meadows Tunnel Outflow",
+            "IFR No. Fk. Stevenson Creek above Shaver Lake"
+        ],
+        [
+            "IFR No. Fk. Stevenson Creek above Shaver Lake Inflow",
+            "IFR No. Fk. Stevenson Creek above Shaver Lake"
+        ],
+        [
+            "Big Creek 8 Penstock Outflow",
+            "IFR bl Big Creek 5 Div"
+        ],
+        [
+            "IFR bl Big Creek 5 Div Inflow",
+            "IFR bl Big Creek 5 Div"
+        ],
+        [
+            "Below Ward Tunnel Diverted Inflow",
+            "Below Chinquapin Cr. Div. Inflow"
+        ],
+        [
+            "Florence Lake",
+            "IFR bl Hooper Creek"
+        ],
+        [
+            "IFR bl Hooper Creek",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "Bear Diversion Tunnel Outflow Inflow",
+            "Bear Diversion Tunnel Outflow"
+        ],
+        [
+            "Bear Diversion Tunnel Outflow",
+            "Bear Diversion Tunnel"
+        ],
+        [
+            "IFR bl Bear Div",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "IFR bl Chinquapin Creek Div",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "IFR bl Camp 62 Creek Div",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "IFR bl Bolsillo Creek Div",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "IFR bl Lake Thomas A Edison",
+            "Mono Diversion Reservoir"
+        ],
+        [
+            "Mono Diversion Reservoir",
+            "Mono Tunnel"
+        ],
+        [
+            "IFR bl Mono Creek Div",
+            "Mammoth Pool Reservoir"
+        ],
+        [
+            "IFR above Shakeflat Creek",
+            "Big Creek 3 Conduit Outflow"
+        ],
+        [
+            "Mammoth Pool PH",
+            "Big Creek 3 Conduit Outflow"
+        ],
+        [
+            "Portal PH",
+            "Huntington Lake"
+        ],
+        [
+            "IFR bl Huntington Lake",
+            "Big Creek 2 Tunnel Outflow"
+        ],
+        [
+            "Pitman Creek Diversion Dam Inflow",
+            "Pitman Creek Diversion Dam"
+        ],
+        [
+            "IFR bl Pitman Creek Div",
+            "Big Creek 2 Tunnel Outflow"
+        ],
+        [
+            "Big Creek 1 PH",
+            "Big Creek 2 Tunnel Outflow"
+        ],
+        [
+            "Eastwood PH",
+            "Shaver Lake"
+        ],
+        [
+            "IFR bl Balsam Forebay",
+            "Big Creek 8 Penstock Outflow"
+        ],
+        [
+            "Big Creek 2 PH",
+            "Big Creek 8 Penstock Outflow"
+        ],
+        [
+            "Big Creek 2A PH",
+            "Big Creek 8 Penstock Outflow"
+        ],
+        [
+            "IFR bl Big Creek 5 Div",
+            "Big Creek 3 Conduit Outflow"
+        ],
+        [
+            "Big Creek 8 PH",
+            "Big Creek 3 Conduit Outflow"
+        ],
+        [
+            "IFR No. Fk. Stevenson Creek above Shaver Lake",
+            "Shaver Lake"
+        ],
+        [
+            "IFR bl Shaver Lake",
+            "Redinger Lake"
+        ],
+        [
+            "Big Creek 3 PH",
+            "Redinger Lake"
+        ],
+        [
+            "Browns Creek Outflow",
+            "Browns Creek Ditch"
+        ],
+        [
+            "No. 3 Conduit Outflow",
+            "San Joaquin 3 PH"
+        ],
+        [
+            "IFR bl Bass Lake",
+            "Manzanita Diversion Dam"
+        ],
+        [
+            "San Joaquin 3 PH",
+            "Manzanita Diversion Dam"
+        ],
+        [
+            "San Joaquin 2 PH",
+            "Below No. 2 Conduit Inflow"
+        ],
+        [
+            "San Joaquin 1A PH",
+            "San Joaquin 1A Div Inflow"
+        ],
+        [
+            "IFR bl Kerckhoff Lake",
+            "Below Kerckhoff 2 Tunnel Inflow"
+        ],
+        [
+            "Kerckhoff 1 PH",
+            "Kerckhoff 1 Tunnel Inflow"
+        ],
+        [
+            "Kerckhoff 2 PH",
+            "Millerton Lake"
+        ],
+        [
+            "CVP Madera Canal Demand",
+            "CVP Madera Canal"
+        ],
+        [
+            "Friant-Kern Canal Demand",
+            "CVP Friant-Kern Canal"
+        ],
+        [
+            "IFR bl Millerton Lake",
+            "San Joaquin River Outflow"
+        ],
+        [
+            "IFR bl Redinger Lake",
+            "IFR bl San Joaquin R and Willow Cr confluence"
+        ],
+        [
+            "IFR bl San Joaquin R and Willow Cr confluence Inflow",
+            "IFR bl San Joaquin R and Willow Cr confluence"
+        ],
+        [
+            "IFR bl San Joaquin 1 Div",
+            "IFR bl San Joaquin R and Willow Cr confluence"
+        ],
+        [
+            "IFR bl Manzanita Div",
+            "IFR bl San Joaquin R and Willow Cr confluence"
+        ],
+        [
+            "IFR bl San Joaquin R and Willow Cr confluence",
+            "Kerckhoff Lake"
+        ],
+        [
+            "Big Creek 4 PH",
+            "Kerckhoff Lake"
+        ],
+        [
+            "San Joaquin 1 PH",
+            "Kerckhoff Lake"
+        ]
+    ],
+    "tables": {
+        "San Joaquin Valley Index": {
+            "url": "/content/cen_sierra_pywr/data/common/hydrology/historical/Livneh/SJVI.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "functional flows metrics": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/_tables/Functional_Flows_metrics.csv",
+            "index_col": 0,
+            "header": 0
+        },
+        "Initial Storage": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/gauges/storage_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "parse_dates": true
+        },
+        "CVP Friant-Kern Canal demand": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/Demand/CVP_Friant_Kern_Canal___cfs.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "CVP Madera Canal demand": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/Demand/CVP_Madera_Canal___cfs.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "All Energy Price Values": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/prices_pivoted_select_years.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Energy Price Blocks": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/piecewise_blocks_daily.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Energy Price Values": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/piecewise_prices_DpMWh_daily.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Seasonal Inflow at Friant": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/hydrology/historical/Livneh/preprocessed/inflow_MillertonLake_AprToJul_af.csv",
+            "header": 0,
+            "index_col": 0,
+            "squeeze": true
+        },
+        "Big Creek System IFRs 2000 normal": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/IFRs/Big_Creek_2000_IFRs_daily_cfs.xlsx",
+            "sheet_name": "normal",
+            "skiprows": [
+                0
+            ],
+            "index_col": 0,
+            "header": 0
+        },
+        "Big Creek System IFRs 2000 dry": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/IFRs/Big_Creek_2000_IFRs_daily_cfs.xlsx",
+            "sheet_name": "dry",
+            "skiprows": [
+                0
+            ],
+            "index_col": 0,
+            "header": 0
+        },
+        "IFR Schedule below Friant Dam": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/IFRs/IFR_Below_Friant_Dam_cfs_daily.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0
+        },
+        "SJ restoration flows": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/hydrology/historical/Livneh/preprocessed/SJ_restoration_flows.csv",
+            "index_col": 0,
+            "header": 0
+        },
+        "Annual Full Natural Flow": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_annual_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "Millerton Lake flood curve": {
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/management/BAU/Flood_Control/Millerton_Lake_Flood_Control_Curve_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "names": [
+                "rainflood",
+                "conditional"
+            ]
+        }
+    },
+    "parameters": {
+        "Price Year": {
+            "type": "Constant",
+            "value": 2009
+        },
+        "Full Natural Flow": {
+            "type": "dataframe",
+            "url": "/content/cen_sierra_pywr/data/Upper_San_Joaquin_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_daily_mcm.csv",
+            "index_col": 0,
+            "parse_dates": true,
+            "header": 0,
+            "squeeze": true
+        },
+        "Bass Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Bass Lake",
+            "volumes": [
+                0,
+                0.36,
+                1.1,
+                2.34,
+                4.2,
+                6.89,
+                10.75,
+                16.31,
+                24.24,
+                34.67,
+                47.12,
+                55.61
+            ],
+            "values": [
+                986.3,
+                999.7,
+                1002.8,
+                1005.8,
+                1008.9,
+                1011.9,
+                1015,
+                1018,
+                1021.1,
+                1024.1,
+                1027.2,
+                1029.1
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Bass Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Bass Lake/Turbine Capacity": {
+            "type": "constant",
+            "value": 4.531294250920419,
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 1 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 1 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 1 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 1 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 1 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 2 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 2 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 2A PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2A PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2A PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 2A PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 2A PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 3 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 3 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 3 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 3 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 3 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 4 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 4 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 4 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 4 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 4 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 8 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 8 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 8 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Big Creek 8 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Big Creek 8 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Friant-Kern Canal Demand/Demand": {
+            "type": "Friant_Kern_Canal_Demand_Demand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "CVP Madera Canal/Demand": {
+            "type": "CVP_Madera_Canal_Demand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Eastwood PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Eastwood PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Eastwood PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Eastwood PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Eastwood PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Florence Lake/Maximum Outflow": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Florence Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Florence Lake",
+            "volumes": [
+                0,
+                0.08,
+                0.35,
+                1.09,
+                2.19,
+                5.75,
+                8.2,
+                11.04,
+                14.31,
+                30.32,
+                39.41,
+                59.53,
+                79.41
+            ],
+            "values": [
+                2188.5,
+                2201.3,
+                2202.2,
+                2203.7,
+                2205.2,
+                2208.3,
+                2209.8,
+                2211.3,
+                2212.8,
+                2218.9,
+                2222.0,
+                2228.1,
+                2233.4
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Florence Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Millerton Lake Flood Release/Requirement": {
+            "type": "Millerton_Lake_Flood_Release_Requirement"
+        },
+        "Huntington Lake/Cost": {
+            "type": "Huntington_Lake_Cost"
+        },
+        "Huntington Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Huntington Lake",
+            "volumes": [
+                0,
+                1.91,
+                2.9,
+                4.1,
+                5.52,
+                9.16,
+                13.93,
+                20.19,
+                28.21,
+                38.05,
+                49.59,
+                62.65,
+                77.13,
+                92.9,
+                109.94
+            ],
+            "values": [
+                2068.4,
+                2083.3,
+                2084.8,
+                2086.4,
+                2087.9,
+                2090.9,
+                2094.0,
+                2097.0,
+                2100.1,
+                2103.1,
+                2106.2,
+                2109.2,
+                2112.3,
+                2115.3,
+                2118.4
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Huntington Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "IFR above Shakeflat Creek/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Balsam Forebay/Min Flow": {
+            "type": "IFR_bl_Balsam_Forebay_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Bass Lake/Min Flow": {
+            "type": "IFR_bl_Bass_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Bear Div/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Big Creek 5 Div/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Big Creek 6 Div/Min Flow": {
+            "type": "IFR_bl_Big_Creek_6_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Bolsillo Creek Div/Min Flow": {
+            "type": "IFR_bl_Bolsillo_Creek_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Browns Creek Ditch/Min Flow": {
+            "type": "IFR_bl_Browns_Creek_Ditch_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Camp 62 Creek Div/Min Flow": {
+            "type": "IFR_bl_Camp_62_Creek_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Chinquapin Creek Div/Min Flow": {
+            "type": "IFR_bl_Chinquapin_Creek_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Hooper Creek/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000"
+        },
+        "IFR bl Huntington Lake/Min Flow": {
+            "type": "IFR_bl_Huntington_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Lake Thomas A Edison/Min Flow": {
+            "type": "IFR_bl_Lake_Thomas_A_Edison_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Kerckhoff Lake/Min Flow": {
+            "type": "IFR_bl_Kerckhoff_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Manzanita Div/Min Flow": {
+            "type": "IFR_bl_Manzanita_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Millerton Lake/Min Flow": {
+            "type": "IFR_bl_Millerton_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Mono Creek Div/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Pitman Creek Div/Min Flow": {
+            "type": "IFR_bl_Pitman_Creek_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Redinger Lake/Min Flow": {
+            "type": "IFR_bl_Redinger_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl San Joaquin 1 Div/Min Flow": {
+            "type": "IFR_bl_San_Joaquin_1_Div_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl San Joaquin R and Willow Cr confluence/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000"
+        },
+        "IFR bl Shaver Lake/Min Flow": {
+            "type": "IFR_bl_Shaver_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR No. Fk. Stevenson Creek above Shaver Lake/Min Flow": {
+            "type": "Big_Creek_System_IFRs_2000"
+        },
+        "Kerckhoff 1 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 1 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 1 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 1 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Kerckhoff 1 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Kerckhoff 2 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 2 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 2 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Kerckhoff 2 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Kerckhoff 2 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Kerckhoff Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Kerckhoff Lake",
+            "volumes": [
+                0,
+                1.34,
+                1.91,
+                2.58,
+                3.33,
+                4.18,
+                4.8
+            ],
+            "values": [
+                270.8,
+                292.6,
+                294.1,
+                295.7,
+                297.2,
+                298.7,
+                299.5
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Kerckhoff Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Lake Thomas A Edison/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Lake Thomas A Edison",
+            "volumes": [
+                0,
+                4.4,
+                7.58,
+                11.74,
+                22.36,
+                35.16,
+                49.88,
+                66.3,
+                84.6,
+                104.81,
+                126.22,
+                148.48,
+                154.17
+            ],
+            "values": [
+                2281.0,
+                2301.2,
+                2302.8,
+                2304.3,
+                2307.3,
+                2310.4,
+                2313.4,
+                2316.5,
+                2319.5,
+                2322.6,
+                2325.6,
+                2328.7,
+                2329.4
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Lake Thomas A Edison/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Lake Thomas A Edison/Cost": {
+            "type": "constant",
+            "value": -45
+        },
+        "Mammoth Pool PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Mammoth Pool PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Mammoth Pool PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Mammoth Pool PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Mammoth Pool PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Mammoth Pool Reservoir/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Mammoth Pool Reservoir",
+            "volumes": [
+                0,
+                0.51,
+                1.06,
+                1.67,
+                2.34,
+                3.84,
+                5.68,
+                7.89,
+                10.63,
+                13.77,
+                17.34,
+                21.47,
+                26.39,
+                38.36,
+                52.76,
+                69.52,
+                88.91,
+                110.7,
+                134.81,
+                147.89
+            ],
+            "values": [
+                944.9,
+                946.4,
+                947.9,
+                949.5,
+                951.0,
+                954.0,
+                957.1,
+                960.1,
+                963.2,
+                966.2,
+                969.3,
+                972.3,
+                975.4,
+                981.5,
+                987.6,
+                993.6,
+                999.7,
+                1005.8,
+                1011.9,
+                1015.0
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Mammoth Pool Reservoir/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Millerton Lake/Cost": {
+            "type": "constant",
+            "value": -30
+        },
+        "Millerton Lake/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Millerton Lake",
+            "volumes": [
+                0,
+                150,
+                150.6,
+                152,
+                154.8,
+                159.2,
+                165.5,
+                173.8,
+                184.4,
+                197.3,
+                212.7,
+                230.7,
+                251.6,
+                275.5,
+                302.7,
+                333.4,
+                367.6,
+                405.6,
+                447.5,
+                493.2,
+                543,
+                597,
+                641.42
+            ],
+            "values": [
+                150,
+                200,
+                201.5,
+                203,
+                204.6,
+                206.1,
+                207.6,
+                209.1,
+                210.7,
+                212.2,
+                213.7,
+                215.2,
+                216.8,
+                218.3,
+                219.8,
+                221.3,
+                222.9,
+                224.4,
+                225.9,
+                227.4,
+                229,
+                230.5,
+                231.6
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Portal PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Portal PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Portal PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "Portal PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Portal PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Redinger Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Redinger Lake",
+            "volumes": [
+                0,
+                5.28,
+                8.4,
+                11.9,
+                15.85,
+                20.29,
+                25.19,
+                30.51,
+                32.21
+            ],
+            "values": [
+                359.8,
+                408.4,
+                411.5,
+                414.5,
+                417.6,
+                420.6,
+                423.7,
+                426.7,
+                427.6
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Redinger Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "San Joaquin 1 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 1 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 1A PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1A PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1A PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 1A PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 1A PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 2 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 2 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 2 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 2 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 2 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 3 PH/Cost/1": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 3 PH/Cost/2": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 3 PH/Cost/3": {
+            "type": "HydropowerCost",
+            "comment": "{\"dim\": \"Unit price (volume)\", \"scale\": 1, \"unit\": \"USD m^-3\"}"
+        },
+        "San Joaquin 3 PH/Water Demand/1": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "San Joaquin 3 PH/Water Demand/2": {
+            "type": "HydropowerDemand",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Shaver Lake/Volume Elevation Curve": {
+            "type": "interpolatedvolume",
+            "node": "Shaver Lake",
+            "volumes": [
+                0,
+                0.47,
+                0.86,
+                1.55,
+                2.55,
+                3.95,
+                5.85,
+                11.33,
+                19.23,
+                29.6,
+                42.48,
+                57.7,
+                75.14,
+                94.62,
+                116.6,
+                167.16
+            ],
+            "values": [
+                1582.2,
+                1598.7,
+                1600.2,
+                1601.7,
+                1603.2,
+                1604.8,
+                1606.3,
+                1609.3,
+                1612.4,
+                1615.4,
+                1618.5,
+                1621.5,
+                1624.6,
+                1627.6,
+                1630.7,
+                1636.8
+            ],
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Shaver Lake/Buffer coefficient": {
+            "type": "constant",
+            "value": 1,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "cfs2cms": {
+            "type": "constant",
+            "value": 0.028317,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "AF2cm": {
+            "type": "constant",
+            "value": 1233.5,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "ToFlow": {
+            "type": "constant",
+            "value": 604800.0,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Af2cms": {
+            "type": "constant",
+            "value": 0.0020395171957671957,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "San Joaquin Valley WYI": {
+            "type": "San_Joaquin_Valley_WYI",
+            "comment": "{\"dim\": \"Volume\", \"scale\": 1000000, \"unit\": \"ac-ft\"}"
+        }, 
+        "San Joaquin Valley WYT": {
+            "type": "San_Joaquin_Valley_WYT",
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Millerton Lake Flood Release Requirement": {
+            "type": "Millerton_Lake_Flood_Release_Requirement",
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "No. 1A Conduit Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/No. 1A Conduit Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Manzanita Diversion Dam Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Manzanita Diversion Dam Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Millerton Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Millerton Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Below Kerckhoff 2 Tunnel Inflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Below Kerckhoff 2 Tunnel Inflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Kerckhoff Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Kerckhoff Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Browns Creek Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Browns Creek Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Bass Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Bass Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Redinger Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Redinger Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Shaver Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Shaver Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Big Creek 3 Conduit Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Big Creek 3 Conduit Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR above Shakeflat Creek Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/IFR above Shakeflat Creek Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Mammoth Pool Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Mammoth Pool Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Big Creek 8 Penstock Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Big Creek 8 Penstock Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Big Creek 2 Tunnel Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Big Creek 2 Tunnel Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Huntington Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Huntington Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Lake Thomas A Edison Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Lake Thomas A Edison Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Portal Forebay Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Portal Forebay Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Bolsillo Cr. Div. Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Bolsillo Cr. Div. Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Camp 62 Cr. Div. Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Camp 62 Cr. Div. Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Chinquapin Cr. Div. Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Chinquapin Cr. Div. Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR bl Hooper Creek Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/IFR bl Hooper Creek Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Florence Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Florence Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR No. Fk. Stevenson Creek above Shaver Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/IFR No. Fk. Stevenson Creek above Shaver Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR bl Big Creek 5 Div Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/IFR bl Big Creek 5 Div Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Bear Diversion Tunnel Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Bear Diversion Tunnel Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Pitman Creek Diversion Dam Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/Pitman Creek Diversion Dam Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR bl San Joaquin R and Willow Cr confluence Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Upper San Joaquin River/hydrology/historical/Livneh/runoff_aggregated/IFR bl San Joaquin R and Willow Cr confluence Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        }
+    },
+    "recorders": {
+        "Bass Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Bass Lake"
+        },
+        "Big Creek 1 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 1 PH"
+        },
+        "Big Creek 2 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 2 PH"
+        },
+        "Big Creek 2A PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 2A PH"
+        },
+        "Big Creek 3 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 3 PH"
+        },
+        "Big Creek 4 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 4 PH"
+        },
+        "Big Creek 8 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Big Creek 8 PH"
+        },
+        "Big Creek 1 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 1 PH"
+        },
+        "Big Creek 2 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 2 PH"
+        },
+        "Big Creek 2A PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 2A PH"
+        },
+        "Big Creek 3 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 3 PH"
+        },
+        "Big Creek 4 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 4 PH"
+        },
+        "Big Creek 8 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Big Creek 8 PH"
+        },
+        "Friant-Kern Canal Demand/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Friant-Kern Canal Demand/Demand"
+        },
+        "CVP Friant-Kern Canal/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "CVP Friant-Kern Canal"
+        },
+        "CVP Madera Canal/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "CVP Madera Canal/Demand"
+        },
+        "CVP Madera Canal/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "CVP Madera Canal"
+        },
+        "Eastwood PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Eastwood PH"
+        },
+        "Eastwood PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Eastwood PH"
+        },
+        "Florence Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Florence Lake"
+        },
+        "Friant Dam Spillway/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Friant Dam Spillway"
+        },
+        "Friant PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Friant PH"
+        },
+        "Friant PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Friant PH"
+        },
+        "Huntington Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Huntington Lake"
+        },
+        "IFR above Shakeflat Creek/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR above Shakeflat Creek"
+        },
+        "IFR bl Balsam Forebay/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Balsam Forebay"
+        },
+        "IFR bl Bass Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Bass Lake"
+        },
+        "IFR bl Bear Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Bear Div"
+        },
+        "IFR bl Big Creek 5 Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Big Creek 5 Div"
+        },
+        "IFR bl Big Creek 6 Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Big Creek 6 Div"
+        },
+        "IFR bl Bolsillo Creek Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Bolsillo Creek Div"
+        },
+        "IFR bl Browns Creek Ditch/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Browns Creek Ditch"
+        },
+        "IFR bl Camp 62 Creek Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Camp 62 Creek Div"
+        },
+        "IFR bl Chinquapin Creek Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Chinquapin Creek Div"
+        },
+        "IFR bl Hooper Creek/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Hooper Creek"
+        },
+        "IFR bl Huntington Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Huntington Lake"
+        },
+        "IFR bl Kerckhoff Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Kerckhoff Lake"
+        },
+        "IFR bl Lake Thomas A Edison/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Lake Thomas A Edison"
+        },
+        "IFR bl Manzanita Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Manzanita Div"
+        },
+        "IFR bl Millerton Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Millerton Lake"
+        },
+        "IFR bl Mono Creek Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Mono Creek Div"
+        },
+        "IFR bl Pitman Creek Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Pitman Creek Div"
+        },
+        "IFR bl Redinger Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Redinger Lake"
+        },
+        "IFR bl San Joaquin 1 Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl San Joaquin 1 Div"
+        },
+        "IFR bl San Joaquin R and Willow Cr confluence/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl San Joaquin R and Willow Cr confluence"
+        },
+        "IFR bl Shaver Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Shaver Lake"
+        },
+        "IFR No. Fk. Stevenson Creek above Shaver Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR No. Fk. Stevenson Creek above Shaver Lake"
+        },
+        "IFR above Shakeflat Creek/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR above Shakeflat Creek/Min Flow"
+        },
+        "IFR bl Balsam Forebay/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Balsam Forebay/Min Flow"
+        },
+        "IFR bl Bass Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Bass Lake/Min Flow"
+        },
+        "IFR bl Bear Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Bear Div/Min Flow"
+        },
+        "IFR bl Big Creek 5 Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Big Creek 5 Div/Min Flow"
+        },
+        "IFR bl Big Creek 6 Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Big Creek 6 Div/Min Flow"
+        },
+        "IFR bl Bolsillo Creek Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Bolsillo Creek Div/Min Flow"
+        },
+        "IFR bl Browns Creek Ditch/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Browns Creek Ditch/Min Flow"
+        },
+        "IFR bl Camp 62 Creek Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Camp 62 Creek Div/Min Flow"
+        },
+        "IFR bl Chinquapin Creek Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Chinquapin Creek Div/Min Flow"
+        },
+        "IFR bl Hooper Creek/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Hooper Creek/Min Flow"
+        },
+        "IFR bl Huntington Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Huntington Lake/Min Flow"
+        },
+        "IFR bl Kerckhoff Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Kerckhoff Lake/Min Flow"
+        },
+        "IFR bl Lake Thomas A Edison/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Lake Thomas A Edison/Min Flow"
+        },
+        "IFR bl Manzanita Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Manzanita Div/Min Flow"
+        },
+        "IFR bl Millerton Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Millerton Lake/Min Flow"
+        },
+        "IFR bl Mono Creek Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Mono Creek Div/Min Flow"
+        },
+        "IFR bl Pitman Creek Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Pitman Creek Div/Min Flow"
+        },
+        "IFR bl Redinger Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Redinger Lake/Min Flow"
+        },
+        "IFR bl San Joaquin 1 Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl San Joaquin 1 Div/Min Flow"
+        },
+        "IFR bl San Joaquin R and Willow Cr confluence/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl San Joaquin R and Willow Cr confluence/Min Flow"
+        },
+        "IFR bl Shaver Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Shaver Lake/Min Flow"
+        },
+        "IFR No. Fk. Stevenson Creek above Shaver Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR No. Fk. Stevenson Creek above Shaver Lake/Min Flow"
+        },
+        "Kerckhoff 1 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Kerckhoff 1 PH"
+        },
+        "Kerckhoff 2 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Kerckhoff 2 PH"
+        },
+        "Kerckhoff 1 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Kerckhoff 1 PH"
+        },
+        "Kerckhoff 2 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Kerckhoff 2 PH"
+        },
+        "Kerckhoff Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Kerckhoff Lake"
+        },
+        "Lake Thomas A Edison/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Lake Thomas A Edison"
+        },
+        "Mammoth Pool PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Mammoth Pool PH"
+        },
+        "Mammoth Pool PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Mammoth Pool PH"
+        },
+        "Mammoth Pool Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Mammoth Pool Reservoir"
+        },
+        "Millerton Lake Flood Release/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Millerton Lake Flood Release"
+        },
+        "Millerton Lake Flood Release/requirement": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Millerton Lake Flood Release/Requirement"
+        },
+        "Millerton Lake/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Millerton Lake"
+        },
+        "Millerton Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Millerton Lake"
+        },
+        "Portal PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Portal PH"
+        },
+        "Portal PH/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Portal PH/Cost/1"
+        },
+        "Portal PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Portal PH"
+        },
+        "Mammoth Pool PH/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Mammoth Pool PH/Cost/1"
+        },
+        "Redinger Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Redinger Lake"
+        },
+        "San Joaquin 1 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "San Joaquin 1 PH"
+        },
+        "San Joaquin 1A PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "San Joaquin 1A PH"
+        },
+        "San Joaquin 2 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "San Joaquin 2 PH"
+        },
+        "San Joaquin 3 PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "San Joaquin 3 PH"
+        },
+        "San Joaquin 1 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "San Joaquin 1 PH"
+        },
+        "San Joaquin 1A PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "San Joaquin 1A PH"
+        },
+        "San Joaquin 2 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "San Joaquin 2 PH"
+        },
+        "San Joaquin 3 PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "San Joaquin 3 PH"
+        },
+        "San Joaquin River Outflow/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "San Joaquin River Outflow"
+        },
+        "Shaver Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Shaver Lake"
+        }
+    }
+}
