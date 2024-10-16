@@ -1,7 +1,7 @@
-from sierra.base_parameters import BaseParameter
+from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
 from datetime import datetime, timedelta
 import numpy as np
-from sierra.utilities.converter import convert
+from cen_sierra_pywr_new.sierra.utilities.converter import convert
 import math
 
 
@@ -12,7 +12,7 @@ class Millerton_Lake_Flood_Release_Requirement(BaseParameter):
     def setup(self):
         super().setup()
         num_scenarios = len(self.model.scenarios.combinations)
-        self.should_drawdown = np.empty(num_scenarios, np.bool)
+        self.should_drawdown = np.empty(num_scenarios, bool)
 
     def _value(self, timestep, scenario_index):
 
@@ -124,7 +124,8 @@ class Millerton_Lake_Flood_Release_Requirement(BaseParameter):
 
             # 3.7. Finally, compute the supplemental release
             # Note that the goal is to spread the release out over time
-            storage_difference_mcm = max(conditional_space_required_mcm - total_space_available_mcm, 0.0)
+            #storage_difference_mcm = max(conditional_space_required_mcm - total_space_available_mcm, 0.0)
+            storage_difference_mcm = np.maximum(conditional_space_required_mcm - total_space_available_mcm, 0.0)
 
             # if storage_difference_mcm > 0.0:
             #     print('{}: conditional; release: {} taf'.format(timestep.datetime, storage_difference_mcm / 1.2335))
@@ -141,14 +142,19 @@ class Millerton_Lake_Flood_Release_Requirement(BaseParameter):
             # else:
 
             supplemental_release_mcm = storage_difference_mcm
+            print("supplemental_release_mcm", supplemental_release_mcm)
 
             # 3.8. Calculate total release
             # Note that this differs from the example in the USACE manual, since we are only calculating instream
             # release here. In the manual, "total release" is instream release + ag. release
-            release_mcm = max(release_mcm, supplemental_release_mcm)
+            #release_mcm = max(release_mcm, supplemental_release_mcm)
+            release_mcm = np.maximum(release_mcm, supplemental_release_mcm)
+
 
         # This is our overall target release, without accounting for max downstream releases
-        release_mcm = float(max(release_mcm, 0.0))
+        #release_mcm = float(max(release_mcm, 0.0))
+        release_mcm = float(np.maximum(release_mcm, 0.0))
+
 
         # Assume Madera Canal can absorb some flood control capacity
         # Note that we cannot calculate Madera demand from the demand node/parameter, since that node depends on this.

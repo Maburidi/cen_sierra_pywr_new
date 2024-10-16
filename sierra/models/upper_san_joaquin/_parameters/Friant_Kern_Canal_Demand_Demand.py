@@ -1,6 +1,6 @@
-from sierra.base_parameters import BaseParameter
+from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
 
-from sierra.utilities.converter import convert
+from cen_sierra_pywr_new.sierra.utilities.converter import convert
 
 class Friant_Kern_Canal_Demand_Demand(BaseParameter):
     """"""

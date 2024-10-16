@@ -1,6 +1,6 @@
-from sierra.base_parameters import MinFlowParameter
+from cen_sierra_pywr_new.sierra.base_parameters import MinFlowParameter
 
-from sierra.utilities.converter import convert
+from cen_sierra_pywr_new.sierra.utilities.converter import convert
 
 
 class IFR_bl_San_Joaquin_R_and_Willow_Cr_confluence_Min_Flow(MinFlowParameter):

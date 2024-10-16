@@ -1,6 +1,6 @@
-from sierra.base_parameters import BaseParameter
+from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
 
-from sierra.utilities.converter import convert
+from cen_sierra_pywr_new.sierra.utilities.converter import convert
 
 
 class Big_Creek_System_IFRs_2000(BaseParameter):
@@ -10,7 +10,12 @@ class Big_Creek_System_IFRs_2000(BaseParameter):
 
         month = self.datetime.month
 
-        Friant_Apr_Jul_runoff_af = self.model.tables['Seasonal Inflow at Friant'][int(self.operational_water_year)]
+        
+        table_ =  self.model.tables['Seasonal Inflow at Friant']
+                
+        
+        Friant_Apr_Jul_runoff_af = table_.loc[int(self.operational_water_year), 'flow']
+        
         if Friant_Apr_Jul_runoff_af <= 900000:
             ifr_table = self.model.tables['Big Creek System IFRs 2000 dry']
         else:
