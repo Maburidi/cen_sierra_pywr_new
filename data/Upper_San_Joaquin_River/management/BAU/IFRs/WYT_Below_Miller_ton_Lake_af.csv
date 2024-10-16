@@ -1,0 +1,7 @@
+Lower Bound,Water Year Type
+0,Critical-Low
+"400,000",Critical-High
+670000,Dry
+930000,Normal-Dry
+1450000,Normal-Wet
+2500001,Wet
