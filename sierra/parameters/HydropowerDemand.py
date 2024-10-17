@@ -1,4 +1,4 @@
-from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
+from sierra.base_parameters import BaseParameter
 from dateutil.relativedelta import relativedelta
 from calendar import isleap
 import random
