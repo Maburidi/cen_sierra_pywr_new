@@ -4,7 +4,7 @@ import argparse
 from itertools import product
 from functools import partial
 
-from cen_sierra_pywr_new.sierra.run_basin_model import run_model
+from sierra.run_basin_model import run_model
 
 from loguru import logger
 from datetime import date
@@ -12,33 +12,31 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-b", "--basin", help="Basin to run ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin', 'all']", default='upper_san_joaquin')
-    #parser.add_argument("-d", "--debug", help="Debug", action='store_true')
-    parser.add_argument("-d", "--debug", help="Debug", type=bool, default=True)
-    parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)", default=None)
-    parser.add_argument("-c", "--num_cores", help="Number of cores to use in joblib multiprocessing", type=int)
-    #parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
-    parser.add_argument("-p", "--include_planning", help="Include planning model", type=bool, default=False)
-    parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=2)
-    parser.add_argument("-bl", "--blocks", help="Number of piecewise blocks", type=int, default=5)
-    parser.add_argument("-sc", "--scenario_set", help="Scenario set")
-    parser.add_argument("-s", "--start_year", help="Start year", type=int)
-    parser.add_argument("-e", "--end_year", help="End year", type=int)
-    parser.add_argument("-y", "--years", help="Years to run (useful for debugging)", type=int)
-    parser.add_argument("-n", "--run_name", help="Run name")
-    parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='store_true')
-    parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
-    parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/')
-    #parser.add_argument("--logs_dir", help="Path to the logs directory",
-    #                    default='/content/drive/MyDrive/Colab_Notebooks/PostDoc_Project1_Pywr/Proj1/cen_sierra_model/logs')
 
-    args = parser.parse_args([])
-    return args
+parser = argparse.ArgumentParser()
+parser.add_argument("-b", "--basin", help="Basin to run ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin', 'all']", default='upper_san_joaquin')
+#parser.add_argument("-d", "--debug", help="Debug", action='store_true')
+parser.add_argument("-d", "--debug", help="Debug", type=bool, default=True)
+parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)", default=None)
+parser.add_argument("-c", "--num_cores", help="Number of cores to use in joblib multiprocessing", type=int)
+#parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
+parser.add_argument("-p", "--include_planning", help="Include planning model", type=bool, default=False)
+parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=2)
+parser.add_argument("-bl", "--blocks", help="Number of piecewise blocks", type=int, default=5)
+parser.add_argument("-sc", "--scenario_set", help="Scenario set")
+parser.add_argument("-s", "--start_year", help="Start year", type=int)
+parser.add_argument("-e", "--end_year", help="End year", type=int)
+parser.add_argument("-y", "--years", help="Years to run (useful for debugging)", type=int)
+parser.add_argument("-n", "--run_name", help="Run name")
+parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='store_true')
+parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
+parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/')
+#parser.add_argument("--logs_dir", help="Path to the logs directory",
+#                    default='/content/drive/MyDrive/Colab_Notebooks/PostDoc_Project1_Pywr/Proj1/cen_sierra_model/logs')
+args = parser.parse_args()
 
+#args = get_args()
 
-args = get_args()
 basin = args.basin
 debug = args.debug
 
