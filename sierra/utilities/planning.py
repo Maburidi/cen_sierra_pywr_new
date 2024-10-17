@@ -1,5 +1,5 @@
 import json
-from cen_sierra_pywr_new.sierra.utilities import simplify_network
+from sierra.utilities import simplify_network
 
 RIM_DAMS = {
     'stanislaus': 'New Melones Lake',
