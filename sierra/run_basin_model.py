@@ -38,11 +38,13 @@ def run_model(*args, **kwargs):
         logger.add(logger_path)
 
     try:
-        model = _run_model(*args, **kwargs)
+        model1 = _run_model(*args, **kwargs)
+        return model1
+
     except Exception as err:
         logger.exception(err)
         logger.error("Failed")
-    return model
+        return False 
 
 
 if not hasattr(pd, "_original_read_csv"):
@@ -219,7 +221,7 @@ def _run_model(climate,
 
         policy_name = os.path.splitext(filename)[0]
         #sys.path.append('drive.MyDrive.Colab_Notebooks.PostDoc_Project1_Pywr.Proj1.cen_sierra_model.parameters')
-        policy_module = 'cen_sierra_pywr_new.sierra.parameters.{policy_name}'.format(policy_name=policy_name)
+        policy_module = 'sierra.parameters.{policy_name}'.format(policy_name=policy_name)
 
         import_module(policy_module, policy_folder)
     logger.info("Parameters Imported")
@@ -236,12 +238,12 @@ def _run_model(climate,
         if '__init__' in filename:
             continue
         policy_name = os.path.splitext(filename)[0]
-        policy_module = 'cen_sierra_pywr_new.sierra.models.{basin}._parameters.{policy_name}'.format(basin=basin, policy_name=policy_name)
+        policy_module = 'sierra.models.{basin}._parameters.{policy_name}'.format(basin=basin, policy_name=policy_name)
         import_module(policy_module, policy_folder)
 
     logger.info("{} Policy Parameters Imported", basin)
     # import domains
-    import_module('cen_sierra_pywr_new.sierra.domains', 'domains')
+    import_module('sierra.domains', 'domains')
     if debug:
         logger.info("Domains imported")
 
@@ -259,7 +261,7 @@ def _run_model(climate,
     # =========================================
 
 
-    from cen_sierra_pywr_new.sierra.recorders.hydropower import HydropowerEnergyRecorder
+    from sierra.recorders.hydropower import HydropowerEnergyRecorder
     HydropowerEnergyRecorder.register()
 
     with open(model_path, 'r') as f:
@@ -425,5 +427,3 @@ def _run_model(climate,
     save_model_results(model, results_path, file_suffix, disaggregate=False, debug=debug)
     return model  
 
-
-    
