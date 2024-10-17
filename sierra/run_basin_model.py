@@ -8,10 +8,10 @@ from importlib import import_module
 from tqdm import tqdm
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from cen_sierra_pywr_new.sierra.common.tests import get_planning_dataframe
+from sierra.common.tests import get_planning_dataframe
 import pandas as pd
 import traceback
-from cen_sierra_pywr_new.sierra.utilities import simplify_network, prepare_planning_model, save_model_results, create_schematic
+from sierra.utilities import simplify_network, prepare_planning_model, save_model_results, create_schematic
 from loguru import logger
 from graphviz import ExecutableNotFound
 
@@ -79,7 +79,7 @@ def _run_model(climate,
     climate_set, climate_scenario = climate.split('/')
 
     if debug:
-        from cen_sierra_pywr_new.sierra.utilities import check_nan
+        from sierra.utilities import check_nan
 
 
         basin_path = os.path.join(data_path, basin.title() +'_' + 'River')
