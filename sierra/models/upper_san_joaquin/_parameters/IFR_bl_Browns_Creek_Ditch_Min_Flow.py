@@ -1,6 +1,6 @@
-from cen_sierra_pywr_new.sierra.base_parameters import MinFlowParameter
+from sierra.base_parameters import MinFlowParameter
 
-from cen_sierra_pywr_new.sierra.utilities.converter import convert
+from sierra.utilities.converter import convert
 
 class IFR_bl_Browns_Creek_Ditch_Min_Flow(MinFlowParameter):
     """"""
