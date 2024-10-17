@@ -38,10 +38,11 @@ def run_model(*args, **kwargs):
         logger.add(logger_path)
 
     try:
-        _run_model(*args, **kwargs)
+        model = _run_model(*args, **kwargs)
     except Exception as err:
         logger.exception(err)
         logger.error("Failed")
+    return model
 
 
 if not hasattr(pd, "_original_read_csv"):
@@ -422,6 +423,7 @@ def _run_model(climate,
 
   
     save_model_results(model, results_path, file_suffix, disaggregate=False, debug=debug)
+    return model  
 
 
     
