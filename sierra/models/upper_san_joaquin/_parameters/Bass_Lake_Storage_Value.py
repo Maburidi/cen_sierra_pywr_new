@@ -1,4 +1,4 @@
-from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
+from sierra.base_parameters import BaseParameter
 
 
 class Bass_Lake_Storage_Value(BaseParameter):
