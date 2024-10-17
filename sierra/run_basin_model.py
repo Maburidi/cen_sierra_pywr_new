@@ -1,15 +1,17 @@
+
 import os
 import sys
 import json
+import pywr
 from pywr.core import Model
 from importlib import import_module
 from tqdm import tqdm
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from sierra.common.tests import get_planning_dataframe
+from cen_sierra_pywr_new.sierra.common.tests import get_planning_dataframe
 import pandas as pd
 import traceback
-from sierra.utilities import simplify_network, prepare_planning_model, save_model_results, create_schematic
+from cen_sierra_pywr_new.sierra.utilities import simplify_network, prepare_planning_model, save_model_results, create_schematic
 from loguru import logger
 from graphviz import ExecutableNotFound
 
@@ -42,6 +44,19 @@ def run_model(*args, **kwargs):
         logger.error("Failed")
 
 
+if not hasattr(pd, "_original_read_csv"):
+    pd._original_read_csv = pd.read_csv
+
+def custom_read_csv(*args, **kwargs):
+    if 'squeeze' in kwargs:
+        kwargs.pop('squeeze')
+
+    return pd._original_read_csv(*args, **kwargs)
+
+pd.read_csv = custom_read_csv
+
+
+
 def _run_model(climate,
                basin,
                start=None, end=None,
@@ -63,8 +78,10 @@ def _run_model(climate,
     climate_set, climate_scenario = climate.split('/')
 
     if debug:
-        from sierra.utilities import check_nan
-        basin_path = os.path.join(data_path, basin.replace('_', ' ').title() + ' River')
+        from cen_sierra_pywr_new.sierra.utilities import check_nan
+
+
+        basin_path = os.path.join(data_path, basin.title() +'_' + 'River')
         total_nan = check_nan(basin_path, climate)
 
         try:
@@ -73,14 +90,8 @@ def _run_model(climate,
         except AssertionError:
             logger.warning('{} NaNs found in data files.'.format(total_nan))
 
-    # if debug:
-    #     from sierra import create_schematic
-
-    # Some adjustments
     if basin in ['merced', 'tuolumne']:
         include_planning = False
-
-    # Set up dates
 
     if start is None or end is None:
         # TODO: get start and end years from outside, not hard coded
@@ -101,21 +112,23 @@ def _run_model(climate,
         start = '{}-10-01'.format(start_year)
         end = '{}-09-30'.format(end_year)
 
+
+    ################################# MAIN CHANGES STARTS HERE ################################
+
+
     # ========================
     # Set up model environment
     # ========================
 
-    here = os.path.dirname(os.path.realpath(__file__))
-    os.chdir(here)
-
+    here = '/content/cen_sierra_pywr_new/sierra/'
     root_dir = os.path.join(here, 'models', basin)
     temp_dir = os.path.join(root_dir, 'temp')
     if not os.path.exists(temp_dir):
         os.makedirs(temp_dir)
 
     bucket = 'openagua-networks'
-    base_filename = 'pywr_model.json'
-    model_filename_base = 'pywr_model_{}'.format(climate_scenario)
+    base_filename = 'pywr_model_updated.json'
+    model_filename_base = 'pywr_model_updated_{}'.format(climate_scenario)
     model_filename = model_filename_base + '.json'
 
     base_path = os.path.join(root_dir, base_filename)
@@ -160,66 +173,98 @@ def _run_model(climate,
                 continue
             url = param.get('url')
             if url:
+
                 if data_path:
-                    url = url.replace('../data', data_path)
+                    #url = url.replace('../data', data_path)
+                    url = url.replace('None/', data_path)
                 url = url.replace('historical/Livneh', climate)
+                url = url.replace('cen_sierra_pywr/', 'cen_sierra_pywr_new/')
+                url = url.replace(' ', '_')
+                url = url.replace('-', '_')
+                url = url.replace('._', '_')
+
                 param['url'] = url
             new_model_parts[model_part][pname] = param
 
     base_model.update(new_model_parts)
     base_model['timestepper']['start'] = start
     base_model['timestepper']['end'] = end
+
+    #with open(model_path, 'w') as f:
+    #    json.dump(base_model, f, indent=4)
+
+    def remove_invalid_args(data):
+        if 'parameters' in data:
+            for param, details in data['parameters'].items():
+                if 'squeeze' in details:
+                    del details['squeeze']
+        return data
+
+    processed_data = remove_invalid_args(base_model)
+
     with open(model_path, 'w') as f:
-        json.dump(base_model, f, indent=4)
+        json.dump(processed_data, f, indent=4)
+
 
     # =========================================
     # Load and register global model parameters
     # =========================================
 
-    # sys.path.insert(0, os.getcwd())
-    policy_folder = 'parameters'
+    policy_folder = os.path.join(here, 'parameters')
+
     for filename in os.listdir(policy_folder):
         if '__init__' in filename:
             continue
+
         policy_name = os.path.splitext(filename)[0]
-        policy_module = 'sierra.parameters.{policy_name}'.format(policy_name=policy_name)
+        #sys.path.append('drive.MyDrive.Colab_Notebooks.PostDoc_Project1_Pywr.Proj1.cen_sierra_model.parameters')
+        policy_module = 'cen_sierra_pywr_new.sierra.parameters.{policy_name}'.format(policy_name=policy_name)
+
         import_module(policy_module, policy_folder)
+    logger.info("Parameters Imported")
 
     # =========================================
     # Load and register custom model parameters
     # =========================================
 
     sys.path.insert(0, os.getcwd())
-    policy_folder = os.path.join('models', basin, '_parameters')
+
+    policy_folder = os.path.join(here, 'models' , basin, '_parameters')
+
     for filename in os.listdir(policy_folder):
         if '__init__' in filename:
             continue
         policy_name = os.path.splitext(filename)[0]
-        policy_module = 'models.{basin}._parameters.{policy_name}'.format(basin=basin, policy_name=policy_name)
+        policy_module = 'cen_sierra_pywr_new.sierra.models.{basin}._parameters.{policy_name}'.format(basin=basin, policy_name=policy_name)
         import_module(policy_module, policy_folder)
 
+    logger.info("{} Policy Parameters Imported", basin)
     # import domains
-    import_module('.domains', 'domains')
+    import_module('cen_sierra_pywr_new.sierra.domains', 'domains')
     if debug:
         logger.info("Domains imported")
 
     # import custom policies
     try:
         import_module('{}.policies'.format(basin))
+        logger.info("{} policies imported", basin)
+
     except:
         pass
+
 
     # =========================================
     # Load and register custom model recorders
     # =========================================
 
-    from recorders.hydropower import HydropowerEnergyRecorder
+
+    from cen_sierra_pywr_new.sierra.recorders.hydropower import HydropowerEnergyRecorder
     HydropowerEnergyRecorder.register()
 
-    # prepare the model files
-    if simplify or include_planning:
-        with open(model_path, 'r') as f:
-            model_json = json.load(f)
+    with open(model_path, 'r') as f:
+        model_json = json.load(f)
+
+    simplify = False
 
     if simplify:
         # simplify model
@@ -241,7 +286,6 @@ def _run_model(climate,
 
         model_path = simplified_model_path
 
-    # Area for testing monthly model
     save_results = debug
     planning_model = None
     df_planning = None
@@ -286,41 +330,42 @@ def _run_model(climate,
         #     test_planning_model(planning_model, months=planning_months, save_results=save_results)
         #     return
 
-    # ==================
-    # Create daily model
-    # ==================
+
     logger.info('Loading daily model')
     try:
-        model = Model.load(model_path, path=model_path)
+        model = Model.load(model_path)
     except Exception as err:
         logger.error(err)
         raise
+    logger.info("Model Loaded Successfully")
 
+    logger.info('Setup model')
     model.blocks = {}
     model.setup()
+    logger.info("Setup Done Successfully!")
 
-    # run model
-    # note that tqdm + step adds a little bit of overhead.
-    # use model.run() instead if seeing progress is not important
-
-    # IMPORTANT: The following can be embedded into the scheduling model via
-    # the 'before' and 'after' functions.
     days_to_omit = 0
     if include_planning:
         end = model.timestepper.end
         new_end = end + relativedelta(months=-planning_months)
         model.timestepper.end = new_end
+
     step = -1
     now = datetime.now()
     monthly_seconds = 0
     model.mode = 'scheduling'
     model.planning = None
+
     if include_planning:
         model.planning = planning_model
         model.planning.scheduling = model
 
     disable_progress_bar = not debug and not show_progress
     n_timesteps = len(model.timestepper.datetime_index)
+    
+    
+    logger.info("Run The Model")
+
     for date in tqdm(model.timestepper.datetime_index, ncols=60, disable=disable_progress_bar):
         step += 1
         if disable_progress_bar and date.month == 9 and date.day == 30:
@@ -350,6 +395,9 @@ def _run_model(climate,
             logger.error('Failed at step {}'.format(date))
             raise
 
+    #model.run()
+    logger.info("Model Run Successfully!")
+
     if debug:
         total_seconds = (datetime.now() - now).total_seconds()
         logger.debug('Total run: {} seconds'.format(total_seconds))
@@ -358,11 +406,9 @@ def _run_model(climate,
 
     # save results to CSV
     # results_path = os.path.join('./results', run_name, basin, climate)
-    if debug:
-        base_results_path = '../results'
-    else:
-        base_results_path = os.environ.get('SIERRA_RESULTS_PATH', '../results')
-
+    #if debug:
+    
+    base_results_path = os.path.join('.', 'results') 
     suffix = ' - {}'.format(file_suffix) if file_suffix else ''
     run_folder = run_name + suffix
     results_path = os.path.join(base_results_path, run_folder, basin, climate)
@@ -373,4 +419,9 @@ def _run_model(climate,
         df_planning_path = os.path.join(results_path, 'planning_model_results.csv')
         df_planning.to_csv(df_planning_path)
 
+
+  
     save_model_results(model, results_path, file_suffix, disaggregate=False, debug=debug)
+
+
+    
