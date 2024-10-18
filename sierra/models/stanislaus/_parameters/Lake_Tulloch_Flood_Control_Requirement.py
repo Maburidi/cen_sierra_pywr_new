@@ -28,13 +28,6 @@ class Lake_Tulloch_Flood_Control_Requirement(BaseParameter):
         
         # Check for invalid dates (NaT values) in the index
 
-        print(flood_curve)
-        
-        invalid_dates = flood_curve.index.isna().sum()
-        
-        if invalid_dates > 0:      
-            print(f"Warning: {invalid_dates} invalid date(s) found in the index")
-
         flood_control_curve_mcm = flood_curve.loc[month_day,'Rainflood space'] - 1 * 1.2335  # less 1 TAF based on observed
 
         # Get previous storage     
