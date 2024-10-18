@@ -5,7 +5,7 @@ from sierra.utilities.converter import convert
 
 class Donnell_Lake_Spill_Min_Requirement(MinFlowParameter):
     """"""
-
+ 
     def _value(self, timestep, scenario_index):
 
         # Default WYT is 3, for instances where we don't have pre-calculated WYT for the first operational water year
@@ -16,11 +16,12 @@ class Donnell_Lake_Spill_Min_Requirement(MinFlowParameter):
         # Calculate regular IFR
         ifr_cms = 0.0
 
+
         # Calculate supp IFR
         if self.mode == 'scheduling':
 
             if self.datetime.month == 10 and self.datetime.day == 1:
-                self.peak_dt = self.model.tables["Peak Donnells Runoff"][timestep.year + 1]
+                self.peak_dt = self.model.tables["Peak Donnells Runoff"].loc[timestep.year + 1, 'date']
 
             diff_day = (timestep.datetime - self.peak_dt).days
             if 0 <= diff_day < 91:
