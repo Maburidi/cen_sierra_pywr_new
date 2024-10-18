@@ -23,11 +23,21 @@ class Lake_Tulloch_Flood_Control_Requirement(BaseParameter):
         # 1. Flood control space operations
 
         # Get target storage
-        month_day = '{}-{}'.format(month, day)
+        month_day = '{}-{}'.format(month,day)
         flood_curve = self.model.tables["Lake Tulloch Flood Control"]
-        flood_control_curve_mcm = flood_curve.at[month_day] - 1 * 1.2335  # less 1 TAF based on observed
+        
+        # Check for invalid dates (NaT values) in the index
 
-        # Get previous storage
+        print(flood_curve)
+        
+        invalid_dates = flood_curve.index.isna().sum()
+        
+        if invalid_dates > 0:      
+            print(f"Warning: {invalid_dates} invalid date(s) found in the index")
+
+        flood_control_curve_mcm = flood_curve.loc[month_day,'Rainflood space'] - 1 * 1.2335  # less 1 TAF based on observed
+
+        # Get previous storage     
         prev_storage_mcm = self.model.nodes["Lake Tulloch"].volume[scenario_index.global_id]
 
         release_mcm = 0.0
@@ -68,4 +78,4 @@ class Lake_Tulloch_Flood_Control_Requirement(BaseParameter):
         return cls(model, **data)
 
 
-Lake_Tulloch_Flood_Control_Requirement.register()
+Lake_Tulloch_Flood_Control_Requirement.register()    
