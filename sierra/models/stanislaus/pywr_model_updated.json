@@ -269,7 +269,7 @@
             "min_flows": "IFR bl Hunter Reservoir/Min Flow",
             "costs": [0,0,0],
             "max_flows":[null,null,null],
-            "nsteps":3
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -279,7 +279,7 @@
             "min_flows": "IFR bl Lyons Res/Min Flow",
             "costs": [0,0,0],
             "max_flows":[null,null,null],
-            "nsteps":3
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -290,7 +290,7 @@
             "min_flows": "IFR bl McKays Point Div/Min Flow",
             "max_flows": ["IFR bl McKays Point Div/Max Flow"],
             "costs": [0],
-            "nsteps":1
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
