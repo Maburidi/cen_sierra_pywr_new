@@ -1,0 +1,3 @@
+﻿Water Year Type,Critically Dry,Dry,Normal,Normal-Dry,Normal-Wet,Wet
+Lower Bound,0,350000,676000,676000,1050000,1585000
+Upper Bound,349999,675999,1584999,1049999,1584999,NA

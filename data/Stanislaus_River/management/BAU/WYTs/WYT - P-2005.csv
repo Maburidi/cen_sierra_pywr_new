@@ -1,0 +1,3 @@
+Water Year Type,Critically Dry,Dry,Normal,Wet
+Lower Bound,0,350001,676001,1585000
+Upper Bound,350000,676000,1584999,math.inf
