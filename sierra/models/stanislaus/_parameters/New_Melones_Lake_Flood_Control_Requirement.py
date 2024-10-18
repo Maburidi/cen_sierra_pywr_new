@@ -56,8 +56,8 @@ class New_Melones_Lake_Flood_Control_Requirement(BaseParameter):
         # inflow_mcm = self.model.tables["Full Natural Flow"][self.datetime]
         # release_mcm = prev_storage_mcm + inflow_mcm - ag_demand_mcm - max_storage_mcm
 
-        flood_control_curve_mcm = flood_curves.at[month_day, 'rainflood']
-        conditional_curve_mcm = flood_curves.at[month_day, 'conditional']
+        flood_control_curve_mcm = flood_curves.loc[month_day, 'rainflood']
+        conditional_curve_mcm = flood_curves.loc[month_day, 'conditional']
 
         ag_demand_mcm = SSJID_df[start_tuple] + OID_df[start_tuple]
         IFR_below_Goodwin_Dam_mcm = self.get("IFR bl Goodwin Reservoir/Min Flow", timestep, scenario_index)
@@ -104,10 +104,11 @@ class New_Melones_Lake_Flood_Control_Requirement(BaseParameter):
         release_mcm = float(max(release_mcm, 0))
 
         # Release a bit more to fill Lake Tulloch during the refill period
+
         refill_release_mcm = 0.0
         if (3, 21) <= start_tuple <= (5, 30):  # refill period
             # Subtract 1 TAF as buffer based on observation
-            TUL_fc = self.model.tables["Lake Tulloch Flood Control"].at[month_day] - 1 * 1.2335
+            TUL_fc = self.model.tables["Lake Tulloch Flood Control"].loc[month_day, 'Rainflood space'] - 1 * 1.2335
             TUL_prev_mcm = self.model.nodes["Lake Tulloch"].volume[scenario_index.global_id]
             if TUL_prev_mcm < TUL_fc:
                 refill_release_mcm += TUL_fc - TUL_prev_mcm
