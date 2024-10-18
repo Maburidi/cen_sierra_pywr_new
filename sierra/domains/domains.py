@@ -20,7 +20,7 @@ class Reservoir(Storage):
 
 class Hydropower(Node):
 
-    __parameter_attributes__ = ("costs", "max_flows","flow_capacity")
+    __parameter_attributes__ = ("costs", "max_flows","flow_capacity","turbine_capacity")
 
 
     def __init__(self, model,nsteps,turbine_capacity=None, flow_capacity=None, residual_flow=0.0, residual_cost=0.0, *args, **kwargs):
