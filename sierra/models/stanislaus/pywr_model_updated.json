@@ -1472,8 +1472,8 @@
                 81.87,
                 97.65,
                 121.45
-            ],
-            "kind": "cubic"
+            ]
+            
         },
         "Beardsley PH/Turbine Capacity": {
             "type": "constant",
@@ -1571,8 +1571,8 @@
                 47.72,
                 61.4,
                 79.83
-            ],
-            "kind": "cubic"
+            ]
+           
         },
         "IFR bl Angels Div/Min Flow": {
             "type": "IFR_bl_Angels_Div_Min_Requirement"
@@ -1757,8 +1757,8 @@
                 3.2,
                 4.82,
                 7.5
-            ],
-            "kind": "cubic"
+            ]
+            
         },
         "Murphys PH/Turbine Capacity": {
             "type": "constant",
@@ -1818,7 +1818,7 @@
                 335.3,
                 341.1
             ],
-            "kind": "cubic",
+           
             "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
         },
         "New Melones Lake/Storage Value": {
@@ -1875,8 +1875,8 @@
                 154.49,
                 197.65,
                 227.24
-            ],
-            "kind": "cubic"
+            ]
+        
         },
         "Phoenix PH/Fixed Head": {
             "type": "constant",
@@ -1934,8 +1934,8 @@
                 10.57,
                 16.69,
                 22.58
-            ],
-            "kind": "cubic"
+            ]
+            
         },
         "Relief Reservoir/Storage Value": {
             "type": "constant",
@@ -1975,8 +1975,8 @@
                 9.99,
                 14.67,
                 18.5
-            ],
-            "kind": "cubic"
+            ]
+            
         },
         "Sand Bar PH/Fixed Head": {
             "type": "constant",
