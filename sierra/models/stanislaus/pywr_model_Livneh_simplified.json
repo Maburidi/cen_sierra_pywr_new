@@ -121,15 +121,15 @@
             "head": 135.3,
             "turbine_capacity": "Angels PH/Turbine Capacity",
             "flow_capacity": "Angels PH/Turbine Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Angels PH/Water Demand/1",
-                "Angels PH/Water Demand/2"
+                "Angels PH/Water Demand/2", null 
             ],
-            "cost": [
+            "costs": [
                 "Angels PH/Cost/1",
                 "Angels PH/Cost/2",
                 "Angels PH/Cost/3"
-            ],
+            ], "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -155,7 +155,9 @@
             "flow_capacity": "Beardsley PH/Turbine Capacity",
             "water_elevation_reservoir": "Beardsley Reservoir",
             "tailwater_elevation": 953.1,
-            "cost": -10000,
+            "costs": [-10000],
+            "max_flows": [null],
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -169,15 +171,16 @@
             "head": 691.896,
             "turbine_capacity": "Collierville PH/Turbine Capacity",
             "flow_capacity": "Collierville PH/Turbine Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Collierville PH/Water Demand/1",
-                "Collierville PH/Water Demand/2"
+                "Collierville PH/Water Demand/2",
+                null
             ],
-            "cost": [
+            "costs": [
                 "Collierville PH/Cost/1",
                 "Collierville PH/Cost/2",
                 "Collierville PH/Cost/3"
-            ],
+            ], "nsteps":3, 
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -186,15 +189,15 @@
             "head": 400,
             "turbine_capacity": "Donnells PH/Turbine Capacity",
             "flow_capacity": "Donnells PH/Turbine Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Donnells PH/Water Demand/1",
-                "Donnells PH/Water Demand/2"
+                "Donnells PH/Water Demand/2", null
             ],
-            "cost": [
+            "costs": [
                 "Donnells PH/Cost/1",
                 "Donnells PH/Cost/2",
                 "Donnells PH/Cost/3"
-            ],
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -217,22 +220,25 @@
             "name": "IFR bl Angels Div",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": -1000000,
-            "min_flow": "IFR bl Angels Div/Min Flow",
+            "min_flows": "IFR bl Angels Div/Min Flow",
             "max_flow_cost": 1000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Collierville PH discharge",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0.0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Collierville PH discharge/Min Flow",
-                "IFR bl Collierville PH discharge/Max Flow"
-            ],
+                "IFR bl Collierville PH discharge/Max Flow",null
+            ], "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -240,7 +246,9 @@
             "type": "InstreamFlowRequirement",
             "min_flow_cost": -1000000,
             "max_flow_cost": 1000000,
-            "min_flow": "IFR at Murphys Park/Min Flow",
+            "min_flows": "IFR at Murphys Park/Min Flow",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null], "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -248,22 +256,30 @@
             "type": "InstreamFlowRequirement",
             "min_flow_cost": -1000000,
             "max_flow_cost": 1000000,
-            "min_flow": "IFR bl Donnell Lake/Min Flow",
-            "max_flow": "IFR bl Donnell Lake/Max Flow",
+            "min_flows": "IFR bl Donnell Lake/Min Flow",
+            "max_flows": ["IFR bl Donnell Lake/Max Flow"],
+            "costs": [0],
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Hunter Reservoir",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl Hunter Reservoir/Violation Cost",
-            "min_flow": "IFR bl Hunter Reservoir/Min Flow",
+            "min_flows": "IFR bl Hunter Reservoir/Min Flow",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Lyons Res",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl Lyons Res/Violation Cost",
-            "min_flow": "IFR bl Lyons Res/Min Flow",
+            "min_flows": "IFR bl Lyons Res/Min Flow",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -271,150 +287,164 @@
             "type": "InstreamFlowRequirement",
             "min_flow_cost": -1000000,
             "max_flow_cost": 1000000,
-            "min_flow": "IFR bl McKays Point Div/Min Flow",
-            "max_flow": "IFR bl McKays Point Div/Max Flow",
+            "min_flows": "IFR bl McKays Point Div/Min Flow",
+            "max_flows": ["IFR bl McKays Point Div/Max Flow"],
+            "costs": [0],
+            "nsteps":1
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "Water Supply Release bl New Spicer Meadow Reservoir",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": -50000,
-            "min_flow": "Water Supply Release bl New Spicer Meadow Reservoir/Requirement"
+            "min_flows": "Water Supply Release bl New Spicer Meadow Reservoir/Requirement",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "IFR bl New Spicer Meadow Reservoir",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl New Spicer Meadow Reservoir/Min Flow",
-                "IFR bl New Spicer Meadow Reservoir/Max Flow"
-            ],
+                "IFR bl New Spicer Meadow Reservoir/Max Flow",null
+            ],"nsteps":3, 
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Philadelphia Div",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Philadelphia Div/Min Flow",
-                "IFR bl Philadelphia Div/Max Flow"
-            ],
+                "IFR bl Philadelphia Div/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Relief Reservoir",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Relief Reservoir/Min Flow",
-                "IFR bl Relief Reservoir/Max Flow"
-            ],
+                "IFR bl Relief Reservoir/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Sand Bar Div",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Sand Bar Div/Min Flow",
-                "IFR bl Sand Bar Div/Max Flow"
-            ],
+                "IFR bl Sand Bar Div/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl NF Stanislaus Div Res",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl NF Stanislaus Div Res/Min Flow",
-                "IFR bl NF Stanislaus Div Res/Max Flow"
-            ],
+                "IFR bl NF Stanislaus Div Res/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Beaver Creek Diversion Dam",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Beaver Creek Diversion Dam/Min Flow",
-                "IFR bl Beaver Creek Diversion Dam/Max Flow"
-            ],
+                "IFR bl Beaver Creek Diversion Dam/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl confluence of NF Stanislaus and Beaver Creek",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl confluence of NF Stanislaus and Beaver Creek/Violation Cost",
-            "min_flow": "IFR bl confluence of NF Stanislaus and Beaver Creek/Min Flow",
+            "min_flows": "IFR bl confluence of NF Stanislaus and Beaver Creek/Min Flow",
             "max_flow_cost": 1000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Goodwin Reservoir",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl Goodwin Reservoir/Violation Cost",
-            "min_flow": "IFR bl Goodwin Reservoir/Min Flow",
+            "min_flows": "IFR bl Goodwin Reservoir/Min Flow",
             "ifr_type": "enhanced",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Pinecrest Lake",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Pinecrest Lake/Min Flow",
-                "IFR bl Pinecrest Lake/Max Flow"
-            ],
+                "IFR bl Pinecrest Lake/Max Flow",null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Utica Reservoir",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl Utica Reservoir/Violation Cost",
-            "min_flow": "IFR bl Utica Reservoir/Min Flow",
+            "min_flows": "IFR bl Utica Reservoir/Min Flow",
             "max_flow_cost": 1000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3,            
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "IFR bl Beardsley Afterbay",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -1000000,
                 0,
                 1000000
             ],
-            "max_flow": [
+            "max_flows": [
                 "IFR bl Beardsley Afterbay/Min Flow",
-                "IFR bl Beardsley Afterbay/Max Flow"
-            ],
+                "IFR bl Beardsley Afterbay/Max Flow", null
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -445,7 +475,9 @@
             "name": "Murphys PH",
             "type": "Hydropower",
             "head": 208.5,
-            "cost": 0.0,
+            "costs": [0.0],
+            "max_flows":[null],
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -466,7 +498,9 @@
             "flow_capacity": "New Melones PH/Flow Capacity",
             "water_elevation_reservoir": "New Melones Lake",
             "tailwater_elevation": 150,
-            "cost": -1,
+            "costs": [-1],
+            "max_flows":[null],
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -487,7 +521,9 @@
             "flow_capacity": "New Spicer Meadow PH/Turbine Capacity",
             "water_elevation_reservoir": "New Spicer Meadow Reservoir",
             "tailwater_elevation": 1940.1,
-            "cost": -1000000,
+            "costs": [-1000000],
+            "max_flows":[null],
+            "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -507,15 +543,15 @@
             "turbine_capacity": "Phoenix PH/Turbine Capacity",
             "flow_capacity": "Phoenix PH/Flow Capacity",
             "head": 361.7976,
-            "max_flow": [
+            "max_flows": [
                 "Phoenix PH/Water Demand/1",
-                "Phoenix PH/Water Demand/2"
+                "Phoenix PH/Water Demand/2",null
             ],
-            "cost": [
+            "costs": [
                 "Phoenix PH/Cost/1",
                 "Phoenix PH/Cost/2",
                 "Phoenix PH/Cost/3"
-            ],
+            ],"nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -546,15 +582,16 @@
             "head": 130,
             "turbine_capacity": "Sand Bar PH/Turbine Capacity",
             "flow_capacity": "Sand Bar PH/Flow Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Sand Bar PH/Water Demand/1",
-                "Sand Bar PH/Water Demand/2"
+                "Sand Bar PH/Water Demand/2",null
             ],
-            "cost": [
+            "costs": [
                 "Sand Bar PH/Cost/1",
                 "Sand Bar PH/Cost/2",
                 "Sand Bar PH/Cost/3"
-            ],
+            ],            
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -568,15 +605,16 @@
             "head": 568.452,
             "turbine_capacity": "Spring Gap PH/Turbine Capacity",
             "flow_capacity": "Spring Gap PH/Turbine Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Spring Gap PH/Water Demand/1",
-                "Spring Gap PH/Water Demand/2"
+                "Spring Gap PH/Water Demand/2",null
             ],
-            "cost": [
+            "costs": [
                 "Spring Gap PH/Cost/1",
                 "Spring Gap PH/Cost/2",
                 "Spring Gap PH/Cost/3"
-            ],
+            ],         
+            "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -585,15 +623,15 @@
             "head": 463.296,
             "turbine_capacity": "Stanislaus PH/Turbine Capacity",
             "flow_capacity": "Stanislaus PH/Turbine Capacity",
-            "max_flow": [
+            "max_flows": [
                 "Stanislaus PH/Water Demand/1",
-                "Stanislaus PH/Water Demand/2"
+                "Stanislaus PH/Water Demand/2", null
             ],
-            "cost": [
+            "costs": [
                 "Stanislaus PH/Cost/1",
                 "Stanislaus PH/Cost/2",
                 "Stanislaus PH/Cost/3"
-            ],
+            ], "nsteps":3,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
@@ -639,26 +677,26 @@
         {
             "name": "Lake Tulloch Flood Control",
             "type": "PiecewiseLink",
-            "max_flow": [
+            "max_flows": [
                 "Lake Tulloch Flood Control/Requirement",
                 null
             ],
-            "cost": [
+            "costs": [
                 -40,
                 1
-            ],
+            ],"nsteps":2, 
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "Donnell Lake Spill",
             "type": "InstreamFlowRequirement",
-            "cost": [
+            "costs": [
                 -5000,
                 4000
             ],
-            "max_flow": [
-                "Donnell Lake Spill/Min Flow"
-            ]
+            "max_flows": [
+                "Donnell Lake Spill/Min Flow",null
+            ],"nsteps":2,
         },
         {
             "name": "Goodwin Reservoir",
@@ -698,14 +736,14 @@
         {
             "name": "New Melones Lake Flood Control",
             "type": "PiecewiseLink",
-            "max_flow": [
+            "max_flows": [
                 "New Melones Lake Flood Control/Requirement",
                 null
             ],
-            "cost": [
+            "costs": [
                 -50,
                 1
-            ],
+            ],"nsteps":2,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
