@@ -752,12 +752,6 @@
             "cost": 5
         },
         {
-            "name": "STN_below_Melons.2.1",
-            "type": "Link",
-            "cost": 1000,
-            "comment": "{\"resource_class\": \"node\"}"
-        },
-        {
             "name": "STN_below_Melons.2.2",
             "comment": "{\"keep\": true, \"resource_class\": \"node\"}",
             "type": "River"
