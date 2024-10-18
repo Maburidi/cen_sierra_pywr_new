@@ -8,7 +8,7 @@ class New_Melones_Apr_Jul_Runoff(BaseParameter):
     def setup(self):
         super().setup()
         num_scenarios = len(self.model.scenarios.combinations)
-        self.apr_jul_runoff = np.ones(num_scenarios, np.float) * 350000
+        self.apr_jul_runoff = np.ones(num_scenarios, float) * 350000
 
     def _value(self, timestep, scenario_index):
         month = self.datetime.month
