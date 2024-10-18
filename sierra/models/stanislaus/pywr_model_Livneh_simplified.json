@@ -1,0 +1,2575 @@
+{
+    "metadata": {
+        "title": "Stanislaus River",
+        "description": "Imported from WEAP Area",
+        "minimum_version": "1.0.0"
+    },
+    "timestepper": {
+        "start": "2010-10-01",
+        "end": "2012-09-30",
+        "timestep": 1
+    },
+    "solver": {
+        "name": "glpk"
+    },
+    "nodes": [
+        {
+            "name": "STN_01 Inflow Inflow",
+            "type": "Catchment",
+            "flow": "STN_01 Inflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Angels Canal Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Angels Canal Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Hunter Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Hunter Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl confluence of NF Stanislaus and Beaver Creek Inflow",
+            "type": "Catchment",
+            "flow": "IFR bl confluence of NF Stanislaus and Beaver Creek Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "McKays Point Diversion Inflow",
+            "type": "Catchment",
+            "flow": "McKays Point Diversion Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Upper Collierville Tunnel Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Upper Collierville Tunnel Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Union-Utica Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Union-Utica Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "New Spicer Meadow Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "New Spicer Meadow Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beaver Creek Diversion Inflow",
+            "type": "Catchment",
+            "flow": "Beaver Creek Diversion Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Stanislaus Tunnel Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Stanislaus Tunnel Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beardsley Afterbay Inflow",
+            "type": "Catchment",
+            "flow": "Beardsley Afterbay Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beardsley Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Beardsley Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Donnells Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Donnells Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Relief Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Relief Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Lyons Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Lyons Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Philadelphia Aquaduct Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Philadelphia Aquaduct Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Pinecrest Reservoir Inflow",
+            "type": "Catchment",
+            "flow": "Pinecrest Reservoir Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Angels PH",
+            "type": "Hydropower",
+            "head": 135.3,
+            "turbine_capacity": "Angels PH/Turbine Capacity",
+            "flow_capacity": "Angels PH/Turbine Capacity",
+            "max_flow": [
+                "Angels PH/Water Demand/1",
+                "Angels PH/Water Demand/2"
+            ],
+            "cost": [
+                "Angels PH/Cost/1",
+                "Angels PH/Cost/2",
+                "Angels PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Angels Canal Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beardsley Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 70.0,
+            "max_volume": 121.45,
+            "min_volume": 25,
+            "level": "Beardsley Reservoir/Elevation",
+            "cost": "Beardsley Reservoir/Storage Value",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11292800 BEARDSLEY LAKE NEAR STRAWBERRY CA"
+        },
+        {
+            "name": "Beardsley PH",
+            "type": "Hydropower",
+            "turbine_capacity": "Beardsley PH/Turbine Capacity",
+            "flow_capacity": "Beardsley PH/Turbine Capacity",
+            "water_elevation_reservoir": "Beardsley Reservoir",
+            "tailwater_elevation": 953.1,
+            "cost": -10000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beaver Creek Diversion",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Collierville PH",
+            "type": "Hydropower",
+            "head": 691.896,
+            "turbine_capacity": "Collierville PH/Turbine Capacity",
+            "flow_capacity": "Collierville PH/Turbine Capacity",
+            "max_flow": [
+                "Collierville PH/Water Demand/1",
+                "Collierville PH/Water Demand/2"
+            ],
+            "cost": [
+                "Collierville PH/Cost/1",
+                "Collierville PH/Cost/2",
+                "Collierville PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Donnells PH",
+            "type": "Hydropower",
+            "head": 400,
+            "turbine_capacity": "Donnells PH/Turbine Capacity",
+            "flow_capacity": "Donnells PH/Turbine Capacity",
+            "max_flow": [
+                "Donnells PH/Water Demand/1",
+                "Donnells PH/Water Demand/2"
+            ],
+            "cost": [
+                "Donnells PH/Cost/1",
+                "Donnells PH/Cost/2",
+                "Donnells PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Donnells Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 40.0,
+            "max_volume": 79.83,
+            "min_volume": 6.2,
+            "cost": "Donnells Reservoir/Storage Value",
+            "level": "Donnells Reservoir/Elevation",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11292600 DONNELL LK NR DARDANELLE CA"
+        },
+        {
+            "name": "Donnell Lake Low Flow Release",
+            "type": "Link",
+            "max_flow": 0.147
+        },
+        {
+            "name": "IFR bl Angels Div",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": -1000000,
+            "min_flow": "IFR bl Angels Div/Min Flow",
+            "max_flow_cost": 1000000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Collierville PH discharge",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0.0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Collierville PH discharge/Min Flow",
+                "IFR bl Collierville PH discharge/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR at Murphys Park",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": -1000000,
+            "max_flow_cost": 1000000,
+            "min_flow": "IFR at Murphys Park/Min Flow",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Donnell Lake",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": -1000000,
+            "max_flow_cost": 1000000,
+            "min_flow": "IFR bl Donnell Lake/Min Flow",
+            "max_flow": "IFR bl Donnell Lake/Max Flow",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Hunter Reservoir",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": "IFR bl Hunter Reservoir/Violation Cost",
+            "min_flow": "IFR bl Hunter Reservoir/Min Flow",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Lyons Res",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": "IFR bl Lyons Res/Violation Cost",
+            "min_flow": "IFR bl Lyons Res/Min Flow",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl McKays Point Div",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": -1000000,
+            "max_flow_cost": 1000000,
+            "min_flow": "IFR bl McKays Point Div/Min Flow",
+            "max_flow": "IFR bl McKays Point Div/Max Flow",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Water Supply Release bl New Spicer Meadow Reservoir",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": -50000,
+            "min_flow": "Water Supply Release bl New Spicer Meadow Reservoir/Requirement"
+        },
+        {
+            "name": "IFR bl New Spicer Meadow Reservoir",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl New Spicer Meadow Reservoir/Min Flow",
+                "IFR bl New Spicer Meadow Reservoir/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Philadelphia Div",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Philadelphia Div/Min Flow",
+                "IFR bl Philadelphia Div/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Relief Reservoir",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Relief Reservoir/Min Flow",
+                "IFR bl Relief Reservoir/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Sand Bar Div",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Sand Bar Div/Min Flow",
+                "IFR bl Sand Bar Div/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl NF Stanislaus Div Res",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl NF Stanislaus Div Res/Min Flow",
+                "IFR bl NF Stanislaus Div Res/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Beaver Creek Diversion Dam",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Beaver Creek Diversion Dam/Min Flow",
+                "IFR bl Beaver Creek Diversion Dam/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl confluence of NF Stanislaus and Beaver Creek",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": "IFR bl confluence of NF Stanislaus and Beaver Creek/Violation Cost",
+            "min_flow": "IFR bl confluence of NF Stanislaus and Beaver Creek/Min Flow",
+            "max_flow_cost": 1000000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Goodwin Reservoir",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": "IFR bl Goodwin Reservoir/Violation Cost",
+            "min_flow": "IFR bl Goodwin Reservoir/Min Flow",
+            "ifr_type": "enhanced",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Pinecrest Lake",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Pinecrest Lake/Min Flow",
+                "IFR bl Pinecrest Lake/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Utica Reservoir",
+            "type": "InstreamFlowRequirement",
+            "min_flow_cost": "IFR bl Utica Reservoir/Violation Cost",
+            "min_flow": "IFR bl Utica Reservoir/Min Flow",
+            "max_flow_cost": 1000000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "IFR bl Beardsley Afterbay",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -1000000,
+                0,
+                1000000
+            ],
+            "max_flow": [
+                "IFR bl Beardsley Afterbay/Min Flow",
+                "IFR bl Beardsley Afterbay/Max Flow"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Hunter Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 0.1,
+            "max_volume": 0.1,
+            "min_volume": 0.1,
+            "cost": -60,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Lyons Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 2.0,
+            "max_volume": 7.5,
+            "min_volume": 1.25,
+            "cost": "Lyons Reservoir/Storage Value",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11297700 LYONS RES NR LONG BARN CA"
+        },
+        {
+            "name": "McKays Point Diversion",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Murphys PH",
+            "type": "Hydropower",
+            "head": 208.5,
+            "cost": 0.0,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "New Melones Lake",
+            "type": "Reservoir",
+            "initial_volume": 1500,
+            "max_volume": 2985,
+            "min_volume": 500,
+            "cost": "New Melones Lake/Storage Value",
+            "level": "New Melones Lake/Elevation",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11299000 NEW MELONES RES NR SONORA CA"
+        },
+        {
+            "name": "New Melones PH",
+            "type": "Hydropower",
+            "turbine_capacity": "New Melones PH/Turbine Capacity",
+            "flow_capacity": "New Melones PH/Flow Capacity",
+            "water_elevation_reservoir": "New Melones Lake",
+            "tailwater_elevation": 150,
+            "cost": -1,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "New Spicer Meadow Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 120.0,
+            "max_volume": 227.24,
+            "min_volume": 50,
+            "level": "New Spicer Meadow Reservoir/Elevation",
+            "cost": "New Spicer Meadow Reservoir/Storage Value",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11293770 NEW SPICER MEADOW RES NR BIG MEADOW CA"
+        },
+        {
+            "name": "New Spicer Meadow PH",
+            "type": "Hydropower",
+            "turbine_capacity": "New Spicer Meadow PH/Turbine Capacity",
+            "flow_capacity": "New Spicer Meadow PH/Turbine Capacity",
+            "water_elevation_reservoir": "New Spicer Meadow Reservoir",
+            "tailwater_elevation": 1940.1,
+            "cost": -1000000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Philadelphia Aquaduct Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Phoenix Canal Outflow",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": -500
+        },
+        {
+            "name": "Phoenix PH",
+            "type": "Hydropower",
+            "turbine_capacity": "Phoenix PH/Turbine Capacity",
+            "flow_capacity": "Phoenix PH/Flow Capacity",
+            "head": 361.7976,
+            "max_flow": [
+                "Phoenix PH/Water Demand/1",
+                "Phoenix PH/Water Demand/2"
+            ],
+            "cost": [
+                "Phoenix PH/Cost/1",
+                "Phoenix PH/Cost/2",
+                "Phoenix PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Pinecrest Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 15.0,
+            "max_volume": 22.58,
+            "min_volume": 0.57,
+            "cost": "Pinecrest Reservoir/Storage Value",
+            "level": "Pinecrest Reservoir/Elevation",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11295900 PINECREST LK NR STRAWBERRY CA"
+        },
+        {
+            "name": "Relief Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 10.0,
+            "max_volume": 18.5,
+            "min_volume": 1.2,
+            "cost": "Relief Reservoir/Storage Value",
+            "level": "Relief Reservoir/Elevation",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11291000 RELIEF RES NR BAKER STATION CA"
+        },
+        {
+            "name": "Sand Bar PH",
+            "type": "Hydropower",
+            "head": 130,
+            "turbine_capacity": "Sand Bar PH/Turbine Capacity",
+            "flow_capacity": "Sand Bar PH/Flow Capacity",
+            "max_flow": [
+                "Sand Bar PH/Water Demand/1",
+                "Sand Bar PH/Water Demand/2"
+            ],
+            "cost": [
+                "Sand Bar PH/Cost/1",
+                "Sand Bar PH/Cost/2",
+                "Sand Bar PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Beardsley Afterbay",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Spring Gap PH",
+            "type": "Hydropower",
+            "head": 568.452,
+            "turbine_capacity": "Spring Gap PH/Turbine Capacity",
+            "flow_capacity": "Spring Gap PH/Turbine Capacity",
+            "max_flow": [
+                "Spring Gap PH/Water Demand/1",
+                "Spring Gap PH/Water Demand/2"
+            ],
+            "cost": [
+                "Spring Gap PH/Cost/1",
+                "Spring Gap PH/Cost/2",
+                "Spring Gap PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Stanislaus PH",
+            "type": "Hydropower",
+            "head": 463.296,
+            "turbine_capacity": "Stanislaus PH/Turbine Capacity",
+            "flow_capacity": "Stanislaus PH/Turbine Capacity",
+            "max_flow": [
+                "Stanislaus PH/Water Demand/1",
+                "Stanislaus PH/Water Demand/2"
+            ],
+            "cost": [
+                "Stanislaus PH/Cost/1",
+                "Stanislaus PH/Cost/2",
+                "Stanislaus PH/Cost/3"
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Stanislaus Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "South San Joaquin Irrigation District",
+            "type": "Output",
+            "max_flow": "South San Joaquin Irrigation District/Demand",
+            "cost": -750,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Oakdale Irrigation District",
+            "type": "Output",
+            "max_flow": "Oakdale Irrigation District/Demand",
+            "cost": -750,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Stanislaus River Outflow",
+            "type": "Output",
+            "cost": 10.0,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "STN_01 Inflow",
+            "comment": "{\"keep\": true, \"resource_class\": \"node\"}",
+            "type": "River"
+        },
+        {
+            "name": "Lake Tulloch",
+            "type": "Reservoir",
+            "initial_volume": 80.0,
+            "max_volume": 82.64,
+            "min_volume": 67.8,
+            "cost": "Lake Tulloch/Storage Value",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS 11299995 TULLOCH RES NR KNIGHTS FERRY CA"
+        },
+        {
+            "name": "Lake Tulloch Flood Control",
+            "type": "PiecewiseLink",
+            "max_flow": [
+                "Lake Tulloch Flood Control/Requirement",
+                null
+            ],
+            "cost": [
+                -40,
+                1
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Donnell Lake Spill",
+            "type": "InstreamFlowRequirement",
+            "cost": [
+                -5000,
+                4000
+            ],
+            "max_flow": [
+                "Donnell Lake Spill/Min Flow"
+            ]
+        },
+        {
+            "name": "Goodwin Reservoir",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Union-Utica Reservoir",
+            "type": "Reservoir",
+            "initial_volume": 6.0,
+            "max_volume": 6.76,
+            "cost": "Union-Utica Reservoir/Storage Value",
+            "comment": "{\"resource_class\": \"node\"}",
+            "gauge": "USGS UNION-UTICA"
+        },
+        {
+            "name": "UPA Tunnel Tap",
+            "type": "Link",
+            "max_flow": 1,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "UPA Tunnel Tap Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Upper Collierville Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Upper Collierville Tunnel 1",
+            "type": "Link",
+            "max_flow": "Upper Collierville Tunnel 1/Capacity"
+        },
+        {
+            "name": "New Melones Lake Flood Control",
+            "type": "PiecewiseLink",
+            "max_flow": [
+                "New Melones Lake Flood Control/Requirement",
+                null
+            ],
+            "cost": [
+                -50,
+                1
+            ],
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "New Melones Spillway",
+            "type": "Link",
+            "cost": 5
+        },
+        {
+            "name": "STN_below_Melons.2.1",
+            "type": "Link",
+            "cost": 1000,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "STN_below_Melons.2.2",
+            "comment": "{\"keep\": true, \"resource_class\": \"node\"}",
+            "type": "River"
+        }
+    ],
+    "edges": [
+        [
+            "Angels Canal Outflow",
+            "Angels PH"
+        ],
+        [
+            "Angels Canal Outflow",
+            "IFR bl Angels Div"
+        ],
+        [
+            "Donnells Reservoir",
+            "Donnells PH"
+        ],
+        [
+            "Donnells Reservoir",
+            "Donnell Lake Low Flow Release"
+        ],
+        [
+            "Donnell Lake Low Flow Release",
+            "IFR bl Donnell Lake"
+        ],
+        [
+            "Donnells Reservoir",
+            "Donnell Lake Spill"
+        ],
+        [
+            "Upper Collierville Tunnel Outflow",
+            "IFR bl NF Stanislaus Div Res"
+        ],
+        [
+            "McKays Point Diversion",
+            "UPA Tunnel Tap Outflow"
+        ],
+        [
+            "Hunter Reservoir",
+            "IFR bl Hunter Reservoir"
+        ],
+        [
+            "Water Supply Release bl New Spicer Meadow Reservoir",
+            "IFR bl New Spicer Meadow Reservoir"
+        ],
+        [
+            "New Spicer Meadow Reservoir",
+            "New Spicer Meadow PH"
+        ],
+        [
+            "Philadelphia Aquaduct Outflow",
+            "Spring Gap PH"
+        ],
+        [
+            "Pinecrest Reservoir",
+            "IFR bl Pinecrest Lake"
+        ],
+        [
+            "Relief Reservoir",
+            "IFR bl Relief Reservoir"
+        ],
+        [
+            "Beardsley Afterbay",
+            "Sand Bar PH"
+        ],
+        [
+            "Stanislaus Tunnel Outflow",
+            "Stanislaus PH"
+        ],
+        [
+            "STN_01 Inflow Inflow",
+            "STN_01 Inflow"
+        ],
+        [
+            "McKays Point Diversion",
+            "IFR bl McKays Point Div"
+        ],
+        [
+            "Union-Utica Reservoir",
+            "IFR bl Utica Reservoir"
+        ],
+        [
+            "Beardsley Afterbay",
+            "IFR bl Beardsley Afterbay"
+        ],
+        [
+            "Beardsley Reservoir",
+            "Beardsley PH"
+        ],
+        [
+            "UPA Tunnel Tap Outflow",
+            "UPA Tunnel Tap"
+        ],
+        [
+            "UPA Tunnel Tap",
+            "Hunter Reservoir"
+        ],
+        [
+            "UPA Tunnel Tap Outflow",
+            "Collierville PH"
+        ],
+        [
+            "Stanislaus Tunnel Outflow",
+            "IFR bl Sand Bar Div"
+        ],
+        [
+            "Lyons Reservoir",
+            "IFR bl Lyons Res"
+        ],
+        [
+            "Goodwin Reservoir",
+            "Oakdale Irrigation District"
+        ],
+        [
+            "Goodwin Reservoir",
+            "South San Joaquin Irrigation District"
+        ],
+        [
+            "Goodwin Reservoir",
+            "IFR bl Goodwin Reservoir"
+        ],
+        [
+            "New Melones Lake",
+            "New Melones PH"
+        ],
+        [
+            "STN_01 Inflow",
+            "New Melones Lake"
+        ],
+        [
+            "Upper Collierville Tunnel Outflow",
+            "Upper Collierville Tunnel 1"
+        ],
+        [
+            "Angels PH",
+            "STN_01 Inflow"
+        ],
+        [
+            "IFR bl Angels Div",
+            "STN_01 Inflow"
+        ],
+        [
+            "IFR bl Beaver Creek Diversion Dam",
+            "IFR bl confluence of NF Stanislaus and Beaver Creek"
+        ],
+        [
+            "Beaver Creek Diversion",
+            "IFR bl Beaver Creek Diversion Dam"
+        ],
+        [
+            "Beaver Creek Diversion",
+            "McKays Point Diversion"
+        ],
+        [
+            "Phoenix PH",
+            "Phoenix Canal Outflow"
+        ],
+        [
+            "New Spicer Meadow Reservoir",
+            "Water Supply Release bl New Spicer Meadow Reservoir"
+        ],
+        [
+            "New Spicer Meadow PH",
+            "Water Supply Release bl New Spicer Meadow Reservoir"
+        ],
+        [
+            "Murphys PH",
+            "IFR at Murphys Park"
+        ],
+        [
+            "IFR bl Sand Bar Div",
+            "IFR bl Collierville PH discharge"
+        ],
+        [
+            "IFR bl Hunter Reservoir",
+            "IFR bl Collierville PH discharge"
+        ],
+        [
+            "IFR bl confluence of NF Stanislaus and Beaver Creek",
+            "IFR bl Collierville PH discharge"
+        ],
+        [
+            "Sand Bar PH",
+            "Stanislaus Tunnel Outflow"
+        ],
+        [
+            "Philadelphia Aquaduct Outflow",
+            "IFR bl Philadelphia Div"
+        ],
+        [
+            "IFR bl Lyons Res",
+            "STN_01 Inflow"
+        ],
+        [
+            "IFR bl Goodwin Reservoir",
+            "Stanislaus River Outflow"
+        ],
+        [
+            "Angels Canal Outflow Inflow",
+            "Angels Canal Outflow"
+        ],
+        [
+            "IFR at Murphys Park",
+            "Angels Canal Outflow"
+        ],
+        [
+            "IFR bl Collierville PH discharge",
+            "STN_01 Inflow"
+        ],
+        [
+            "Hunter Reservoir Inflow",
+            "Hunter Reservoir"
+        ],
+        [
+            "IFR bl confluence of NF Stanislaus and Beaver Creek Inflow",
+            "IFR bl confluence of NF Stanislaus and Beaver Creek"
+        ],
+        [
+            "IFR bl McKays Point Div",
+            "IFR bl confluence of NF Stanislaus and Beaver Creek"
+        ],
+        [
+            "McKays Point Diversion Inflow",
+            "McKays Point Diversion"
+        ],
+        [
+            "IFR bl New Spicer Meadow Reservoir",
+            "McKays Point Diversion"
+        ],
+        [
+            "IFR bl NF Stanislaus Div Res",
+            "McKays Point Diversion"
+        ],
+        [
+            "Upper Collierville Tunnel Outflow Inflow",
+            "Upper Collierville Tunnel Outflow"
+        ],
+        [
+            "IFR bl Utica Reservoir",
+            "Upper Collierville Tunnel Outflow"
+        ],
+        [
+            "Union-Utica Reservoir Inflow",
+            "Union-Utica Reservoir"
+        ],
+        [
+            "New Spicer Meadow Reservoir Inflow",
+            "New Spicer Meadow Reservoir"
+        ],
+        [
+            "Beaver Creek Diversion Inflow",
+            "Beaver Creek Diversion"
+        ],
+        [
+            "Stanislaus Tunnel Outflow Inflow",
+            "Stanislaus Tunnel Outflow"
+        ],
+        [
+            "IFR bl Beardsley Afterbay",
+            "Stanislaus Tunnel Outflow"
+        ],
+        [
+            "Beardsley Afterbay Inflow",
+            "Beardsley Afterbay"
+        ],
+        [
+            "Beardsley Reservoir",
+            "Beardsley Afterbay"
+        ],
+        [
+            "Beardsley PH",
+            "Beardsley Afterbay"
+        ],
+        [
+            "Beardsley Reservoir Inflow",
+            "Beardsley Reservoir"
+        ],
+        [
+            "Donnell Lake Spill",
+            "Beardsley Reservoir"
+        ],
+        [
+            "IFR bl Donnell Lake",
+            "Beardsley Reservoir"
+        ],
+        [
+            "Donnells Reservoir Inflow",
+            "Donnells Reservoir"
+        ],
+        [
+            "Relief Reservoir Inflow",
+            "Relief Reservoir"
+        ],
+        [
+            "IFR bl Philadelphia Div",
+            "Lyons Reservoir"
+        ],
+        [
+            "Lyons Reservoir Inflow",
+            "Lyons Reservoir"
+        ],
+        [
+            "Philadelphia Aquaduct Outflow Inflow",
+            "Philadelphia Aquaduct Outflow"
+        ],
+        [
+            "IFR bl Pinecrest Lake",
+            "Philadelphia Aquaduct Outflow"
+        ],
+        [
+            "Pinecrest Reservoir Inflow",
+            "Pinecrest Reservoir"
+        ],
+        [
+            "IFR bl Relief Reservoir",
+            "Donnells Reservoir"
+        ],
+        [
+            "Hunter Reservoir",
+            "Murphys PH"
+        ],
+        [
+            "Donnells PH",
+            "Beardsley Reservoir"
+        ],
+        [
+            "Upper Collierville Tunnel 1",
+            "New Spicer Meadow Reservoir"
+        ],
+        [
+            "Collierville PH",
+            "IFR bl Collierville PH discharge"
+        ],
+        [
+            "Stanislaus PH",
+            "STN_01 Inflow"
+        ],
+        [
+            "Spring Gap PH",
+            "Stanislaus Tunnel Outflow"
+        ],
+        [
+            "Lyons Reservoir",
+            "Phoenix PH"
+        ],
+        [
+            "New Melones Lake",
+            "New Melones Spillway"
+        ],
+        [
+            "New Melones PH",
+            "New Melones Lake Flood Control"
+        ],
+        [
+            "New Melones Spillway",
+            "New Melones Lake Flood Control"
+        ],
+        [
+            "Lake Tulloch",
+            "Lake Tulloch Flood Control"
+        ],
+        [
+            "Lake Tulloch Flood Control",
+            "Goodwin Reservoir"
+        ],
+        [
+            "STN_below_Melons.2.2",
+            "Lake Tulloch"
+        ],
+        [
+            "New Melones Lake Flood Control",
+            "STN_below_Melons.2.2"
+        ]
+    ],
+    "tables": {
+        "Full Natural Flow Forecast": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/exceedance_forecast_mcm.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": [
+                0,
+                1
+            ]
+        },
+        "functional flows metrics": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/_tables/Functional_Flows_metrics.csv",
+            "index_col": 0,
+            "header": 0
+        },
+        "Annual Full Natural Flow": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_annual_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "Peak Donnells Runoff": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/Donnells_Reservoir_Peak_MAM_Runoff_date.csv",
+            "index_col": 0,
+            "parse_dates": [
+                1
+            ],
+            "squeeze": true
+        },
+        "WYT P2005 & P2130": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/WYT_P2005_P2130.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "WYT P2019": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/WYT_P2019.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "New Melones Storage Regression": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/New_Melones_March_1_regression_mcm.csv",
+            "header": 0,
+            "index_col": 0
+        },
+        "San Joaquin Valley Index": {
+            "url": "/content/cen_sierra_pywr/data/common/hydrology/historical/Livneh/SJVI.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "Storage Costs": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/storage_costs.csv",
+            "index_col": "Reservoir"
+        },
+        "All Energy Price Values": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/prices_pivoted_select_years.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Energy Price Blocks": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/piecewise_blocks_daily.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Energy Price Values": {
+            "url": "/content/cen_sierra_pywr/data/common/energy_prices/piecewise_prices_DpMWh_daily.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Initial Storage": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/gauges/storage_mcm.csv",
+            "index_col": "Date",
+            "parse_dates": false
+        },
+        "Lake Tulloch Flood Control": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/Flood_Control/Lake_Tulloch_Flood_Control_Curve_mcm.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "New Melones Lake Flood Control": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/Flood_Control/New_Melones_Lake_Flood_Control_Curve_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "names": [
+                "rainflood",
+                "conditional"
+            ]
+        },
+        "New Spicer Meadow District release": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/Demand/Release_below_New_Spicer_Meadow_Dam_cfs.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "IFR Below Relief Reservoir schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Relief_Reservoir_(MIF)_cfs_daily.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "IFR Below Pinecrest Lake schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Pinecrest_Lake_cfs_daily.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "IFR Below Donnell Lake schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Donnells_Reservoir_(MIF)_cfs_daily.csv",
+            "header": 0,
+            "index_col": [
+                0,
+                1
+            ],
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "Supplemental IFR below Donnell Lake": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Donnells_Reservoir_(Supp)_cfs.csv",
+            "index_col": 0,
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "IFR Below Sand Bar Div Schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Sand_Bar_Diversion_(MIF)_cfs_daily.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "Supplemental IFR below Sand Bar Div": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Sand_Bar_Diversion_(Supp)_cfs.csv",
+            "header": 0,
+            "index_col": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "IFR Below Philadelphia Div Schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Philadelphia_Div._(MIF)_cfs_daily.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "IFR bl Goodwin Dam schedule": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/IFRs/IFR_Below_Goodwin_Dam_cfs.csv",
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "header": 0,
+            "index_col": 0
+        },
+        "Oakdale Irrigation District Demand": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/Demand/Oakdale_Canal_demand_by_WYT_mcm.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        "South San Joaquin Irrigation District Demand": {
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/management/BAU/Demand/South_San_Joaquin_Canal_demand_by_WYT_mcm.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0,
+            "names": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    },
+    "scenarios": [],
+    "parameters": {
+        "Full Natural Flow": {
+            "type": "dataframe",
+            "url": "/content/cen_sierra_pywr/data/Stanislaus_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_daily_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "parse_dates": true,
+            "squeeze": true
+        },
+        "Blocks": {
+            "type": "Constant",
+            "value": 4
+        },
+        "Price Year": {
+            "type": "Constant",
+            "value": 2009
+        },
+        "New Melones Lake/Water Year Type": {
+            "type": "New_Melones_WYT"
+        },
+        "South San Joaquin Irrigation District/Demand": {
+            "type": "South_San_Joaquin_Irrigation_District_Demand"
+        },
+        "Oakdale Irrigation District/Demand": {
+            "type": "Oakdale_Irrigation_District_Demand"
+        },
+        "Water Supply Release bl New Spicer Meadow Reservoir/Requirement": {
+            "type": "Water_Supply_Release_bl_New_Spicer_Meadow_Reservoir"
+        },
+        "Angels PH/Fixed Head": {
+            "type": "constant",
+            "value": 135.3
+        },
+        "Angels PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 0.0976
+        },
+        "Angels PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Angels PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Angels PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Angels PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Angels PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Beardsley Reservoir/Turbine Capacity": {
+            "type": "constant",
+            "value": 1.517
+        },
+        "Beardsley Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "column": "Cost",
+            "index": "Beardsley Reservoir"
+        },
+        "Beardsley Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Beardsley Reservoir",
+            "values": [
+                953.1,
+                963.2,
+                966.2,
+                969.3,
+                972.3,
+                975.4,
+                978.4,
+                981.5,
+                987.6,
+                993.6,
+                1002.8,
+                1011.9,
+                1021.1,
+                1027.2,
+                1035.7
+            ],
+            "volumes": [
+                0,
+                0.05,
+                0.33,
+                0.85,
+                1.69,
+                2.92,
+                4.67,
+                7.05,
+                14.3,
+                24.04,
+                40.81,
+                60.17,
+                81.87,
+                97.65,
+                121.45
+            ],
+            "kind": "cubic"
+        },
+        "Beardsley PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 1.48
+        },
+        "Collierville PH/Fixed Head": {
+            "type": "constant",
+            "value": 691.896
+        },
+        "Collierville PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 3.425
+        },
+        "Collierville PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Collierville PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Collierville PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Collierville PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Collierville PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Donnell Lake Spill/Min Flow": {
+            "type": "Donnell_Lake_Spill_Min_Requirement"
+        },
+        "Donnells PH/Fixed Head": {
+            "type": "constant",
+            "value": 350.8
+        },
+        "Donnells PH/Turbine Capacity": {
+            "type": "Donnells_PH_Turbine_Capacity"
+        },
+        "Donnells PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Donnells PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Donnells PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Donnells PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Donnells PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Donnells Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "Donnells Reservoir",
+            "column": "Cost"
+        },
+        "Donnells Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Donnells Reservoir",
+            "values": [
+                1411.5,
+                1438.7,
+                1440.2,
+                1441.7,
+                1443.2,
+                1444.8,
+                1447.8,
+                1450.8,
+                1453.9,
+                1456.9,
+                1460,
+                1463,
+                1469.1,
+                1478.3,
+                1487.4,
+                1498.7
+            ],
+            "volumes": [
+                0,
+                2.65,
+                3.51,
+                4.6,
+                5.83,
+                7.19,
+                10.14,
+                13.32,
+                16.52,
+                19.97,
+                23.55,
+                27.25,
+                35.02,
+                47.72,
+                61.4,
+                79.83
+            ],
+            "kind": "cubic"
+        },
+        "IFR bl Angels Div/Min Flow": {
+            "type": "IFR_bl_Angels_Div_Min_Requirement"
+        },
+        "IFR bl Collierville PH discharge/Min Flow": {
+            "type": "IFR_bl_Collierville_PH_discharge_Min_Requirement"
+        },
+        "IFR bl Collierville PH discharge/Max Flow": {
+            "type": "IFR_bl_Collierville_PH_discharge_Max_Requirement"
+        },
+        "IFR at Murphys Park/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR at Murphys Park/Min Flow": {
+            "type": "IFR_at_Murphys_Park_Requirement"
+        },
+        "IFR bl Donnell Lake/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Donnell Lake/Min Flow": {
+            "type": "IFR_bl_Donnell_Lake_Min_Requirement"
+        },
+        "IFR bl Donnell Lake/Max Flow": {
+            "type": "IFR_bl_Donnell_Lake_Max_Requirement"
+        },
+        "IFR bl Hunter Reservoir/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Hunter Reservoir/Min Flow": {
+            "type": "IFR_bl_Hunter_Reservoir_Requirement"
+        },
+        "IFR bl Lyons Res/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Lyons Res/Min Flow": {
+            "type": "IFR_bl_Lyons_Res_Requirement"
+        },
+        "IFR bl McKays Point Div/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl McKays Point Div/Min Flow": {
+            "type": "IFR_bl_McKays_Point_Div_Min_Requirement"
+        },
+        "IFR bl McKays Point Div/Max Flow": {
+            "type": "IFR_bl_McKays_Point_Div_Max_Requirement"
+        },
+        "IFR bl New Spicer Meadow Reservoir/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl New Spicer Meadow Reservoir/Min Flow": {
+            "type": "IFR_bl_New_Spicer_Meadow_Reservoir_Min_Requirement"
+        },
+        "IFR bl New Spicer Meadow Reservoir/Max Flow": {
+            "type": "IFR_bl_New_Spicer_Meadow_Reservoir_Max_Requirement"
+        },
+        "IFR bl Philadelphia Div/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Philadelphia Div/Min Flow": {
+            "type": "IFR_bl_Philadelphia_Div_Min_Requirement"
+        },
+        "IFR bl Philadelphia Div/Max Flow": {
+            "type": "IFR_bl_Philadelphia_Div_Max_Requirement"
+        },
+        "IFR bl Relief Reservoir/Min Flow": {
+            "type": "IFR_bl_Relief_Reservoir_Min_Requirement"
+        },
+        "IFR bl Relief Reservoir/Max Flow": {
+            "type": "IFR_bl_Relief_Reservoir_Max_Requirement"
+        },
+        "IFR bl Sand Bar Div/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Sand Bar Div/Min Flow": {
+            "type": "IFR_bl_Sand_Bar_Div_Min_Requirement"
+        },
+        "IFR bl Sand Bar Div/Max Flow": {
+            "type": "IFR_bl_Sand_Bar_Div_Max_Requirement"
+        },
+        "IFR bl NF Stanislaus Div Res/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl NF Stanislaus Div Res/Min Flow": {
+            "type": "IFR_bl_NF_Stanislaus_Div_Res_Min_Requirement"
+        },
+        "IFR bl NF Stanislaus Div Res/Max Flow": {
+            "type": "IFR_bl_NF_Stanislaus_Div_Res_Max_Requirement"
+        },
+        "IFR bl Beaver Creek Diversion Dam/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Beaver Creek Diversion Dam/Min Flow": {
+            "type": "IFR_bl_Beaver_Creek_Diversion_Dam_Min_Requirement"
+        },
+        "IFR bl Beaver Creek Diversion Dam/Max Flow": {
+            "type": "IFR_bl_Beaver_Creek_Diversion_Dam_Max_Requirement"
+        },
+        "IFR bl confluence of NF Stanislaus and Beaver Creek/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl confluence of NF Stanislaus and Beaver Creek/Min Flow": {
+            "type": "IFR_bl_confluence_of_NF_Stanislaus_and_Beaver_Creek_Requirement"
+        },
+        "IFR bl New Melones Res/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Goodwin Reservoir/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Goodwin Reservoir/Min Flow": {
+            "type": "IFR_bl_Goodwin_Reservoir_Requirement"
+        },
+        "IFR bl Pinecrest Lake/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Pinecrest Lake/Min Flow": {
+            "type": "IFR_bl_Pinecrest_Lake_Min_Requirement"
+        },
+        "IFR bl Pinecrest Lake/Max Flow": {
+            "type": "IFR_bl_Pinecrest_Lake_Max_Requirement"
+        },
+        "IFR bl Utica Reservoir/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Utica Reservoir/Min Flow": {
+            "type": "IFR_bl_Utica_Reservoir_Requirement"
+        },
+        "IFR bl Beardsley Afterbay/Violation Cost": {
+            "type": "constant",
+            "value": -1000000
+        },
+        "IFR bl Beardsley Afterbay/Min Flow": {
+            "type": "IFR_bl_Beardsley_Afterbay_Min_Requirement"
+        },
+        "IFR bl Beardsley Afterbay/Max Flow": {
+            "type": "IFR_bl_Beardsley_Afterbay_Max_Requirement"
+        },
+        "Lyons Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "Lyons Reservoir",
+            "column": "Cost"
+        },
+        "Lyons Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Lyons Reservoir",
+            "values": [
+                1248.1,
+                1266.1,
+                1267.7,
+                1269.2,
+                1272.2,
+                1275.3,
+                1278.3,
+                1281.4,
+                1284.4,
+                1286.3
+            ],
+            "volumes": [
+                0,
+                0.04,
+                0.12,
+                0.23,
+                0.58,
+                1.12,
+                1.96,
+                3.2,
+                4.82,
+                7.5
+            ],
+            "kind": "cubic"
+        },
+        "Murphys PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 0.24
+        },
+        "New Melones Lake Flood Control/Requirement": {
+            "type": "New_Melones_Lake_Flood_Control_Requirement"
+        },
+        "New Melones Lake/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "New Melones Lake",
+            "volumes": [
+                1.2,
+                5.3,
+                15.7,
+                35.4,
+                66.5,
+                110.9,
+                170,
+                244.9,
+                336.5,
+                445.7,
+                573.8,
+                722,
+                891.8,
+                1084.7,
+                1302,
+                1545,
+                1814.7,
+                2111.5,
+                2436.1,
+                2789.1,
+                3172.3,
+                3486
+            ],
+            "values": [
+                182.9,
+                190.5,
+                198.1,
+                205.7,
+                213.4,
+                221,
+                228.6,
+                236.2,
+                243.8,
+                251.5,
+                259.1,
+                266.7,
+                274.3,
+                281.9,
+                289.6,
+                297.2,
+                304.8,
+                312.4,
+                320,
+                327.6,
+                335.3,
+                341.1
+            ],
+            "kind": "cubic",
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "New Melones Lake/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "New Melones Lake",
+            "column": "Cost"
+        },
+        "New Melones PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 6.67
+        },
+        "New Melones PH/Flow Capacity": {
+            "type": "constant",
+            "value": 7.33
+        },
+        "New Spicer Meadow Reservoir/Turbine Capacity": {
+            "type": "constant",
+            "value": 0.489
+        },
+        "New Spicer Meadow Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "New Spicer Meadow Reservoir",
+            "column": "Cost"
+        },
+        "New Spicer Meadow Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "New Spicer Meadow Reservoir",
+            "values": [
+                1940.1,
+                1956.8,
+                1962.9,
+                1969,
+                1975.1,
+                1981.2,
+                1987.3,
+                1993.4,
+                1999.5,
+                2005.6,
+                2011.7,
+                2015.9
+            ],
+            "volumes": [
+                0,
+                5.8,
+                11.47,
+                19.12,
+                29.32,
+                43.41,
+                61.77,
+                85.88,
+                116.96,
+                154.49,
+                197.65,
+                227.24
+            ],
+            "kind": "cubic"
+        },
+        "Phoenix PH/Fixed Head": {
+            "type": "constant",
+            "value": 361.7976
+        },
+        "Phoenix PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 0.0153
+        },
+        "Phoenix PH/Flow Capacity": {
+            "type": "constant",
+            "value": 0.0612
+        },
+        "Phoenix PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Phoenix PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Phoenix PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Phoenix PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Phoenix PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Pinecrest Reservoir/Storage Value": {
+            "type": "Pinecrest_Reservoir_Storage_Value"
+        },
+        "Pinecrest Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Pinecrest Reservoir",
+            "values": [
+                1671.2,
+                1682.5,
+                1685.5,
+                1688.6,
+                1691.6,
+                1694.7,
+                1697.7,
+                1700.8,
+                1706.9,
+                1712.2
+            ],
+            "volumes": [
+                0,
+                0.98,
+                1.92,
+                3.05,
+                4.36,
+                5.84,
+                7.89,
+                10.57,
+                16.69,
+                22.58
+            ],
+            "kind": "cubic"
+        },
+        "Relief Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "Relief Reservoir",
+            "column": "Cost"
+        },
+        "Relief Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Relief Reservoir",
+            "values": [
+                2156.6,
+                2197.6,
+                2200.7,
+                2203.7,
+                2206.8,
+                2209.8,
+                2212.8,
+                2215.9,
+                2218.9,
+                2222,
+                2225,
+                2231.1,
+                2232.1
+            ],
+            "volumes": [
+                0,
+                0.07,
+                0.13,
+                0.38,
+                1.04,
+                1.98,
+                3.25,
+                4.64,
+                6.29,
+                8.11,
+                9.99,
+                14.67,
+                18.5
+            ],
+            "kind": "cubic"
+        },
+        "Sand Bar PH/Fixed Head": {
+            "type": "constant",
+            "value": 130.0
+        },
+        "Sand Bar PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 1.2
+        },
+        "Sand Bar PH/Flow Capacity": {
+            "type": "constant",
+            "value": 1.5
+        },
+        "Sand Bar PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Sand Bar PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Sand Bar PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Sand Bar PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Sand Bar PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Spring Gap PH/Fixed Head": {
+            "type": "constant",
+            "value": 568.452
+        },
+        "Spring Gap PH/Turbine Capacity": {
+            "type": "Spring_Gap_PH_Turbine_Capacity"
+        },
+        "Spring Gap PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Spring Gap PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Spring Gap PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Spring Gap PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Spring Gap PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Stanislaus PH/Fixed Head": {
+            "type": "constant",
+            "value": 463.296
+        },
+        "New Spicer Meadow PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 2.03
+        },
+        "Union-Utica Reservoir/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "Union-Utica Reservoir",
+            "column": "Cost"
+        },
+        "Stanislaus PH/Turbine Capacity": {
+            "type": "constant",
+            "value": 1.3
+        },
+        "Stanislaus PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Stanislaus PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Stanislaus PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Stanislaus PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Stanislaus PH/Cost/3": {
+            "type": "HydropowerCost"
+        },
+        "Lake Tulloch Flood Control/Requirement": {
+            "type": "Lake_Tulloch_Flood_Control_Requirement"
+        },
+        "Lake Tulloch/Min Volume": {
+            "type": "Lake_Tulloch_Min_Volume"
+        },
+        "Lake Tulloch/Storage Value": {
+            "type": "constant",
+            "table": "Storage Costs",
+            "index": "Lake Tulloch",
+            "column": "Cost"
+        },
+        "Upper Collierville Tunnel 1/Capacity": {
+            "type": "Upper_Collierville_Tunnel_1_Capacity"
+        },
+        "San Joaquin Valley WYT": {
+            "type": "San_Joaquin_Valley_WYT"
+        },
+        "San Joaquin Valley WYI": {
+            "type": "San_Joaquin_Valley_WYI"
+        },
+        "New Melones Apr-Jul Runoff": {
+            "type": "New_Melones_Apr_Jul_Runoff"
+        },
+        "STN_01 Inflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/STN_01 Inflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Angels Canal Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Angels Canal Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Hunter Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Hunter Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "IFR bl confluence of NF Stanislaus and Beaver Creek Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/IFR bl confluence of NF Stanislaus and Beaver Creek Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "McKays Point Diversion Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/McKays Point Diversion Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Upper Collierville Tunnel Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Upper Collierville Tunnel Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Union-Utica Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Union-Utica Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "New Spicer Meadow Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/New Spicer Meadow Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Beaver Creek Diversion Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Beaver Creek Diversion Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Stanislaus Tunnel Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Stanislaus Tunnel Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Beardsley Afterbay Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Beardsley Afterbay Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Beardsley Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Beardsley Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Donnells Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Donnells Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Relief Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Relief Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Lyons Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Lyons Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Philadelphia Aquaduct Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Philadelphia Aquaduct Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Pinecrest Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Pinecrest Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        }
+    },
+    "recorders": {
+        "Angels PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Angels PH"
+        },
+        "Beardsley PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Beardsley PH"
+        },
+        "Spring Gap PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Spring Gap PH"
+        },
+        "Stanislaus PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Stanislaus PH"
+        },
+        "Sand Bar PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Sand Bar PH"
+        },
+        "Phoenix PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Phoenix PH"
+        },
+        "New Melones PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "New Melones PH"
+        },
+        "Murphys PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Murphys PH"
+        },
+        "Collierville PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Collierville PH"
+        },
+        "Donnells PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Donnells PH"
+        },
+        "New Spicer Meadow PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "New Spicer Meadow PH"
+        },
+        "Angels PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Angels PH"
+        },
+        "Beardsley PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Beardsley PH"
+        },
+        "Spring Gap PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Spring Gap PH"
+        },
+        "Stanislaus PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Stanislaus PH"
+        },
+        "Sand Bar PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Sand Bar PH"
+        },
+        "Phoenix PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Phoenix PH"
+        },
+        "New Melones PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "New Melones PH"
+        },
+        "Murphys PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Murphys PH"
+        },
+        "Collierville PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Collierville PH"
+        },
+        "Donnells PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Donnells PH"
+        },
+        "New Spicer Meadow PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "New Spicer Meadow PH"
+        },
+        "Beardsley Reservoir/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Beardsley Reservoir"
+        },
+        "Beardsley Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Beardsley Reservoir"
+        },
+        "Beardsley Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Beardsley Reservoir/Storage Value"
+        },
+        "Donnells Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Donnells Reservoir"
+        },
+        "Donnells Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Donnells Reservoir/Storage Value"
+        },
+        "Hunter Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Hunter Reservoir"
+        },
+        "IFR bl Angels Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Angels Div"
+        },
+        "IFR bl Angels Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Angels Div/Min Flow"
+        },
+        "IFR bl Collierville PH discharge/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Collierville PH discharge"
+        },
+        "IFR bl Collierville PH discharge/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Collierville PH discharge/Min Flow"
+        },
+        "IFR bl Collierville PH discharge/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Collierville PH discharge/Max Flow"
+        },
+        "IFR bl Donnell Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Donnell Lake"
+        },
+        "IFR bl Donnell Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Donnell Lake/Min Flow"
+        },
+        "IFR bl Donnell Lake/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Donnell Lake/Max Flow"
+        },
+        "IFR bl Hunter Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Hunter Reservoir"
+        },
+        "IFR bl Hunter Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Hunter Reservoir/Min Flow"
+        },
+        "IFR bl Lyons Res/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Lyons Res"
+        },
+        "IFR bl Lyons Res/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Lyons Res/Min Flow"
+        },
+        "IFR bl McKays Point Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl McKays Point Div"
+        },
+        "IFR bl McKays Point Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl McKays Point Div/Min Flow"
+        },
+        "IFR bl McKays Point Div/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl McKays Point Div/Max Flow"
+        },
+        "IFR bl New Spicer Meadow Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl New Spicer Meadow Reservoir"
+        },
+        "IFR bl New Spicer Meadow Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl New Spicer Meadow Reservoir/Min Flow"
+        },
+        "IFR bl New Spicer Meadow Reservoir/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl New Spicer Meadow Reservoir/Max Flow"
+        },
+        "IFR bl Philadelphia Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Philadelphia Div"
+        },
+        "IFR bl Philadelphia Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Philadelphia Div/Min Flow"
+        },
+        "IFR bl Philadelphia Div/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Philadelphia Div/Max Flow"
+        },
+        "IFR bl Relief Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Relief Reservoir"
+        },
+        "IFR bl Relief Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Relief Reservoir/Min Flow"
+        },
+        "IFR bl Relief Reservoir/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Relief Reservoir/Max Flow"
+        },
+        "IFR bl Sand Bar Div/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Sand Bar Div"
+        },
+        "IFR bl Sand Bar Div/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Sand Bar Div/Min Flow"
+        },
+        "IFR bl Sand Bar Div/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Sand Bar Div/Max Flow"
+        },
+        "IFR bl NF Stanislaus Div Res/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl NF Stanislaus Div Res"
+        },
+        "IFR bl NF Stanislaus Div Res/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl NF Stanislaus Div Res/Min Flow"
+        },
+        "IFR bl NF Stanislaus Div Res/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl NF Stanislaus Div Res/Max Flow"
+        },
+        "IFR bl Goodwin Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Goodwin Reservoir"
+        },
+        "IFR bl Goodwin Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Goodwin Reservoir/Min Flow"
+        },
+        "IFR bl Beardsley Afterbay/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Beardsley Afterbay"
+        },
+        "IFR bl Beardsley Afterbay/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Beardsley Afterbay/Min Flow"
+        },
+        "IFR bl Beardsley Afterbay/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Beardsley Afterbay/Max Flow"
+        },
+        "IFR bl Beaver Creek Diversion Dam/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Beaver Creek Diversion Dam"
+        },
+        "IFR bl Beaver Creek Diversion Dam/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Beaver Creek Diversion Dam/Min Flow"
+        },
+        "IFR bl Beaver Creek Diversion Dam/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Beaver Creek Diversion Dam/Max Flow"
+        },
+        "IFR bl confluence of NF Stanislaus and Beaver Creek/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl confluence of NF Stanislaus and Beaver Creek"
+        },
+        "IFR bl confluence of NF Stanislaus and Beaver Creek/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl confluence of NF Stanislaus and Beaver Creek/Min Flow"
+        },
+        "IFR bl Pinecrest Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Pinecrest Lake"
+        },
+        "IFR bl Pinecrest Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Pinecrest Lake/Min Flow"
+        },
+        "IFR bl Pinecrest Lake/max flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Pinecrest Lake/Max Flow"
+        },
+        "IFR bl Utica Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Utica Reservoir"
+        },
+        "IFR bl Utica Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Utica Reservoir/Min Flow"
+        },
+        "Lyons Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Lyons Reservoir"
+        },
+        "Lyons Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Lyons Reservoir/Storage Value"
+        },
+        "New Melones Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "New Melones Lake"
+        },
+        "Union-Utica Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Union-Utica Reservoir"
+        },
+        "New Melones Lake/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "New Melones Lake"
+        },
+        "New Melones Lake/water year type": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "New Melones Lake/Water Year Type"
+        },
+        "New Melones Lake Flood Control/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "New Melones Lake Flood Control"
+        },
+        "New Melones Lake Flood Control/requirement": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "New Melones Lake Flood Control/Requirement"
+        },
+        "New Spicer Meadow Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "New Spicer Meadow Reservoir"
+        },
+        "New Spicer Meadow Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "New Spicer Meadow Reservoir/Storage Value"
+        },
+        "Phoenix Canal Outflow/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Phoenix Canal Outflow"
+        },
+        "Pinecrest Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Pinecrest Reservoir"
+        },
+        "Pinecrest Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Pinecrest Reservoir/Storage Value"
+        },
+        "Relief Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Relief Reservoir"
+        },
+        "Relief Reservoir/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Relief Reservoir/Storage Value"
+        },
+        "South San Joaquin Irrigation District/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "South San Joaquin Irrigation District"
+        },
+        "Oakdale Irrigation District/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Oakdale Irrigation District"
+        },
+        "South San Joaquin Irrigation District/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "South San Joaquin Irrigation District/Demand"
+        },
+        "Oakdale Irrigation District/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Oakdale Irrigation District/Demand"
+        },
+        "Stanislaus River Outflow/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Stanislaus River Outflow"
+        },
+        "Lake Tulloch/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Lake Tulloch"
+        },
+        "Lake Tulloch/cost": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Lake Tulloch/Storage Value"
+        },
+        "UPA Tunnel Tap/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "UPA Tunnel Tap"
+        },
+        "Donnell Lake Spill/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Donnell Lake Spill"
+        },
+        "Donnell Lake Spill/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Donnell Lake Spill/Min Flow"
+        },
+        "IFR at Murphys Park/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR at Murphys Park"
+        },
+        "IFR at Murphys Park/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR at Murphys Park/Min Flow"
+        },
+        "Upper Collierville Tunnel 1/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Upper Collierville Tunnel 1"
+        }
+    }
+}
