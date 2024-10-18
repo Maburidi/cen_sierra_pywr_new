@@ -696,7 +696,7 @@
             ],
             "max_flows": [
                 "Donnell Lake Spill/Min Flow",null
-            ],"nsteps":2,
+            ],"nsteps":2
         },
         {
             "name": "Goodwin Reservoir",
