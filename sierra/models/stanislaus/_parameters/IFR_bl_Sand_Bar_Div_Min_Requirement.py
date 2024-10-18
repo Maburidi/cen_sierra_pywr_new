@@ -33,7 +33,7 @@ class IFR_bl_Sand_Bar_Div_Min_Requirement(MinFlowParameter):
 
         if self.mode == 'scheduling':
             if self.datetime.month == 10 and self.datetime.day == 1:
-                self.peak_dt[scenario_index.global_id] = self.model.tables["Peak Donnells Runoff"][timestep.year + 1]
+                self.peak_dt[scenario_index.global_id] = self.model.tables["Peak Donnells Runoff"].loc[timestep.year + 1,'date']
             diff_day = (self.datetime - self.peak_dt[scenario_index.global_id]).days
             if 0 <= diff_day < 91:
                 data_supp = self.model.tables["Supplemental IFR below Sand Bar Div"]
