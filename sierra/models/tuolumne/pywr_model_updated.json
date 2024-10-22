@@ -75,14 +75,14 @@
         {
             "name": "Don Pedro Lake Flood Control",
             "type": "PiecewiseLink",
-            "max_flow": [
+            "max_flows": [
                 "Don Pedro Lake Flood Control/Requirement",
                 null
             ],
-            "cost": [
+            "costs": [
                 -25,
                 1
-            ],
+            ],"nsteps":2,
             "comment": "{\"resource_class\": \"link\"}"
         },
         {
@@ -122,19 +122,22 @@
             "head": 640.1,
             "turbine_capacity": 2.447,
             "flow_capacity": 2.447,
-            "cost": [
+            "costs": [
                 -500000000,
                 -1
             ],
-            "max_flow": [
-                "Dion R Holm PH/Demand"
-            ]
+            "max_flows": [
+                "Dion R Holm PH/Demand",null
+            ], "nsteps":2
         },
         {
             "name": "Don Pedro Lake Spillway",
             "type": "InstreamFlowRequirement",
             "comment": "{\"resource_class\": \"node\"}",
-            "min_flow_cost": -1000
+            "min_flow_cost": -1000,
+            "costs":[0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "Don Pedro PH",
@@ -144,10 +147,11 @@
             "flow_capacity": 6.5,
             "water_elevation_reservoir": "Don Pedro Reservoir",
             "tailwater_elevation": 88.4,
-            "cost": [
+            "costs": [
                 1
             ],
-            "max_flow": []
+            "max_flows": [null],
+            "nsteps":1
         },
         {
             "name": "Don Pedro Reservoir",
@@ -203,7 +207,10 @@
             "comment": "{\"resource_class\": \"node\"}",
             "max_flow_cost": 10000000000,
             "min_flow": "IFR bl Cherry Lake/Min Flow",
-            "min_flow_cost": -10000000000
+            "min_flow_cost": -10000000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "IFR at La Grange",
@@ -211,7 +218,10 @@
             "comment": "{\"resource_class\": \"node\"}",
             "min_flow": "IFR at La Grange/Min Flow",
             "min_flow_cost": -10000,
-            "ifr_type": "enhanced"
+            "ifr_type": "enhanced",
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "IFR bl Hetch Hetchy Reservoir",
@@ -219,7 +229,10 @@
             "comment": "{\"resource_class\": \"node\"}",
             "min_flow": "IFR bl Hetch Hetchy Reservoir/Min Flow",
             "min_flow_cost": -1000000,
-            "max_flow_cost": 100000000000
+            "max_flow_cost": 100000000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "IFR bl Lake Eleanor",
@@ -227,14 +240,20 @@
             "comment": "{\"resource_class\": \"node\"}",
             "min_flow": "IFR bl Lake Eleanor/Min Flow",
             "min_flow_cost": -10000000000,
-            "max_flow_cost": 10000000
+            "max_flow_cost": 10000000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "Moccasin Fish Hatchery",
             "type": "InstreamFlowRequirement",
             "comment": "{\"resource_class\": \"node\"}",
             "min_flow": 0.039,
-            "min_flow_cost": -10000
+            "min_flow_cost": -10000,
+            "costs": [0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "Kirkwood PH",
@@ -243,13 +262,13 @@
             "head": 335.3,
             "turbine_capacity": 3.4256584537,
             "flow_capacity": 3.4256584537,
-            "cost": [
+            "costs": [
                 -2350000,
                 1000
             ],
-            "max_flow": [
-                "Kirkwood PH/Demand"
-            ]
+            "max_flows": [
+                "Kirkwood PH/Demand",null
+            ],"nstrps":2
         },
         {
             "name": "La Grange",
@@ -274,10 +293,11 @@
             "head": 377.952,
             "turbine_capacity": 1.63942225998,
             "flow_capacity": 1.63942225998,
-            "cost": [
+            "costs": [
                 -2350
             ],
-            "max_flow": []
+            "max_flows": [null],
+            "nsteps":1
         },
         {
             "name": "Moccasin Reservoir",
