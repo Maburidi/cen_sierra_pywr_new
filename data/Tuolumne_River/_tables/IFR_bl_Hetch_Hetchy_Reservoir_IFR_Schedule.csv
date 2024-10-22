@@ -1,0 +1,15 @@
+,Year Type A,Year Type A,Year Type B,Year Type B,Year Type C
+,Criteria,cfs,Criteria,cfs,cfs
+January,8.8,50,6.1,40,35
+February,14,60,9.5,50,35
+March,18.6,60,14.2,50,35
+April,26,75,18,65,35
+May,26.6,100,19.5,80,50
+June,28.45,125,21.25,110,75
+July,575,125,390,110,75
+August,640,125,400,110,75
+Sept. 1-15,,100,,80,75
+Sept. 15-30,,80,o,65,50
+October,,60,p,50,35
+November,,60,,50,35
+December,,50,,40,35
