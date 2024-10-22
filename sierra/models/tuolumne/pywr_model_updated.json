@@ -268,7 +268,7 @@
             ],
             "max_flows": [
                 "Kirkwood PH/Demand",null
-            ],"nstrps":2
+            ],"nsteps":2
         },
         {
             "name": "La Grange",
