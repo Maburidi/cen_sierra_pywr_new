@@ -1,0 +1,1232 @@
+{
+    "metadata": {
+        "title": "Tuolumne River",
+        "description": "Imported from WEAP Area",
+        "minimum_version": "1.0.0"
+    },
+    "timestepper": {
+        "start": "2010-10-01",
+        "end": "2012-09-30",
+        "timestep": 1
+    },
+    "solver": {
+        "name": "glpk"
+    },
+    "nodes": [
+        {
+            "name": "TUO_01 Inflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "TUO_01 Inflow Inflow/Runoff"
+        },
+        {
+            "name": "Upper Hetch Hetchy Tunnel Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Upper Hetch Hetchy Tunnel Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Cherry Lake Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Cherry Lake Inflow/Runoff"
+        },
+        {
+            "name": "Lake Eleanor Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Lake Eleanor Inflow/Runoff"
+        },
+        {
+            "name": "Hetch Hetchy Reservoir Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Hetch Hetchy Reservoir Inflow/Runoff"
+        },
+        {
+            "name": "Moccasin Reservoir Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Moccasin Reservoir Inflow/Runoff"
+        },
+        {
+            "name": "Priest Reservoir Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Priest Reservoir Inflow/Runoff"
+        },
+        {
+            "name": "Hetch Hetchy Aquaduct Outflow Inflow",
+            "type": "Catchment",
+            "comment": "{\"resource_class\": \"node\"}",
+            "flow": "Hetch Hetchy Aquaduct Outflow Inflow/Runoff"
+        },
+        {
+            "name": "Below Hetch Hetchy Aquaduct Diverted Inflow",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 0
+        },
+        {
+            "name": "Below Lake Eleanor Tunnel Diverted Inflow.1",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Don Pedro Lake Flood Control",
+            "type": "PiecewiseLink",
+            "max_flow": [
+                "Don Pedro Lake Flood Control/Requirement",
+                null
+            ],
+            "cost": [
+                -25,
+                1
+            ],
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Hetch Hetch Aquaduct.1.1",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}",
+            "max_flow": 2.2022063950670576
+        },
+        {
+            "name": "Lower Cherry Aqueduct 1",
+            "max_flow": "Lower Cherry Aqueduct 1/Flow Requirement",
+            "cost": -1000,
+            "type": "Link",
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Moccasin Aquaduct.1.1",
+            "type": "Link",
+            "max_flow": 0.039,
+            "comment": "{\"resource_class\": \"link\"}"
+        },
+        {
+            "name": "Cherry Lake",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_volume": 25,
+            "initial_volume": 250,
+            "max_volume": 338.2,
+            "level": "Cherry Lake/Elevation",
+            "cost": "Cherry Lake/Cost",
+            "gauge": "USGS 11277200 CHERRY LK NR HETCH HETCHY CA"
+        },
+        {
+            "name": "Dion R Holm PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 640.1,
+            "turbine_capacity": 2.447,
+            "flow_capacity": 2.447,
+            "cost": [
+                -500000000,
+                -1
+            ],
+            "max_flow": [
+                "Dion R Holm PH/Demand"
+            ]
+        },
+        {
+            "name": "Don Pedro Lake Spillway",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flow_cost": -1000
+        },
+        {
+            "name": "Don Pedro PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "turbine_capacity": 6.5,
+            "flow_capacity": 6.5,
+            "water_elevation_reservoir": "Don Pedro Reservoir",
+            "tailwater_elevation": 88.4,
+            "cost": [
+                1
+            ],
+            "max_flow": []
+        },
+        {
+            "name": "Don Pedro Reservoir",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 2082.0,
+            "max_volume": 2504.0,
+            "min_volume": 1000,
+            "level": "Don Pedro Reservoir/Elevation",
+            "cost": "Don Pedro Reservoir/Cost",
+            "gauge": "USGS 11287500 DON PEDRO RES NR LA GRANGE CA"
+        },
+        {
+            "name": "Eleanor-Cherry Pumping",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow": "Eleanor-Cherry Pumping/Requirement",
+            "cost": -10000
+        },
+        {
+            "name": "Eleanor-Cherry Gravity",
+            "type": "Link",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow": "Eleanor-Cherry Gravity/Requirement",
+            "cost": -10000
+        },
+        {
+            "name": "Groveland",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow": 0.0048931,
+            "cost": -30000
+        },
+        {
+            "name": "Hetch Hetchy Aquaduct Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Hetch Hetchy Reservoir",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 353,
+            "max_volume": 444.6,
+            "min_volume": 35,
+            "level": "Hetch Hetchy Reservoir/Elevation",
+            "cost": "Hetch Hetchy Reservoir/Cost",
+            "gauge": "USGS 11275500 HETCH HETCHY RES A HETCH HETCHY CA"
+        },
+        {
+            "name": "IFR bl Cherry Lake",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow_cost": 10000000000,
+            "min_flow": "IFR bl Cherry Lake/Min Flow",
+            "min_flow_cost": -10000000000
+        },
+        {
+            "name": "IFR at La Grange",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flow": "IFR at La Grange/Min Flow",
+            "min_flow_cost": -10000,
+            "ifr_type": "enhanced"
+        },
+        {
+            "name": "IFR bl Hetch Hetchy Reservoir",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flow": "IFR bl Hetch Hetchy Reservoir/Min Flow",
+            "min_flow_cost": -1000000,
+            "max_flow_cost": 100000000000
+        },
+        {
+            "name": "IFR bl Lake Eleanor",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flow": "IFR bl Lake Eleanor/Min Flow",
+            "min_flow_cost": -10000000000,
+            "max_flow_cost": 10000000
+        },
+        {
+            "name": "Moccasin Fish Hatchery",
+            "type": "InstreamFlowRequirement",
+            "comment": "{\"resource_class\": \"node\"}",
+            "min_flow": 0.039,
+            "min_flow_cost": -10000
+        },
+        {
+            "name": "Kirkwood PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 335.3,
+            "turbine_capacity": 3.4256584537,
+            "flow_capacity": 3.4256584537,
+            "cost": [
+                -2350000,
+                1000
+            ],
+            "max_flow": [
+                "Kirkwood PH/Demand"
+            ]
+        },
+        {
+            "name": "La Grange",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Lake Eleanor",
+            "type": "Reservoir",
+            "comment": "{\"resource_class\": \"node\"}",
+            "initial_volume": 18.13,
+            "max_volume": 33.92,
+            "min_volume": 0,
+            "level": "Lake Eleanor/Elevation",
+            "cost": "Lake Eleanor/Cost",
+            "gauge": "USGS 11277500 LK ELEANOR NR HETCH HETCHY CA"
+        },
+        {
+            "name": "Moccasin PH",
+            "type": "Hydropower",
+            "comment": "{\"resource_class\": \"node\"}",
+            "head": 377.952,
+            "turbine_capacity": 1.63942225998,
+            "flow_capacity": 1.63942225998,
+            "cost": [
+                -2350
+            ],
+            "max_flow": []
+        },
+        {
+            "name": "Moccasin Reservoir",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Modesto Irrigation District",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow": "Modesto Irrigation District/Demand",
+            "cost": -10000000000
+        },
+        {
+            "name": "Priest Reservoir",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "SFPUC",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": 1,
+            "max_flow": 1.1
+        },
+        {
+            "name": "SFPUC requirement",
+            "type": "Link",
+            "max_flow": "SFPUC requirement/Demand",
+            "cost": -5000
+        },
+        {
+            "name": "TUOLU-N-JUN1",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Tuolumne River Outflow",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "TUO_01 Inflow",
+            "type": "River",
+            "comment": "{\"resource_class\": \"node\", \"keep\": true}"
+        },
+        {
+            "name": "TUO_R-N-JUN12",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Turlock Irrigation District",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "max_flow": "Turlock Irrigation District/Demand",
+            "cost": -10000000000
+        },
+        {
+            "name": "Upper Hetch Hetchy Tunnel Outflow",
+            "type": "BreakLink",
+            "comment": "{\"resource_class\": \"node\"}"
+        }
+    ],
+    "edges": [
+        [
+            "Hetch Hetchy Aquaduct Outflow",
+            "Below Hetch Hetchy Aquaduct Diverted Inflow"
+        ],
+        [
+            "Lake Eleanor",
+            "Below Lake Eleanor Tunnel Diverted Inflow.1"
+        ],
+        [
+            "Below Lake Eleanor Tunnel Diverted Inflow.1",
+            "Eleanor-Cherry Pumping"
+        ],
+        [
+            "Below Lake Eleanor Tunnel Diverted Inflow.1",
+            "Eleanor-Cherry Gravity"
+        ],
+        [
+            "Hetch Hetch Aquaduct.1.1",
+            "TUOLU-N-JUN1"
+        ],
+        [
+            "Upper Hetch Hetchy Tunnel Outflow",
+            "Lower Cherry Aqueduct 1"
+        ],
+        [
+            "Moccasin Reservoir",
+            "Moccasin Aquaduct.1.1"
+        ],
+        [
+            "Moccasin Aquaduct.1.1",
+            "Moccasin Fish Hatchery"
+        ],
+        [
+            "SFPUC requirement",
+            "SFPUC"
+        ],
+        [
+            "Cherry Lake",
+            "IFR bl Cherry Lake"
+        ],
+        [
+            "Cherry Lake",
+            "Dion R Holm PH"
+        ],
+        [
+            "Hetch Hetchy Reservoir",
+            "IFR bl Hetch Hetchy Reservoir"
+        ],
+        [
+            "Lake Eleanor",
+            "IFR bl Lake Eleanor"
+        ],
+        [
+            "Eleanor-Cherry Pumping",
+            "Cherry Lake"
+        ],
+        [
+            "Eleanor-Cherry Gravity",
+            "Cherry Lake"
+        ],
+        [
+            "TUO_01 Inflow Inflow",
+            "TUO_01 Inflow"
+        ],
+        [
+            "Hetch Hetchy Reservoir",
+            "Kirkwood PH"
+        ],
+        [
+            "TUOLU-N-JUN1",
+            "Groveland"
+        ],
+        [
+            "TUOLU-N-JUN1",
+            "TUO_R-N-JUN12"
+        ],
+        [
+            "TUO_R-N-JUN12",
+            "Priest Reservoir"
+        ],
+        [
+            "Kirkwood PH",
+            "Hetch Hetchy Aquaduct Outflow"
+        ],
+        [
+            "La Grange",
+            "IFR at La Grange"
+        ],
+        [
+            "Don Pedro Reservoir",
+            "Don Pedro Lake Spillway"
+        ],
+        [
+            "Don Pedro Reservoir",
+            "Don Pedro PH"
+        ],
+        [
+            "Don Pedro Lake Flood Control",
+            "La Grange"
+        ],
+        [
+            "TUO_01 Inflow",
+            "Don Pedro Reservoir"
+        ],
+        [
+            "Moccasin PH",
+            "Moccasin Reservoir"
+        ],
+        [
+            "Don Pedro Lake Spillway",
+            "Don Pedro Lake Flood Control"
+        ],
+        [
+            "Don Pedro PH",
+            "Don Pedro Lake Flood Control"
+        ],
+        [
+            "Upper Hetch Hetchy Tunnel Outflow Inflow",
+            "Upper Hetch Hetchy Tunnel Outflow"
+        ],
+        [
+            "Cherry Lake Inflow",
+            "Cherry Lake"
+        ],
+        [
+            "Lake Eleanor Inflow",
+            "Lake Eleanor"
+        ],
+        [
+            "Hetch Hetchy Reservoir Inflow",
+            "Hetch Hetchy Reservoir"
+        ],
+        [
+            "Moccasin Reservoir Inflow",
+            "Moccasin Reservoir"
+        ],
+        [
+            "Priest Reservoir",
+            "Moccasin Reservoir"
+        ],
+        [
+            "Priest Reservoir Inflow",
+            "Priest Reservoir"
+        ],
+        [
+            "Moccasin Reservoir",
+            "SFPUC requirement"
+        ],
+        [
+            "Moccasin PH",
+            "SFPUC requirement"
+        ],
+        [
+            "TUO_R-N-JUN12",
+            "Moccasin PH"
+        ],
+        [
+            "Priest Reservoir",
+            "Moccasin PH"
+        ],
+        [
+            "Below Hetch Hetchy Aquaduct Diverted Inflow",
+            "Hetch Hetch Aquaduct.1.1"
+        ],
+        [
+            "Kirkwood PH",
+            "Hetch Hetch Aquaduct.1.1"
+        ],
+        [
+            "Hetch Hetchy Aquaduct Outflow Inflow",
+            "Hetch Hetchy Aquaduct Outflow"
+        ],
+        [
+            "IFR bl Hetch Hetchy Reservoir",
+            "Hetch Hetchy Aquaduct Outflow"
+        ],
+        [
+            "IFR bl Cherry Lake",
+            "Upper Hetch Hetchy Tunnel Outflow"
+        ],
+        [
+            "IFR bl Lake Eleanor",
+            "Upper Hetch Hetchy Tunnel Outflow"
+        ],
+        [
+            "Lower Cherry Aqueduct 1",
+            "Hetch Hetchy Aquaduct Outflow"
+        ],
+        [
+            "La Grange",
+            "Modesto Irrigation District"
+        ],
+        [
+            "La Grange",
+            "Turlock Irrigation District"
+        ],
+        [
+            "IFR at La Grange",
+            "Tuolumne River Outflow"
+        ],
+        [
+            "Moccasin Reservoir",
+            "TUO_01 Inflow"
+        ],
+        [
+            "Moccasin Fish Hatchery",
+            "TUO_01 Inflow"
+        ],
+        [
+            "Hetch Hetchy Aquaduct Outflow",
+            "TUO_01 Inflow"
+        ],
+        [
+            "Dion R Holm PH",
+            "TUO_01 Inflow"
+        ],
+        [
+            "Upper Hetch Hetchy Tunnel Outflow",
+            "TUO_01 Inflow"
+        ]
+    ],
+    "tables": {
+        "functional flows metrics": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/_tables/Functional_Flows_metrics.csv",
+            "index_col": 0,
+            "header": 0
+        },
+        "Annual Full Natural Flow": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_annual_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "San Joaquin Valley Index": {
+            "url": "/content/cen_sierra_pywr/data/common/hydrology/historical/Livneh/SJVI.csv",
+            "index_col": 0,
+            "squeeze": true
+        },
+        "Modesto Irrigation District/Demand Table": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/management/BAU/Demand/Modesto_Irrigation_District_demand_fraction.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0
+        },
+        "Turlock Irrigation District/Demand Table": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/management/BAU/Demand/Turlock_Irrigation_District_demand_fraction.csv",
+            "index_col": [
+                0,
+                1
+            ],
+            "header": 0
+        },
+        "SFPUC weekly fraction": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/management/BAU/Demand/SFPUC_weekly_fraction.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "Don Pedro Lake Flood Control Curve": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/management/BAU/Flood_Control/Don_Pedro_Reservoir_Flood_Control_Curve_mcm.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "Preferred Storage": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/management/BAU/Reservoirs/Preferred_Storage_Curves_AF.csv",
+            "index_col": 0,
+            "header": 0
+        },
+        "Lake Eleanor Pumping Thresholds": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/Lake_Eleanor_Pumping_Threshold_AF.csv",
+            "index_col": 0,
+            "header": 0,
+            "squeeze": true
+        },
+        "IFR at La Grange/IFR Schedule": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/_tables/IFR_at_La_Grange_IFR_Schedule.csv",
+            "header": 0,
+            "index_col": 0,
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"ft^3 s^-1\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/IFR Schedule": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/_tables/IFR_bl_Hetch_Hetchy_Reservoir_IFR_Schedule.csv",
+            "header": [
+                0,
+                1
+            ],
+            "index_col": 0,
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"ft^3 s^-1\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/UTREP hydrographs": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/_tables/IFR_bl_Hetch_Hetchy_Reservoir_UTREP_template_hydrographs_cfs.csv",
+            "header": 0
+        },
+        "IFR bl Lake Eleanor/IFR Schedule": {
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/_tables/IFR_bl_Lake_Eleanor_IFR_Schedule.csv",
+            "header": 0,
+            "index_col": 0,
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"ft^3 s^-1\"}"
+        }
+    },
+    "parameters": {
+        "Price Year": {
+            "type": "constant",
+            "value": 2009
+        },
+        "Full Natural Flow": {
+            "type": "dataframe",
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/hydrology/historical/Livneh/preprocessed/full_natural_flow_daily_mcm.csv",
+            "index_col": 0,
+            "parse_dates": true,
+            "header": 0,
+            "squeeze": true
+        },
+        "Dion R Holm PH/Demand": {
+            "type": "Dion_R_Holm_PH_Demand"
+        },
+        "Don Pedro Lake Flood Control/Requirement": {
+            "type": "Don_Pedro_Lake_Flood_Control_Requirement"
+        },
+        "Water Bank": {
+            "type": "Water_Bank"
+        },
+        "Eleanor-Cherry Pumping/Requirement": {
+            "type": "Eleanor_Cherry_Pumping_Requirement"
+        },
+        "Eleanor-Cherry Gravity/Requirement": {
+            "type": "Eleanor_Cherry_Gravity_Requirement"
+        },
+        "Cherry Lake/Cost": {
+            "type": "constant",
+            "value": -400000000
+        },
+        "Cherry Lake/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Cherry Lake",
+            "volumes": [
+                0.0,
+                0.1,
+                0.3,
+                0.8,
+                1.9,
+                3.7,
+                7.4,
+                14.4,
+                24.3,
+                48.0,
+                75.0,
+                104.9,
+                137.8,
+                172.5,
+                209.2,
+                248.0,
+                288.6,
+                331.4,
+                338.2
+            ],
+            "values": [
+                1353.3,
+                1356.4,
+                1359.4,
+                1362.5,
+                1365.5,
+                1368.6,
+                1371.6,
+                1374.6,
+                1377.7,
+                1383.8,
+                1389.9,
+                1396.0,
+                1402.1,
+                1408.2,
+                1414.3,
+                1420.4,
+                1426.5,
+                1432.6,
+                1433.5
+            ],
+            "kind": "cubic",
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Districts Entitlements": {
+            "type": "Districts_Entitlements"
+        },
+        "Don Pedro Reservoir/Cost": {
+            "type": "constant",
+            "value": -10
+        },
+        "Don Pedro Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Don Pedro Reservoir",
+            "volumes": [
+                0.0,
+                0.2,
+                0.5,
+                1.1,
+                2.2,
+                4.0,
+                7.8,
+                15.3,
+                27.0,
+                43.7,
+                66.9,
+                98.4,
+                139.8,
+                195.8,
+                262.6,
+                338.9,
+                385.5,
+                524.9,
+                638.3,
+                767.2,
+                911.5,
+                989.9,
+                1072.8,
+                1252.9,
+                1453.4,
+                1676.6,
+                1924.6,
+                2199.7,
+                2504.0,
+                2821.8
+            ],
+            "values": [
+                88.4,
+                97.5,
+                100.6,
+                106.7,
+                112.8,
+                118.9,
+                125.0,
+                131.1,
+                137.2,
+                143.3,
+                149.3,
+                155.4,
+                161.5,
+                167.6,
+                173.7,
+                179.8,
+                185.9,
+                192.0,
+                198.1,
+                204.2,
+                210.3,
+                213.3,
+                216.4,
+                222.5,
+                228.6,
+                234.7,
+                240.8,
+                246.9,
+                253.0,
+                258.8
+            ],
+            "kind": "cubic",
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Hetch Hetchy Reservoir/Cost": {
+            "type": "constant",
+            "value": -1500
+        },
+        "Hetch Hetchy Reservoir/Precipitation": {
+            "type": "dataframe",
+            "url": "/content/cen_sierra_pywr/data/Tuolumne_River/hydrology/historical/Livneh/precipitation/precipitation_Hetch_Hetchy_mm.csv",
+            "header": 0,
+            "index_col": 0,
+            "parse_dates": true,
+            "squeeze": true
+        },
+        "Hetch Hetchy Reservoir/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Hetch Hetchy Reservoir",
+            "volumes": [
+                0.0,
+                0.1,
+                0.2,
+                0.5,
+                4.1,
+                10.7,
+                28.2,
+                48.7,
+                70.8,
+                94.3,
+                119.6,
+                147.8,
+                180.3,
+                215.8,
+                254.0,
+                294.6,
+                337.5,
+                382.7,
+                429.8,
+                444.6
+            ],
+            "values": [
+                1070.5,
+                1070.8,
+                1071.4,
+                1072.9,
+                1075.9,
+                1079.0,
+                1085.1,
+                1091.2,
+                1097.3,
+                1103.4,
+                1109.5,
+                1115.6,
+                1121.7,
+                1127.8,
+                1133.9,
+                1140.0,
+                1146.0,
+                1152.1,
+                1158.2,
+                1160.1
+            ],
+            "kind": "cubic",
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "IFR bl Cherry Lake/Min Flow": {
+            "type": "IFR_bl_Cherry_Lake_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR at La Grange/Water Year Type": {
+            "type": "IFR_at_La_Grange_Water_Year_Type",
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "IFR at La Grange/Min Flow": {
+            "type": "IFR_at_La_Grange_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/Water Year Type": {
+            "type": "IFR_bl_Hetch_Hetchy_Reservoir_Water_Year_Type",
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/Base Flow": {
+            "type": "IFR_bl_Hetch_Hetchy_Reservoir_Base_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/Min Flow": {
+            "type": "IFR_bl_Hetch_Hetchy_Reservoir_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Hetch Hetchy Reservoir/UTREP Spill": {
+            "type": "IFR_bl_Hetch_Hetchy_Reservoir_UTREP_Spill",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "IFR bl Lake Eleanor/Min Flow": {
+            "type": "IFR_bl_Lake_Eleanor_Min_Flow",
+            "comment": "{\"dim\": \"Volumetric flow rate\", \"scale\": 1, \"unit\": \"m^3 s^-1\"}"
+        },
+        "Kirkwood PH/Demand": {
+            "type": "Kirkwood_PH_Demand"
+        },
+        "Lake Eleanor/Cost": {
+            "type": "constant",
+            "value": 0
+        },
+        "Lake Eleanor/Elevation": {
+            "type": "interpolatedvolume",
+            "node": "Lake Eleanor",
+            "volumes": [
+                0.0,
+                0.1,
+                0.3,
+                0.7,
+                1.2,
+                1.8,
+                3.0,
+                4.4,
+                6.5,
+                9.0,
+                12.7,
+                16.6,
+                21.0,
+                26.5,
+                32.2,
+                34.0
+            ],
+            "values": [
+                1404.5,
+                1408.8,
+                1409.7,
+                1410.0,
+                1410.3,
+                1410.6,
+                1411.2,
+                1411.8,
+                1412.7,
+                1413.7,
+                1414.9,
+                1416.1,
+                1417.3,
+                1418.8,
+                1420.4,
+                1420.5
+            ],
+            "kind": "cubic",
+            "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
+        },
+        "Lake Eleanor/Forecasted Inflow": {
+            "type": "Lake_Eleanor_Forecasted_Inflow"
+        },
+        "Lower Cherry Aqueduct 1/Flow Requirement": {
+            "type": "Lower_Cherry_Aqueduct_1_Flow_Requirement"
+        },
+        "Modesto Irrigation District/Demand": {
+            "type": "Modesto_Irrigation_District_Demand"
+        },
+        "SFPUC requirement/Demand Reduction": {
+            "type": "SFPUC_requirement_Demand_Reduction"
+        },
+        "SFPUC requirement/Demand": {
+            "type": "SFPUC_requirement_Demand"
+        },
+        "SFPUC requirement/Annual Demand": {
+            "type": "Constant",
+            "value": 331.83
+        },
+        "Turlock Irrigation District/Demand": {
+            "type": "Turlock_Irrigation_District_Demand"
+        },
+        "cfs2cms": {
+            "type": "constant",
+            "value": 0.02832058906825262,
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "San Joaquin Valley WYI": {
+            "type": "San_Joaquin_Valley_WYI",
+            "comment": "{\"dim\": \"Volume\", \"scale\": 1000000, \"unit\": \"ac-ft\"}"
+        },
+        "San Joaquin Valley WYT": {
+            "type": "San_Joaquin_Valley_WYT",
+            "comment": "{\"dim\": \"dimensionless\", \"scale\": 1, \"unit\": \"-\"}"
+        },
+        "Water Bank Preferred Storage AF": {
+            "type": "monthlyprofile",
+            "values": [
+                570000,
+                570000,
+                570000,
+                570000,
+                570000,
+                570000,
+                510000,
+                510000,
+                510000,
+                510000,
+                510000,
+                510000
+            ]
+        },
+        "TUO_01 Inflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/TUO_01 Inflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Upper Hetch Hetchy Tunnel Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Upper Hetch Hetchy Tunnel Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Cherry Lake Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Cherry Lake Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Lake Eleanor Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Lake Eleanor Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Hetch Hetchy Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Hetch Hetchy Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Moccasin Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Moccasin Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Priest Reservoir Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Priest Reservoir Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+        "Hetch Hetchy Aquaduct Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Tuolumne River/hydrology/historical/Livneh/runoff_aggregated/Hetch Hetchy Aquaduct Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        }
+    },
+    "recorders": {
+        "Cherry Lake/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Cherry Lake"
+        },
+        "Cherry Lake/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Cherry Lake"
+        },
+        "Districts Entitlements/flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Districts Entitlements"
+        },
+        "Dion R Holm PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Dion R Holm PH"
+        },
+        "Dion R Holm PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Dion R Holm PH"
+        },
+        "Don Pedro Lake Spillway/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Don Pedro Lake Spillway"
+        },
+        "Don Pedro PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Don Pedro PH"
+        },
+        "Don Pedro PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Don Pedro PH"
+        },
+        "Don Pedro Lake Flood Control/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Don Pedro Lake Flood Control"
+        },
+        "Don Pedro Lake Flood Control/requirement": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Don Pedro Lake Flood Control/Requirement"
+        },
+        "Don Pedro Reservoir/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Don Pedro Reservoir"
+        },
+        "Don Pedro Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Don Pedro Reservoir"
+        },
+        "Water Bank/storage": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Water Bank"
+        },
+        "Eleanor-Cherry Pumping/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Eleanor-Cherry Pumping"
+        },
+        "Eleanor-Cherry Gravity/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Eleanor-Cherry Gravity"
+        },
+        "Groveland/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Groveland"
+        },
+        "Hetch Hetchy Reservoir/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Hetch Hetchy Reservoir"
+        },
+        "IFR bl Cherry Lake/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Cherry Lake"
+        },
+        "IFR bl Cherry Lake/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Cherry Lake/Min Flow"
+        },
+        "IFR at La Grange/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR at La Grange"
+        },
+        "IFR at La Grange/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR at La Grange/Min Flow"
+        },
+        "IFR at La Grange/water year type": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR at La Grange/Water Year Type"
+        },
+        "IFR bl Hetch Hetchy Reservoir/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Hetch Hetchy Reservoir"
+        },
+        "IFR bl Hetch Hetchy Reservoir/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Hetch Hetchy Reservoir/Min Flow"
+        },
+        "IFR bl Hetch Hetchy Reservoir/base flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Hetch Hetchy Reservoir/Base Flow"
+        },
+        "IFR bl Hetch Hetchy Reservoir/water year type": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Hetch Hetchy Reservoir/Water Year Type"
+        },
+        "IFR bl Lake Eleanor/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "IFR bl Lake Eleanor"
+        },
+        "IFR bl Lake Eleanor/min flow": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "IFR bl Lake Eleanor/Min Flow"
+        },
+        "Moccasin Fish Hatchery/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Moccasin Fish Hatchery"
+        },
+        "Kirkwood PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Kirkwood PH"
+        },
+        "Kirkwood PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Kirkwood PH"
+        },
+        "Lake Eleanor/storage": {
+            "type": "NumpyArrayStorageRecorder",
+            "node": "Lake Eleanor"
+        },
+        "Lake Eleanor/elevation": {
+            "type": "NumpyArrayLevelRecorder",
+            "node": "Lake Eleanor"
+        },
+        "Lower Cherry Aqueduct 1/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Lower Cherry Aqueduct 1"
+        },
+        "Moccasin PH/energy": {
+            "type": "HydropowerEnergyRecorder",
+            "node": "Moccasin PH"
+        },
+        "Moccasin PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Moccasin PH"
+        },
+        "Modesto Irrigation District/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Modesto Irrigation District"
+        },
+        "SFPUC/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "SFPUC"
+        },
+        "Modesto Irrigation District/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Modesto Irrigation District/Demand"
+        },
+        "SFPUC requirement/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "SFPUC requirement/Demand"
+        },
+        "Tuolumne River Outflow/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Tuolumne River Outflow"
+        },
+        "Turlock Irrigation District/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Turlock Irrigation District"
+        },
+        "Turlock Irrigation District/demand": {
+            "type": "NumpyArrayParameterRecorder",
+            "parameter": "Turlock Irrigation District/Demand"
+        }
+    }
+}
