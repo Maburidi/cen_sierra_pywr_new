@@ -53,8 +53,8 @@ class Don_Pedro_Lake_Flood_Control_Requirement(BaseParameter):
             HH_space = HH.max_volume - HH.volume[scenario_index.global_id]
             available_space = NDP_space + HH_space
             forecasted_spill = forecast - available_space  # 20 TAF buffer
-            if forecasted_spill > 0:
-                release_mcm = max(release_mcm, forecasted_spill / forecast_days)
+            if forecasted_spill.item() > 0:
+                release_mcm = np.maximum(release_mcm, forecasted_spill / forecast_days)
 
                 # limit extra release 4000 cfs (9.7862 mcm) if we are below the flood curve
                 # if prev_storage_mcm < flood_control_curve_mcm:
