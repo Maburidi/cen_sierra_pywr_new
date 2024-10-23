@@ -2,6 +2,7 @@ from datetime import datetime
 from sierra.base_parameters import BaseParameter
 
 from sierra.utilities.converter import convert
+import numpy as np
 
 
 class Don_Pedro_Lake_Flood_Control_Requirement(BaseParameter):
@@ -18,7 +19,7 @@ class Don_Pedro_Lake_Flood_Control_Requirement(BaseParameter):
 
         # Get target storage
         flood_curve = self.model.tables["Don Pedro Lake Flood Control Curve"]
-        flood_control_curve_mcm = flood_curve.at['{}-{}'.format(month, day)]
+        flood_control_curve_mcm = flood_curve.loc['{}-{}'.format(month, day), "Flood Control Space (mcm)"]
 
         NDP = self.model.nodes["Don Pedro Reservoir"]
 
@@ -59,27 +60,28 @@ class Don_Pedro_Lake_Flood_Control_Requirement(BaseParameter):
                 # if prev_storage_mcm < flood_control_curve_mcm:
                 #     release_mcm = min(release_mcm, 9.7862)
 
-        if (7, 1) < month_day <= (10, 7):
+        if (7,1) < month_day <= (10,7):
             end = datetime(timestep.year, 10, 7)
             drawdown_days = (end - start).days + 1
             # oct_target_mcm = 1690 cfs w/ 10 cfs buffer = (1690 - 10) * 1.2335 = 2072.28 mcm
-            drawdown_release_mcm = max((prev_storage_mcm - 2072.28) / drawdown_days, 0)
+            drawdown_release_mcm = np.maximum((prev_storage_mcm - 2072.28) / drawdown_days, 0)
             inflow_forecast_mcm = FNF_df[start:end].sum() / drawdown_days
             # downstream_demand_mcm = MID_mcm + TID_mcm + IFR_mcm
             downstream_demand_mcm = 3
-            extra_release_mcm = max(drawdown_release_mcm + inflow_forecast_mcm - downstream_demand_mcm, 0)
+            extra_release_mcm = np.maximum(drawdown_release_mcm + inflow_forecast_mcm - downstream_demand_mcm, 0)
             release_mcm += extra_release_mcm
 
             # Let's also limit ramping (for both instream flow and reservoir management reasons)
             prev_release_mcm = DP_flood_control.prev_flow[scenario_index.global_id]
-            if release_mcm > prev_release_mcm:
-                release_mcm = min(release_mcm, prev_release_mcm * 0.99)
-            elif release_mcm < prev_release_mcm:
-                release_mcm = max(release_mcm, prev_release_mcm * 0.9)
+
+            if release_mcm.item() > prev_release_mcm:
+                release_mcm = np.minimum(release_mcm, prev_release_mcm * 0.99)
+            elif release_mcm.item() < prev_release_mcm:
+                release_mcm = np.maximum(release_mcm, prev_release_mcm * 0.9)
 
         max_release_mcm = MID_mcm + TID_mcm + 9000 / 35.31 * 0.0864
 
-        release_mcm = min(release_mcm, max_release_mcm)  # max release
+        release_mcm = np.minimum(release_mcm, max_release_mcm)  # max release
 
         return release_mcm / 0.0864
 
