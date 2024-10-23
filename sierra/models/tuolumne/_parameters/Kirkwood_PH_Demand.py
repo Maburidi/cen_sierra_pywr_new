@@ -12,7 +12,7 @@ class Kirkwood_PH_Demand(BaseParameter):
     def setup(self):
         super().setup()
         num_scenarios = len(self.model.scenarios.combinations)
-        self.prev_release_cms = np.zeros(num_scenarios, np.float)
+        self.prev_release_cms = np.zeros(num_scenarios, float) 
 
     def _value(self, timestep, scenario_index):
 
