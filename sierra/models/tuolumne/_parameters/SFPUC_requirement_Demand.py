@@ -13,7 +13,9 @@ class SFPUC_requirement_Demand(BaseParameter):
 
         week = min(timestep.datetime.week, 52)
         daily_fractions = self.model.tables["SFPUC weekly fraction"]
-        daily_fraction = daily_fractions[week] / 7
+
+
+        daily_fraction = daily_fractions.loc[week, 'Fraction'] / 7
         daily_demand_cms = annual_demand_mcm * daily_fraction / 0.0864
 
         hh = self.model.nodes["Hetch Hetchy Reservoir"].volume[scenario_index.global_id]
