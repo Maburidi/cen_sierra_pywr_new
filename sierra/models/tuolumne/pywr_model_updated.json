@@ -743,7 +743,6 @@
                 1432.6,
                 1433.5
             ],
-            "kind": "cubic",
             "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
         },
         "Districts Entitlements": {
@@ -820,7 +819,6 @@
                 253.0,
                 258.8
             ],
-            "kind": "cubic",
             "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
         },
         "Hetch Hetchy Reservoir/Cost": {
@@ -882,7 +880,6 @@
                 1158.2,
                 1160.1
             ],
-            "kind": "cubic",
             "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
         },
         "IFR bl Cherry Lake/Min Flow": {
@@ -963,7 +960,6 @@
                 1420.4,
                 1420.5
             ],
-            "kind": "cubic",
             "comment": "{\"dim\": \"Length\", \"scale\": 1, \"unit\": \"m\"}"
         },
         "Lake Eleanor/Forecasted Inflow": {
