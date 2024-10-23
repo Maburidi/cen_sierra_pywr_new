@@ -21,20 +21,23 @@
         {
             "name": "Exchequer Dam Flood Release",
             "type": "PiecewiseLink",
-            "max_flow": [
+            "max_flows": [
                 "Exchequer Dam Flood Release/Requirement",
                 null
             ],
-            "cost": [
+            "costs": [
                 -1000,
                 1
-            ]
+            ], "nsteps":2
         },
         {
             "name": "IFR bl New Exchequer Dam",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl New Exchequer Dam/Violation Cost",
-            "min_flow": "IFR bl New Exchequer Dam/Min Flow"
+            "min_flows": "IFR bl New Exchequer Dam/Min Flow",
+            "costs":[0,0,0],
+            "max_flows":[null,null,null],
+            "nsteps":3
         },
         {
             "name": "Crocker-Huffman Diversion Reservoir",
@@ -69,29 +72,35 @@
             "type": "Hydropower",
             "head": 16.46,
             "turbine_capacity": 6.606,
-            "cost": [
+            "costs": [
                 0,
                 "McSwain PH/Excess Value"
-            ]
+            ],
+            "maxflows": [null, null],
+            "nsteps":2
         },
         {
             "name": "Merced Falls PH",
             "type": "Hydropower",
             "head": 7.925,
             "turbine_capacity": 3,
-            "cost": [
+            "costs": [
                 "Merced Falls PH/Base Value",
                 "Merced Falls PH/Excess Value"
-            ]
+            ],
+            "maxflows": [null, null],
+            "nsteps":2
         },
         {
             "name": "IFR at Shaffer Bridge",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR at Shaffer Bridge/Min Flow Cost",
             "max_flow_cost": "IFR at Shaffer Bridge/Max Flow Cost",
-            "min_flow": "IFR at Shaffer Bridge/Min Flow",
-            "max_flow": "IFR at Shaffer Bridge/Max Flow",
-            "ifr_type": "enhanced"
+            "min_flows": "IFR at Shaffer Bridge/Min Flow",
+            "max_flows": ["IFR at Shaffer Bridge/Max Flow"],
+            "ifr_type": "enhanced",
+            "costs": [0],
+            "nsteps":1
         },
         {
             "name": "Merced River Outflow",
@@ -118,7 +127,9 @@
             "water_elevation_reservoir": "Lake McClure",
             "cost": [
                 -1
-            ]
+            ],
+            "max_flows": [null],
+            "nsteps":1 
         }
     ],
     "edges": [
