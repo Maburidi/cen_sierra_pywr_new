@@ -35,9 +35,9 @@ class IFR_bl_Hetch_Hetchy_Reservoir_Water_Year_Type(MinFlowParameter):
             if date.month <= 6:
                 precip = self.model.parameters["Hetch Hetchy Reservoir/Precipitation"].dataframe
                 total_precip = precip[oct_1:date].sum() / 25.4  # Sum & convert mm to inches
-                if total_precip < 6.1:
+                if total_precip.item() < 6.1:
                     WYT = 1
-                elif 6.1 <= total_precip < 8.8:
+                elif 6.1 <= total_precip.item() < 8.8:
                     WYT = 2
                 else:
                     WYT = 3
