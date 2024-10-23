@@ -37,7 +37,8 @@ class Exchequer_Dam_Flood_Release_Requirement(BaseParameter):
     def before(self):
         super().before()
         if (self.model.timestep.month, self.model.timestep.day) == (10, 1):
-            SJVI = self.model.tables["San Joaquin Valley Index"][self.model.timestep.year + 1]
+            sjvi = self.model.tables["San Joaquin Valley Index"]                
+            SJVI = sjvi.loc[self.model.timestep.year + 1,'SJVI (maf)' ]                        
             if SJVI <= 2.5:
                 self.wyt = 'dry'
             elif SJVI < 3.8:
