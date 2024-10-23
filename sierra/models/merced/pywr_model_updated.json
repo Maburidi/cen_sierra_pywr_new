@@ -88,7 +88,7 @@
                 "Merced Falls PH/Base Value",
                 "Merced Falls PH/Excess Value"
             ],
-            "maxflows": [null, null],
+            "max_flows": [null, null],
             "nsteps":2
         },
         {
