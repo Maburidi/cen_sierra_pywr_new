@@ -1,4 +1,4 @@
-from sierra.base_parameters import BaseParameter
+from cen_sierra_pywr_new.sierra.base_parameters import BaseParameter
 
 
 class Lake_McClure_Water_Demand(BaseParameter):
@@ -7,7 +7,8 @@ class Lake_McClure_Water_Demand(BaseParameter):
     def _value(self, timestep, scenario_index):
 
         if (timestep.month, timestep.day) == (10, 1):
-            SJVI = self.model.tables["San Joaquin Valley Index"][timestep.year + 1]
+            sjvi = self.model.tables["San Joaquin Valley Index"]                
+            SJVI = sjvi.loc[timestep.year + 1,'SJVI (maf)' ]                        
             # Note: this isn't exactly scenario safe, but self.wyt doesn't change between scenarios
             # so is okay as is.
             if SJVI <= 2.5:
