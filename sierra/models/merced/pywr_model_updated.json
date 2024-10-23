@@ -400,8 +400,7 @@
                 251.3,
                 255.0,
                 263.7
-            ],
-            "kind": "cubic"
+            ]
         },
         "Lake McClure Inflow/Runoff": {
             "type": "InflowDataframe",
