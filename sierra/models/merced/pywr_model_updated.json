@@ -125,7 +125,7 @@
             "flow_capacity": "New Exchequer PH/Turbine Capacity",
             "tailwater_elevation": 120,
             "water_elevation_reservoir": "Lake McClure",
-            "cost": [
+            "costs": [
                 -1
             ],
             "max_flows": [null],
