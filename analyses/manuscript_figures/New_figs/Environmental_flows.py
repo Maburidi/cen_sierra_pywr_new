@@ -54,7 +54,7 @@ def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning=
     #data_path = os.environ['SIERRA_DATA_PATH']
     
     obs_path = Path('/content/cen_sierra_pywr_new/data/', 'Stanislaus_River/gauges/streamflow_cfs.csv')
-    print(obs_path)
+
     df_obs = pd.read_csv(obs_path, index_col=0, parse_dates=True)
     column_names = df_obs.columns
 
