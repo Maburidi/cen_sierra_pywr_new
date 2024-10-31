@@ -42,7 +42,7 @@ class DataReader:
 
 
 
-def plot_environmental_flows(basin,data_path, node, figs_path, start, end, scen, planning= None):
+def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning= None):
     # setup
 
     # prepare plot
@@ -52,7 +52,7 @@ def plot_environmental_flows(basin,data_path, node, figs_path, start, end, scen,
 
     #data_path = os.environ['SIERRA_DATA_PATH']
     
-    obs_path = Path(data_path, 'Stanislaus_River/gauges/streamflow_cfs.csv')
+    obs_path = Path('content/cen_sierra_pywr_new/data/', 'Stanislaus_River/gauges/streamflow_cfs.csv')
     df_obs = pd.read_csv(obs_path, index_col=0, parse_dates=True)
     column_names = df_obs.columns
 
