@@ -43,7 +43,7 @@ class DataReader:
 
 
 
-def plot_environmental_flows1(basin, node, figs_path, start, end, scen, planning= None):
+def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning= None):
     # setup
 
     # prepare plot
