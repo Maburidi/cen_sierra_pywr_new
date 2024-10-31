@@ -11,11 +11,12 @@ sns.set_palette('Set1')
 
 
 class DataReader:
-    def __init__(self, scenario=None, basin=None, start=None, end=None):
+    def __init__(self,node, scenario=None, basin=None, start=None, end=None):
         self.basin = basin
         self.scenario = scenario        
         self.start = start             
-        self.end = end                  
+        self.end = end    
+        self.node = node              
 
     def get_df(self, var, label=None):
         #output_dir = os.environ.get('SIERRA_RESULTS_PATH', '../../results')    
@@ -33,7 +34,7 @@ class DataReader:
 
         path = Path(csv_path, f'InstreamFlowRequirement_{var}_mcm.csv')
 
-        _df = pd.read_csv(path, index_col=0, parse_dates=True, header=0)[node][self.start:self.end].to_frame()
+        _df = pd.read_csv(path, index_col=0, parse_dates=True, header=0)[self.node][self.start:self.end].to_frame()
 
         _df = _df * 1e6 / 24 / 60 / 60
         _df.index.name = 'Date'
@@ -42,7 +43,7 @@ class DataReader:
 
 
 
-def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning= None):
+def plot_environmental_flows1(basin, node, figs_path, start, end, scen, planning= None):
     # setup
 
     # prepare plot
@@ -53,12 +54,13 @@ def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning=
     #data_path = os.environ['SIERRA_DATA_PATH']
     
     obs_path = Path('/content/cen_sierra_pywr_new/data/', 'Stanislaus_River/gauges/streamflow_cfs.csv')
+    print(obs_path)
     df_obs = pd.read_csv(obs_path, index_col=0, parse_dates=True)
     column_names = df_obs.columns
 
     df_obs = df_obs['USGS 11292900 MF STANISLAUS R BL BEARDSLEY DAM CA'][start:end] / 35.315
 
-    reader = DataReader(scen, basin=basin, start=start, end=end)
+    reader = DataReader( node, scen, basin=basin, start=start, end=end)
     df_flow = reader.get_df('Flow')
     df_min = reader.get_df('Min Flow')
     df_range = reader.get_df('Max Flow') 
