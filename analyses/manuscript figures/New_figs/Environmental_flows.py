@@ -48,11 +48,20 @@ def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning=
     # prepare plot
 
     fig, ax = plt.subplots(1, 1, figsize=(12, 4))
-
+    if basin == "stanislaus":
+        pp = 'Stanislaus_River'
+    elif basin == "upper_san_joaquin":      
+        pp = 'Upper_San_Joaquin_River'      
+    elif basin == "tuolumne":               
+        pp = 'Tuolumne_River'                  
+    else:
+        pp = 'Merced_River'
 
     #data_path = os.environ['SIERRA_DATA_PATH']
+
+    oee = pp + '/' + 'gauges/streamflow_cfs.csv'
     
-    obs_path = Path('/content/cen_sierra_pywr_new/data/', 'Stanislaus_River/gauges/streamflow_cfs.csv')
+    obs_path = Path('/content/cen_sierra_pywr_new/data/', oee ) 
     df_obs = pd.read_csv(obs_path, index_col=0, parse_dates=True)
     column_names = df_obs.columns
 
