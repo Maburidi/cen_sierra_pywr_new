@@ -136,6 +136,12 @@ kwargs = dict(
 if not multiprocessing:  # serial processing for debugging
     for args in model_args:
         model = run_model(*args, **kwargs) 
+        import pickle
+        path = os.path.join('/content/cen_sierra_pywr_new/results',run_name, basin , basin + '_model.pkl')
+  
+        with open(path , "wb") as f:
+            pickle.dump(model, f)
+
 
 else:
     import multiprocessing as mp
