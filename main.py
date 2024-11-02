@@ -8,7 +8,7 @@ from sierra.run_basin_model import run_model
 
 from loguru import logger
 from datetime import date
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 #load_dotenv()
 
 
