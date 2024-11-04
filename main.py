@@ -133,9 +133,34 @@ kwargs = dict(
 
 
 
-if not multiprocessing:  # serial processing for debugging
-    for args in model_args:
-        model = run_model(*args, **kwargs) 
+if not multiprocessing:      # Serial processing for debugging                                                       
+
+    for args in model_args:                                       
+        model = run_model(*args, **kwargs)                  
+    
+
+    #============ SAVE RESULTS AT THE RECORDER =============
+    import pandas as pd                     
+    rec_list = []
+    for recorder in model.recorders:
+        try:                          
+            rec_list.append(str(recorder.node.name))
+        except: continue
+    timesteps = pd.DataFrame(model.timestepper.datetime_index, columns =['Date'])
+    all_recorders_data = timesteps.copy() 
+
+    for rec in model.recorders:
+        
+        try:
+           res = rec.data           
+           res_df = pd.DataFrame(res, columns=[ rec.node.name ]) 
+           all_recorders_data = pd.concat([all_recorders_data, res_df], axis=1)
+        except Exception as e:
+           continue 
+        
+    all_recorders_data.to_csv("/content/cen_sierra_pywr_new/results/all_recorders_output1.csv", index=False)
+
+
 else:
     import multiprocessing as mp
 
