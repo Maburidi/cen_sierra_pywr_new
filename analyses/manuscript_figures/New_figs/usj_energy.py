@@ -104,6 +104,6 @@ def plot_basin_energy(basin,scen, start, end, figs_path):
     
 
     
-    fig.savefig( figs_path + 'usj energy.png' , dpi=600)
+    fig.savefig( figs_path + '/usj energy.png' , dpi=600)
 
     plt.show()
