@@ -1,9 +1,124 @@
-{     
+{
     "debug": {
         "name": "Debug",
         "climates": [
             "historical"
         ]
-    } 
-      
-}     
+    },
+    "price_year": {
+        "name": "Energy Prices",
+        "climates": [
+            "historical"
+        ],
+        "scenarios": [
+            "energy_prices"
+        ]
+    },
+    "natural_flow": {
+    	"name": "Natural Flow",
+    	"climates": [
+            "historical"
+    	],
+    	"scenarios": [
+    		"natural_flow"
+    	]
+    },
+    "swrcb_40": {
+    	"name": "SWRCB40",
+    	"climates": [
+            "historical"
+    	],
+    	"scenarios": [
+    		"swrcb_40"
+    	]
+    },
+    "all_ifr_scenarios": {
+        "name": "All IFR scenarios - whole basin",
+        "climates": [
+            "historical",
+            "gcms"
+        ],
+        "scenarios": [
+            "all_ifr_scenarios"
+        ]
+    },
+    "functional_flows_full": {
+        "name": "Functional Flows with Climate Change",
+        "climates": [
+            "historical",
+            "gcms"
+        ],
+        "scenarios": [
+            "functional_flows"
+        ]
+    },
+    "functional_flows_basic": {
+        "name": "Functional Flows Historical",
+        "climates": [
+            "historical"
+        ],
+        "scenarios": [
+            "functional_flows_basic"
+        ]
+    },
+    "functional_flows_simple": {
+        "name": "Functional Flows Simple",
+        "climates": [
+            "historical"
+        ],
+        "scenarios": [
+            "functional_flows_simple"
+        ]
+    },
+    "functional_flows_historical": {
+        "name": "Functional Flows Historical",
+        "climates": [
+            "historical"
+        ],
+        "scenarios": [
+            "functional_flows_historical"
+        ]
+    },
+    "basic_ifrs_energy_prices": {
+        "name": "Binary IFRs x Prices",
+        "climates": [
+            "gcms"
+        ],
+        "scenarios": [
+            "energy_prices",
+            "binary_ifrs"
+        ]
+    },
+    "gcms": {
+        "name": "GCMs test",
+        "climates": [
+            "gcms"
+        ],
+        "scenarios": []
+    },
+    "whiplash": {
+        "name": "Whiplash",
+        "climates": [
+            "sequences"
+        ],
+        "scenarios": [
+            "energy_prices"
+        ]
+    },
+    "full_study": {
+        "name": "Functional flows with future energy prices",
+        "climates": [
+            "historical"
+        ],
+        "scenarios": [
+            "functional_flows_basic"
+        ]
+    },
+    "energy_prices_only": {
+        "name": "Energy prices only",
+        "scenarios": [
+            "energy_prices"
+        ]
+    }
+}
+
