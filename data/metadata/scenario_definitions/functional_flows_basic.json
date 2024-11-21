@@ -1,0 +1,18 @@
+{
+    "scenarios": [
+        {
+            "name": "IFRs",
+            "size": 2,
+            "ensemble_names": [
+                "Baseline",
+                "Functional Flows"
+            ]
+        }
+    ],
+	"tables": {
+		"functional flows metrics": {
+		"url": "../data/Stanislaus River/_tables/Functional_Flows_metrics.csv",
+		"index_col": 0,
+		"header": 0
+    },
+}
