@@ -6,6 +6,7 @@ from functools import partial
 
 from sierra.run_basin_model import run_model
 
+import pandas as pd
 from loguru import logger
 from datetime import date
 #from dotenv import load_dotenv
