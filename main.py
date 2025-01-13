@@ -31,7 +31,7 @@ parser.add_argument("-y", "--years", help="Years to run (useful for debugging)",
 parser.add_argument("-n", "--run_name", help="Run name")
 parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='store_true')
 parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
-parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/') args.gcm_model
+parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/') 
 parser.add_argument("-gm", "--gcm_model", help="set the GCM model name if running gcms", default=None)
 
 #parser.add_argument("--logs_dir", help="Path to the logs directory",
