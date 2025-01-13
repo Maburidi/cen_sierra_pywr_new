@@ -99,7 +99,7 @@ if args.scenario_set:
                 
             if debug:
                 gcm_rcps = gcm_rcps[:1]  # Just do 2 gcm_rcps for debugging
-            climate_sets['gcms'] = gcm_rcps[index]
+            climate_sets['gcms'] = [gcm_rcps[index]]
         if 'sequences' in climates:
             sequences_file = os.path.join(data_path, 'metadata/sequence_definitions.csv')
             climate_sets['sequences'] = pd.read_csv(sequences_file, index_col=0, header=0).index
