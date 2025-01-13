@@ -17,7 +17,7 @@ from datetime import date
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--basin", help="Basin to run ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin', 'all']", default='upper_san_joaquin')
 #parser.add_argument("-d", "--debug", help="Debug", action='store_true')
-parser.add_argument("-d", "--debug", help="Debug", type=bool, default=True)
+parser.add_argument("-d", "--debug", help="Debug", type=bool, default=False)
 parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)", default=None)
 parser.add_argument("-c", "--num_cores", help="Number of cores to use in joblib multiprocessing", type=int)
 #parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
@@ -95,11 +95,16 @@ if args.scenario_set:
                 basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'gcms')
                 basin_gcm_rcps = os.listdir(basin_gcm_hydrology_path)
                 gcm_rcps = basin_gcm_rcps
-                index = gcm_rcps.index(args.gcm_model)
-                
-            if debug:
-                gcm_rcps = gcm_rcps[:1]  # Just do 2 gcm_rcps for debugging
-            climate_sets['gcms'] = [gcm_rcps[index]]
+                                
+            #if debug:
+            #    gcm_rcps = [str(args.gcm_model)]  # Just do 2 gcm_rcps for debugging
+            
+            if args.gcm_model in gcm_rcps: 
+                climate_sets['gcms'] = [str(args.gcm_model)]
+            else:
+                logger.info(f"'{args.gcm_model}' is not in gcm_rcps")
+  
+
         if 'sequences' in climates:
             sequences_file = os.path.join(data_path, 'metadata/sequence_definitions.csv')
             climate_sets['sequences'] = pd.read_csv(sequences_file, index_col=0, header=0).index
