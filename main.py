@@ -2,24 +2,27 @@ import os
 import json
 import argparse
 from itertools import product
-from sierra.run_basin_model import run_model
 from functools import partial
+
+from sierra.run_basin_model import run_model
+
 import pandas as pd
 from loguru import logger
-
 from datetime import date
+#from dotenv import load_dotenv
+#load_dotenv()
 
-from dotenv import load_dotenv
 
-load_dotenv()
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-b", "--basin", help="Basin to run")
-parser.add_argument("-d", "--debug", help="Debug", action='store_true')
-parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)")
+parser.add_argument("-b", "--basin", help="Basin to run ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin', 'all']", default='upper_san_joaquin')
+#parser.add_argument("-d", "--debug", help="Debug", action='store_true')
+parser.add_argument("-d", "--debug", help="Debug", type=bool, default=False)
+parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)", default=None)
 parser.add_argument("-c", "--num_cores", help="Number of cores to use in joblib multiprocessing", type=int)
-parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
-parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=8)
+#parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
+parser.add_argument("-p", "--include_planning", help="Include planning model", type=bool, default=False)
+parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=2)
 parser.add_argument("-bl", "--blocks", help="Number of piecewise blocks", type=int, default=5)
 parser.add_argument("-sc", "--scenario_set", help="Scenario set")
 parser.add_argument("-s", "--start_year", help="Start year", type=int)
@@ -28,17 +31,22 @@ parser.add_argument("-y", "--years", help="Years to run (useful for debugging)",
 parser.add_argument("-n", "--run_name", help="Run name")
 parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='store_true')
 parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
+parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/') 
+parser.add_argument("-gm", "--gcm_model", help="set the GCM model name if running gcms", default=None)
+
+#parser.add_argument("--logs_dir", help="Path to the logs directory",
+#                    default='/content/drive/MyDrive/Colab_Notebooks/PostDoc_Project1_Pywr/Proj1/cen_sierra_model/logs')
 args = parser.parse_args()
+
+#args = get_args()
 
 basin = args.basin
 debug = args.debug
+
 include_planning = args.include_planning
 multiprocessing = args.multiprocessing
+data_path = args.data_path
 
-try:
-    data_path = os.environ['SIERRA_DATA_PATH']
-except:
-    raise Exception("SIERRA_DATA_PATH must be defined in your environment")
 
 start = None
 end = None
@@ -52,6 +60,7 @@ climate_sets = {
 
 planning_months = args.planning_months
 
+
 if debug:
     start = '{}-10-01'.format(args.start_year or 2000)
     end = '{}-09-30'.format(args.end_year or 2002)
@@ -62,6 +71,7 @@ if debug:
 else:
     start = '{}-10-01'.format(args.start_year or 2051)
     end = '{}-09-30'.format(args.end_year or 2012)
+
 
 if args.scenario_set:
     scenario_sets_dir = os.path.join(data_path, 'metadata', 'scenario_sets.json')
@@ -81,26 +91,37 @@ if args.scenario_set:
         if 'gcms' in climates:
             gcm_rcps = scenario_set_definition.get('gcms')
             if not gcm_rcps:
-                full_basin_name = basin.replace('_', ' ').title() + ' River'
+                full_basin_name = basin.replace('_', ' ').title() + '_River'
                 basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'gcms')
                 basin_gcm_rcps = os.listdir(basin_gcm_hydrology_path)
                 gcm_rcps = basin_gcm_rcps
-            if debug:
-                gcm_rcps = gcm_rcps[:2]  # Just do 2 gcm_rcps for debugging
-            climate_sets['gcms'] = gcm_rcps
+                                
+            #if debug:
+            #    gcm_rcps = [str(args.gcm_model)]  # Just do 2 gcm_rcps for debugging
+            
+            if args.gcm_model in gcm_rcps: 
+                climate_sets['gcms'] = [str(args.gcm_model)]
+            else:
+                logger.info(f"'{args.gcm_model}' is not in gcm_rcps")
+  
+
         if 'sequences' in climates:
             sequences_file = os.path.join(data_path, 'metadata/sequence_definitions.csv')
             climate_sets['sequences'] = pd.read_csv(sequences_file, index_col=0, header=0).index
 
+
+
 climate_scenarios = []
 for climate_set, climates in climate_sets.items():
     climate_scenarios.extend(['{}/{}'.format(climate_set, climate) for climate in climates])
+
 
 if basin == 'all':
     basins = ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin']
     include_planning = True
 else:
     basins = [basin]
+
 
 model_args = list(product(climate_scenarios, basins))
 
@@ -120,9 +141,35 @@ kwargs = dict(
     file_suffix=None if debug or args.no_suffix else date.today().strftime('%Y-%m-%d')
 )
 
-if not multiprocessing:  # serial processing for debugging
-    for args in model_args:
-        run_model(*args, **kwargs)
+
+
+if not multiprocessing:      # Serial processing for debugging                                                       
+
+    for args in model_args:                                       
+        model = run_model(*args, **kwargs)                  
+    
+
+    #============ SAVE RESULTS AT THE RECORDER =============
+    import pandas as pd                     
+    rec_list = []
+    for recorder in model.recorders:
+        try:                          
+            rec_list.append(str(recorder.node.name))
+        except: continue
+    timesteps = pd.DataFrame(model.timestepper.datetime_index, columns =['Date'])
+    all_recorders_data = timesteps.copy() 
+
+    for rec in model.recorders:
+        
+        try:
+           res = rec.data           
+           res_df = pd.DataFrame(res, columns=[ rec.node.name ]) 
+           all_recorders_data = pd.concat([all_recorders_data, res_df], axis=1)
+        except Exception as e:
+           continue 
+        
+    all_recorders_data.to_csv("/content/cen_sierra_pywr_new/results/all_recorders_output1.csv", index=False)
+
 
 else:
     import multiprocessing as mp
