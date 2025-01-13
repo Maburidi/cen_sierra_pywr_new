@@ -31,7 +31,9 @@ parser.add_argument("-y", "--years", help="Years to run (useful for debugging)",
 parser.add_argument("-n", "--run_name", help="Run name")
 parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='store_true')
 parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
-parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/')
+parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/') args.gcm_model
+parser.add_argument("-gm", "--gcm_model", help="set the GCM model name if running gcms", default=None)
+
 #parser.add_argument("--logs_dir", help="Path to the logs directory",
 #                    default='/content/drive/MyDrive/Colab_Notebooks/PostDoc_Project1_Pywr/Proj1/cen_sierra_model/logs')
 args = parser.parse_args()
@@ -89,13 +91,15 @@ if args.scenario_set:
         if 'gcms' in climates:
             gcm_rcps = scenario_set_definition.get('gcms')
             if not gcm_rcps:
-                full_basin_name = basin.replace('_', ' ').title() + ' River'
+                full_basin_name = basin.replace('_', ' ').title() + '_River'
                 basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'gcms')
                 basin_gcm_rcps = os.listdir(basin_gcm_hydrology_path)
                 gcm_rcps = basin_gcm_rcps
+                index = gcm_rcps.index(args.gcm_model)
+                
             if debug:
-                gcm_rcps = gcm_rcps[:2]  # Just do 2 gcm_rcps for debugging
-            climate_sets['gcms'] = gcm_rcps
+                gcm_rcps = gcm_rcps[:1]  # Just do 2 gcm_rcps for debugging
+            climate_sets['gcms'] = gcm_rcps[index]
         if 'sequences' in climates:
             sequences_file = os.path.join(data_path, 'metadata/sequence_definitions.csv')
             climate_sets['sequences'] = pd.read_csv(sequences_file, index_col=0, header=0).index
