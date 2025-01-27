@@ -1,5 +1,3 @@
-
-
 import os
 from pathlib import Path
 import pandas as pd
@@ -11,7 +9,7 @@ sns.set_palette('Set1')
 
 
 class DataReader:
-    def __init__(self, scenario=None, basin=None, start=None, end=None):
+    def __init__(self, scenario=None, gcm_name= None, basin=None, start=None, end=None):
         self.basin = basin
         self.scenario = scenario        
         self.start = start             
@@ -26,6 +24,12 @@ class DataReader:
         suffix = '' 
 
         climate_scenario = 'historical/Livneh'
+
+        #"/content/cen_sierra_pywr_new/results/GCMs test/tuolumne/historical/Livneh/InstreamFlowRequirement_Flow_mcm.csv"
+        #"/content/cen_sierra_pywr_new/results/GCMs test/tuolumne/gcms/CCSM4_rcp85/InstreamFlowRequirement_Flow_mcm.csv"
+
+        if gcm_name: 
+            climate_scenario = '/gcms/' + gcm_name 
         if self.scenario:
             csv_path = Path(output_dir, self.scenario + suffix, self.basin, climate_scenario)
         else: 
@@ -42,7 +46,7 @@ class DataReader:
 
 
 
-def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning= None):
+def plot_environmental_flows(basin, node, figs_path, start, end, scen,gcm_name, planning= None):
     # setup
 
     # prepare plot
@@ -67,7 +71,7 @@ def plot_environmental_flows(basin, node, figs_path, start, end, scen, planning=
 
     df_obs = df_obs['USGS 11292900 MF STANISLAUS R BL BEARDSLEY DAM CA'][start:end] / 35.315
 
-    reader = DataReader(scen, basin=basin, start=start, end=end)
+    reader = DataReader(scen, basin=basin,gcm_name =gcm_name, start=start, end=end)
     df_flow = reader.get_df('Flow')
     df_min = reader.get_df('Min Flow')
     df_range = reader.get_df('Max Flow') 
