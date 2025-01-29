@@ -114,6 +114,13 @@
             "functional_flows_basic"
         ]
     },
+    "loca2_gcms": {
+        "name": "LOCA2_GCMs test",
+        "climates": [
+            "loca2_gcms"
+        ],
+        "scenarios": []
+    },
     "energy_prices_only": {
         "name": "Energy prices only",
         "scenarios": [
