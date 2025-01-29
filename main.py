@@ -33,6 +33,8 @@ parser.add_argument("-pb", "--progress_bar", help="Show progress bar", action='s
 parser.add_argument("-ns", "--no_suffix", help="Suppress file date suffix in output", action='store_true')
 parser.add_argument("--data_path", help="Path to the data directory", default='/content/cen_sierra_pywr_new/data/') 
 parser.add_argument("-gm", "--gcm_model", help="set the GCM model name if running gcms", default=None)
+parser.add_argument("-lgm", "--lgcm_model", help="set the LOCA2 GCM model name if running gcms", default=None)
+
 
 #parser.add_argument("--logs_dir", help="Path to the logs directory",
 #                    default='/content/drive/MyDrive/Colab_Notebooks/PostDoc_Project1_Pywr/Proj1/cen_sierra_model/logs')
@@ -103,6 +105,22 @@ if args.scenario_set:
                 climate_sets['gcms'] = [str(args.gcm_model)]
             else:
                 logger.info(f"'{args.gcm_model}' is not in gcm_rcps")
+        
+        if 'loca2_gcms' in climates:
+            loca2_gcm_rcps = scenario_set_definition.get('loca2_gcms')
+            if not loca2_gcm_rcps:
+                full_basin_name = basin.replace('_', ' ').title() + '_River'
+                loca2_basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'LOCA2_gcms')
+                loca2_basin_gcm_rcps = os.listdir(loca2_basin_gcm_hydrology_path)
+                loca2_gcm_rcps = loca2_basin_gcm_rcps
+                                
+            #if debug:
+            #    gcm_rcps = [str(args.gcm_model)]  # Just do 2 gcm_rcps for debugging
+            
+            if args.lgcm_model in loca2_gcm_rcps: 
+                climate_sets['LOCA2_gcms'] = [str(args.lgcm_model)]
+            else:
+                logger.info(f"'{args.gcm_model}' is not in gcm_rcps")
   
 
         if 'sequences' in climates:
@@ -124,6 +142,8 @@ else:
 
 
 model_args = list(product(climate_scenarios, basins))
+
+print(model_args)
 
 kwargs = dict(
     run_name=run_name,
