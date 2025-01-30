@@ -1,5 +1,11 @@
 # CenSierraPywr models
 
+
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Maburidi/cen_sierra_pywr_new/blob/main/Colab_tutorial/Tutorial_run_the_model.ipynb)
+
+
+
 This repository includes the code base for modeling the hydropower systems of the primary tributaries of California's San Joaquin river.
 
 This readme includes
