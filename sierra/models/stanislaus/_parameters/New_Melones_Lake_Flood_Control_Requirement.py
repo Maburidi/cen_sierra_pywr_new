@@ -101,7 +101,7 @@ class New_Melones_Lake_Flood_Control_Requirement(BaseParameter):
             # ag_demand_mcm /= forecast_days
 
         # This is our overall target release, without accounting for max downstream releases
-        release_mcm = float(max(release_mcm, 0))
+        release_mcm = float(np.max(release_mcm, 0))
 
         # Release a bit more to fill Lake Tulloch during the refill period
 
