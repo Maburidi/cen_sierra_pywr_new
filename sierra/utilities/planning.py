@@ -262,7 +262,7 @@ def prepare_planning_model(m, basin, climate, outpath, steps=12, blocks=8, param
                     elif type(value) == list:
                         new_values = []
                         for j, v in enumerate(value):
-                            if type(v) == str:
+                            if type(v) == str and v != None :
                                 if v not in parameters_to_expand:
                                     parameters_to_expand.append(v)
                                 parts = v.split('/')
@@ -281,6 +281,22 @@ def prepare_planning_model(m, basin, climate, outpath, steps=12, blocks=8, param
                             else:
                                 new_values.append(v)
                         new_node[key] = new_values
+
+                        if len(new_node['max_flows']) != len(new_node['costs']):
+                            if len(new_node['max_flows']) > len(new_node['costs']):
+                                if None in new_node['max_flows']:
+                                    new_node['max_flows'] = [x for x in new_node['max_flows'] if x is not None]  
+                                else:
+                                    new_node['max_flows'] = new_node['max_flows'][:len(new_node['costs'])]
+                            else:
+                                if None in new_node['costs']:            
+                                    new_node['costs'] = [x for x in new_node['costs'] if x is not None]   # Remove None
+                                else:
+                                    new_node['costs'] = new_node['costs'][:len(new_node['max_flows'])]    
+                 
+                    if key == 'nsteps':
+                        new_node[key] = int(max(len(new_node['max_flows']), len(new_node['costs'])))
+                        
 
                 new_nodes.append(new_node)
 
