@@ -299,36 +299,55 @@ def _run_model(climate,
 
         # create filenames, etc.
         monthly_filename = model_filename_base + '_monthly.json'
+
+        
         planning_model_path = os.path.join(temp_dir, monthly_filename)
 
         prepare_planning_model(model_json, basin, climate, planning_model_path,
                                steps=planning_months, blocks=blocks, debug=debug, remove_rim_dams=True)
 
+        logger.info('Planning model has been created!')
+
         if debug:
             try:
-                create_schematic(basin, 'monthly')
+                create_schematic(basin, 'monthly', gcms_ = climate_scenario)
+                logger.info('Monthly schematic has been created!')
             except ExecutableNotFound:
                 logger.warning('Graphviz executable not found. Monthly schematic not created.')
 
         # create pywr model
         try:
+            logger.info('Start loading planning model')
             planning_model = Model.load(planning_model_path, path=planning_model_path)
+            logger.info('Planning Model has been Loaded!')
         except Exception as err:
-            logger.error("Planning model failed to load")
+            logger.error("Planning model failed to load")       
             # logger.error(err)
             raise
 
         # set model mode to planning
-        planning_model.mode = 'planning'
+        planning_model.mode = 'planning'     
         planning_model.blocks = {}
+        
 
         # set time steps
-        # start = planning_model.timestepper.start
+        #start = planning_model.timestepper.start
+        #print("start",start)
         end = planning_model.timestepper.end
         end -= relativedelta(months=planning_months)
+        planning_model.timestepper.end = end 
+
+        #planning_model.timestepper.end = last_timestep.date
+
+        #print(end)
+
+        logger.info('Setup Planning Model')
 
         planning_model.setup()
 
+        logger.info("Setup Planning Model Done Successfully!")
+
+      
         # if debug == 'm':
         #     test_planning_model(planning_model, months=planning_months, save_results=save_results)
         #     return
@@ -340,12 +359,12 @@ def _run_model(climate,
     except Exception as err:
         logger.error(err)
         raise
-    logger.info("Model Loaded Successfully")
+    logger.info("Daily Model Loaded Successfully")
 
-    logger.info('Setup model')
+    logger.info('Setup Daily Model')
     model.blocks = {}
     model.setup()
-    logger.info("Setup Done Successfully!")
+    logger.info("Setup Daily Model Done Successfully!")
 
     days_to_omit = 0
     if include_planning:
