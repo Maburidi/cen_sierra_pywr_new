@@ -27,7 +27,7 @@ fontcolors = {
 
 # dot = Digraph(comment='System')
 
-def create_schematic(basin, version, format='pdf', render=False, view=False):
+def create_schematic(basin, version,gcms_, format='pdf', render=False, view=False):
     try:
         from graphviz import Digraph, ExecutableNotFound
         from graphviz.backend import CalledProcessError
@@ -36,10 +36,14 @@ def create_schematic(basin, version, format='pdf', render=False, view=False):
         return
 
     filename = 'pywr_model_Livneh'
+    
+    if gcms_:
+        filename = 'pywr_model'+'_updated_'+str(gcms_)
+
     if version:
-        filename += '_' + version
+        filename += '_' + version  
     filename += '.json'
-    with open(os.path.join('models', basin, 'temp', filename)) as f:
+    with open(os.path.join('/content/cen_sierra_pywr_new/sierra/models', basin, 'temp', filename)) as f:
         model = json.load(f)
 
     try:
