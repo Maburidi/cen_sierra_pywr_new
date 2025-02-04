@@ -17,12 +17,12 @@ from datetime import date
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--basin", help="Basin to run ['stanislaus', 'tuolumne', 'merced', 'upper_san_joaquin', 'all']", default='upper_san_joaquin')
 #parser.add_argument("-d", "--debug", help="Debug", action='store_true')
-parser.add_argument("-d", "--debug", help="Debug", type=bool, default=False)
+parser.add_argument("-d", "--debug", help="Debug",  type=int, choices=[0, 1], default=0)
 parser.add_argument("-mp", "--multiprocessing", help="Multiprocessing protocol (omit for none)", default=None)
 parser.add_argument("-c", "--num_cores", help="Number of cores to use in joblib multiprocessing", type=int)
 #parser.add_argument("-p", "--include_planning", help="Include planning model", action='store_true')
-parser.add_argument("-p", "--include_planning", help="Include planning model", type=bool, default=False)
-parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=2)
+parser.add_argument("-p", "--include_planning", help="Include planning model", type=int, choices=[0, 1], default=0)
+parser.add_argument("-m", "--planning_months", help="Planning months", type=int, default=8)
 parser.add_argument("-bl", "--blocks", help="Number of piecewise blocks", type=int, default=5)
 parser.add_argument("-sc", "--scenario_set", help="Scenario set")
 parser.add_argument("-s", "--start_year", help="Start year", type=int)
@@ -143,7 +143,6 @@ else:
 
 model_args = list(product(climate_scenarios, basins))
 
-print(model_args)
 
 kwargs = dict(
     run_name=run_name,
