@@ -341,7 +341,7 @@ def _run_model(climate,
 
         #print(end)
 
-        logger.info('Setup Planning Model')
+        logger.info('Setup Planning Model for {} planning months and {} blocks'.format(planning_months, blocks))
 
         planning_model.setup()
 
