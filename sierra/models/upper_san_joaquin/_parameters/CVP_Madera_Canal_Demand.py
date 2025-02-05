@@ -24,7 +24,7 @@ class CVP_Madera_Canal_Demand(BaseParameter):
 
         demand_cms = demand_cfs / 35.315
 
-        param_name = "Millerton Lake Flood Release Requirement" + self.month_suffix
+        param_name = "Millerton Lake Flood Release/Requirement" + self.month_suffix
         flood_control_reqt_cms = self.model.parameters[param_name].value(timestep, scenario_index) / 0.0864
 
         demand_cms += flood_control_reqt_cms
