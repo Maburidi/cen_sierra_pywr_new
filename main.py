@@ -109,7 +109,7 @@ if args.scenario_set:
         if 'loca2_gcms' in climates:
             loca2_gcm_rcps = scenario_set_definition.get('loca2_gcms')
             if not loca2_gcm_rcps:
-                full_basin_name = basin.replace('_', ' ').title() + '_River'
+                full_basin_name = basin.replace(' ', '_').title() + '_River'
                 loca2_basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'LOCA2_gcms')
                 loca2_basin_gcm_rcps = os.listdir(loca2_basin_gcm_hydrology_path)
                 loca2_gcm_rcps = loca2_basin_gcm_rcps
