@@ -48,7 +48,7 @@ def prepare_planning_model(m, basin, climate, outpath, steps=12, blocks=8, param
                          delete_scenarios=False)
 
     num_scenarios = 1
-    for scenario in m.get('scenarios', []):
+    for scenario in m.get('scenarios', []): 
         num_scenarios *= scenario['size']
 
     all_steps = range(steps)
@@ -282,23 +282,23 @@ def prepare_planning_model(m, basin, climate, outpath, steps=12, blocks=8, param
                                 new_values.append(v)
                         new_node[key] = new_values
 
-                        if len(new_node['max_flows']) != len(new_node['costs']):
-                            if len(new_node['max_flows']) > len(new_node['costs']):
-                                if None in new_node['max_flows']:
-                                    new_node['max_flows'] = [x for x in new_node['max_flows'] if x is not None]  
-                                else:
-                                    new_node['max_flows'] = new_node['max_flows'][:len(new_node['costs'])]
+                if 'max_flows' in new_node and 'costs' in new_node:      
+                    if len(new_node['max_flows']) != len(new_node['costs']):                
+                        if len(new_node['max_flows']) > len(new_node['costs']):           
+                            if None in new_node['max_flows']:
+                                new_node['max_flows'] = [x for x in new_node['max_flows'] if x is not None]  
                             else:
-                                if None in new_node['costs']:            
-                                    new_node['costs'] = [x for x in new_node['costs'] if x is not None]   # Remove None
-                                else:
-                                    new_node['costs'] = new_node['costs'][:len(new_node['max_flows'])]    
-                 
-                    if key == 'nsteps':
-                        new_node[key] = int(max(len(new_node['max_flows']), len(new_node['costs'])))
-                        
-
+                                new_node['max_flows'] = new_node['max_flows'][:len(new_node['costs'])]
+                        else:
+                            if None in new_node['costs']:                                              
+                                new_node['costs'] = [x for x in new_node['costs'] if x is not None]   # Remove None
+                            else:
+                                new_node['costs'] = new_node['costs'][:len(new_node['max_flows'])] 
+                    if 'nsteps' in  new_node:
+                        new_node['nsteps'] = int(min(len(new_node['max_flows']), len(new_node['costs'])))
+                                          
                 new_nodes.append(new_node)
+
 
     edges_temp = []
     for n1, n2 in m['edges']:
