@@ -28,10 +28,10 @@ class IFR_at_Shaffer_Bridge_Min_Flow(MinFlowParameter):
 
         if timestep.month == 10 and timestep.day <= 10 and timestep.index:
             ifr_mcm = self.model.nodes["IFR at Shaffer Bridge"].prev_flow[scenario_index.global_id]
-            return ifr_mcm / 0.0864  # convert to cms
+            return ifr_mcm / 0.0864  # convert to cms  
 
         # FERC REQUIREMENT
-        WYT = self.model.tables['WYT for IFR Below Exchequer'][self.operational_water_year]
+        WYT = self.model.tables['WYT for IFR Below Exchequer'].loc[self.operational_water_year,'WYT']
         ferc_flow_req = self.ferc_req(timestep, scenario_index, WYT)
 
         # DAVIS-GRUNSKY AGREEMENT REQUIREMENT
