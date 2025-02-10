@@ -178,7 +178,7 @@ def _run_model(climate,
             if url:
 
                 if data_path:
-                    #url = url.replace('../data', data_path)
+                    url = url.replace('../data', data_path)
                     url = url.replace('None/', data_path)
                 url = url.replace('historical/Livneh', climate)
                 url = url.replace('cen_sierra_pywr/', 'cen_sierra_pywr_new/')
