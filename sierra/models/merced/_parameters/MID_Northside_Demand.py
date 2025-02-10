@@ -12,7 +12,7 @@ class MID_Northside_Demand(BaseParameter):
 
     def _value(self, timestep, scenario_index):
 
-        WYT = self.model.tables['WYT for IFR Below Exchequer'][self.operational_water_year]
+        WYT = self.model.tables['WYT for IFR Below Exchequer'].loc[self.operational_water_year, 'WYT']
         ts = "{}/{}/1900".format(timestep.month, timestep.day)
         demand_cms = self.model.tables["MID Northside Diversions"].at[ts, WYT]*self.MID_North_bias_factor / 35.31
 
