@@ -8,7 +8,7 @@ class MID_Main_Demand(BaseParameter):
     MID_bias_factor = 1.14
 
     def _value(self, timestep, scenario_index):
-        WYT = self.model.tables['WYT for IFR Below Exchequer'][self.operational_water_year]
+        WYT = self.model.tables['WYT for IFR Below Exchequer'].loc[self.operational_water_year,'WYT']
         ts = "{}/{}/1900".format(timestep.month, timestep.day)
         demand_cms = self.model.tables["MID Main Diversions"].at[ts, WYT]*self.MID_bias_factor / 35.31
         return demand_cms
