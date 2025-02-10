@@ -104,6 +104,13 @@ class IFR_at_Shaffer_Bridge_Min_Flow(MinFlowParameter):
             end_date = date(year - 1, 12, 31)
             gauge_Shafer_ts = self.model.recorders['IFR at Shaffer Bridge/flow'].to_dataframe()
 
+            gauge_Shafer_ts.index = gauge_Shafer_ts.index.to_timestamp()
+            
+            # Now you can slice with datetime.date objects directly
+            
+            sliced_ts = gauge_Shafer_ts[st_date:end_date]
+            result = sliced_ts.mean().values[0]
+
             # TODO: find a more efficient lookup method than iloc
             self.nov_dec_mean[scenario_index.global_id] = gauge_Shafer_ts[st_date:end_date].mean().values[0]
 
