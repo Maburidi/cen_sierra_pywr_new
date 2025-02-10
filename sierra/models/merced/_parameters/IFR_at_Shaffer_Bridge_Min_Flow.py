@@ -28,7 +28,7 @@ class IFR_at_Shaffer_Bridge_Min_Flow(MinFlowParameter):
 
         if timestep.month == 10 and timestep.day <= 10 and timestep.index:
             ifr_mcm = self.model.nodes["IFR at Shaffer Bridge"].prev_flow[scenario_index.global_id]
-            return ifr_mcm / 0.0864  # convert to cms  
+            return ifr_mcm / 0.0864  # convert to cms
 
         # FERC REQUIREMENT
         WYT = self.model.tables['WYT for IFR Below Exchequer'].loc[self.operational_water_year,'WYT']
@@ -42,7 +42,12 @@ class IFR_at_Shaffer_Bridge_Min_Flow(MinFlowParameter):
 
         # FISH PULSE REQUIREMENT
         # TODO: revise table to lookup by month, day rather than 1900 year (this method is slow)
-        fish_pulse = self.model.tables["Fish Pulse"]['1900-{:02}-{:02}'.format(timestep.month, timestep.day)] / 35.315
+        fish_pulse = self.model.tables["Fish Pulse"].loc['1900-{:02}-{:02}'.format(timestep.month, timestep.day),'Fish Pulse (cfs)'] / 35.315
+
+        #date_key = '1900-{:02}-{:02}'.format(timestep.month, timestep.day)
+
+        #fish_pulse = self.model.tables["Fish Pulse"].loc[:, ("Fish Pulse (cfs)", date_key)] / 35.315
+
 
         # The required flow is (greater of the Davis-Grunsky and FERC flows)
         # + the Cowell Agreement entitlement + Fish Pulse + Diversion Reg
