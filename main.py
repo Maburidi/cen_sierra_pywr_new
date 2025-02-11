@@ -93,7 +93,7 @@ if args.scenario_set:
         if 'gcms' in climates:
             gcm_rcps = scenario_set_definition.get('gcms')
             if not gcm_rcps:
-                full_basin_name = basin.replace('_', ' ').title() + '_River'
+                full_basin_name = basin.replace(' ', '_').title() + '_River'
                 basin_gcm_hydrology_path = os.path.join(data_path, full_basin_name, 'hydrology', 'gcms')
                 basin_gcm_rcps = os.listdir(basin_gcm_hydrology_path)
                 gcm_rcps = basin_gcm_rcps
