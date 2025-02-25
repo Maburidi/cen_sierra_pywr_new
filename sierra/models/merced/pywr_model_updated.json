@@ -1003,8 +1003,7 @@
                 251.3,
                 255.0,
                 263.7
-            ],
-            "kind": "cubic"
+            ]
         }
     },
     "recorders": {
@@ -1051,10 +1050,6 @@
         "Lake McSwain/storage": {
             "type": "NumpyArrayStorageRecorder",
             "node": "Lake McSwain"
-        },
-        "Lake McSwain/observed storage": {
-            "type": "NumpyArrayParameterRecorder",
-            "parameter": "Lake McSwain/Observed Storage"
         },
         "McSwain PH/flow": {
             "type": "NumpyArrayNodeRecorder",
