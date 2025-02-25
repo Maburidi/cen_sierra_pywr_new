@@ -1,6 +1,6 @@
-from parameters import WaterLPParameter
+from sierra.base_parameters import WaterLPParameter
 
-from utilities.converter import convert
+from sierra.utilities.converter import convert
 
 class USGS_11264500_MERCED_R_A_HAPPY_ISLES_Observed_Flow(WaterLPParameter):
     """"""
