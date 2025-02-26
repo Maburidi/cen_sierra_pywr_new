@@ -1,6 +1,6 @@
-from parameters import WaterLPParameter
+from sierra.parameters.WaterLPParameter import WaterLPParameter
 
-from utilities.converter import convert
+from sierra.utilities.converter import convert
 
 class Near_Stevinson_11272500_Observed_Flow(WaterLPParameter):
     """"""
