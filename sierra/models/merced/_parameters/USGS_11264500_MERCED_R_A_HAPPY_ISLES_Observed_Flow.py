@@ -1,4 +1,4 @@
-from sierra.base_parameters import WaterLPParameter
+from sierra.parameters.WaterLPParameter import WaterLPParameter
 
 from sierra.utilities.converter import convert
 
