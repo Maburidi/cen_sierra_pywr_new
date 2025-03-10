@@ -109,7 +109,7 @@
         {
             "name": "MID Main",
             "type": "Output",
-            "max_flow": "MID Main/Demand",
+            "max_flow": 10,
             "cost": "MID Main/Cost"
         },
         {
