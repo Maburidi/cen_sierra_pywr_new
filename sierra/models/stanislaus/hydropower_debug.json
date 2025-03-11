@@ -1,0 +1,71 @@
+{
+    "metadata": {
+        "title": "Stanislaus River",
+        "description": "Imported from WEAP Area",
+        "minimum_version": "1.0.0"
+    },
+    "timestepper": {
+        "start": "2010-10-01",
+        "end": "2012-09-30",
+        "timestep": 1
+    },
+    "solver": {
+        "name": "glpk"
+    },
+    "nodes": [
+
+        {
+            "name": "Angels Canal Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Angels Canal Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+
+        {
+            "name": "Angels PH",
+            "type": "Hydropower",
+            "head": 135.3,
+            "turbine_capacity": "Angels PH/Turbine Capacity",
+            "flow_capacity": "Angels PH/Turbine Capacity",
+            "max_flows": [
+                "Angels PH/Water Demand/1",
+                "Angels PH/Water Demand/2", null 
+            ],
+            "costs": [
+                "Angels PH/Cost/1",
+                "Angels PH/Cost/2",
+                "Angels PH/Cost/3"
+            ], "nsteps":3,
+            "nstepsss": "{\"resource_class\": \"node\"}"
+        },
+        {
+            "name": "Phoenix Canal Outflow",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": -500
+        }
+    ],
+    "edges": [
+      ["Angels Canal Outflow Inflow","Angels PH" ], 
+      ["Angels PH","Phoenix Canal Outflow" ] 
+    ], 
+    "tables": {
+
+
+
+    },
+    "scenarios": [],
+    "parameters": {
+
+
+    
+    },
+    "recorders": {
+
+
+
+    }
+}
+
+
+
