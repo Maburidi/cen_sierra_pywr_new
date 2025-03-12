@@ -50,17 +50,33 @@
       ["Angels PH","Phoenix Canal Outflow" ] 
     ], 
     "tables": {
-        "Angels Canal Outflow Inflow/Runoff": {
+
+                "All Energy Price Values": {
+            "url": "/content/cen_sierra_pywr_new/data/common/energy_prices/prices_pivoted_select_years.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        },
+          "Energy Price Blocks": {
+            "url": "/content/cen_sierra_pywr_new/data/common/energy_prices/piecewise_blocks_daily.csv",
+            "header": 0,
+            "index_col": "Date",
+            "parse_dates": false
+        }
+
+
+    },
+    "scenarios": [],
+    "parameters": {
+
+                "Angels Canal Outflow Inflow/Runoff": {
             "type": "InflowDataframe",
             "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Angels Canal Outflow Inflow mcm.csv",
             "column": "flow",
             "index_col": 0,
             "parse_dates": true
-        }
+        },
 
-    },
-    "scenarios": [],
-    "parameters": {
         "Angels PH/Water Demand/1": {
             "type": "HydropowerDemand"
         },
