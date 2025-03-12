@@ -71,7 +71,7 @@
 
                 "Angels Canal Outflow Inflow/Runoff": {
             "type": "InflowDataframe",
-            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Angels Canal Outflow Inflow mcm.csv",
+            "url": "/content/cen_sierra_pywr_new/data/Stanislaus_River/hydrology/historical/Livneh/runoff_aggregated/Angels_Canal_Outflow_Inflow_mcm.csv",
             "column": "flow",
             "index_col": 0,
             "parse_dates": true
