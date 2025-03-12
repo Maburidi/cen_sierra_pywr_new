@@ -36,7 +36,7 @@
                 "Angels PH/Cost/2",
                 "Angels PH/Cost/3"
             ], "nsteps":3,
-            "nstepsss": "{\"resource_class\": \"node\"}"
+            "comment": "{\"resource_class\": \"node\"}"
         },
         {
             "name": "Phoenix Canal Outflow",
@@ -50,15 +50,32 @@
       ["Angels PH","Phoenix Canal Outflow" ] 
     ], 
     "tables": {
-
-
+        "Angels Canal Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "None/Stanislaus River/hydrology/historical/Livneh/runoff_aggregated/Angels Canal Outflow Inflow mcm.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        }
 
     },
     "scenarios": [],
     "parameters": {
-
-
-    
+        "Angels PH/Water Demand/1": {
+            "type": "HydropowerDemand"
+        },
+        "Angels PH/Water Demand/2": {
+            "type": "HydropowerDemand"
+        },
+        "Angels PH/Cost/1": {
+            "type": "HydropowerCost"
+        },
+        "Angels PH/Cost/2": {
+            "type": "HydropowerCost"
+        },
+        "Angels PH/Cost/3": {
+            "type": "HydropowerCost"
+        }
     },
     "recorders": {
 
