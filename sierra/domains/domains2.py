@@ -43,12 +43,12 @@ class Hydropower(PiecewiseLink):
         super().__init__(model, **kwargs)
 
         # Force Pywr to resolve parameter references
-        timestep = model.timestepper.start  
-        scenario_index = 0    
+        #timestep = model.timestepper.start  
+        #scenario_index = 0    
 
-        self.costs = [c.value(timestep, scenario_index) if hasattr(c, 'value') else c for c in self.costs]
+        #self.costs = [c.value(timestep, scenario_index) if hasattr(c, 'value') else c for c in self.costs]
 
-        print(f"Initialized Costs in {self.name}: {self.costs}")
+        #print(f"Initialized Costs in {self.name}: {self.costs}")
 
         # Ensure output max_flow is set correctly
         self.output.max_flow = flow_capacity
