@@ -1,0 +1,80 @@
+{
+    "metadata": {
+        "title": "Stanislaus River",
+        "description": "Imported from WEAP Area",
+        "minimum_version": "1.0.0"
+    },
+    "timestepper": {
+        "start": "2010-10-01",
+        "end": "2010-11-20",
+        "timestep": 1
+    },
+    "solver": {
+        "name": "glpk"
+    },
+    "nodes": [
+
+        {
+            "name": "Angels Canal Outflow Inflow",
+            "type": "Catchment",
+            "flow": "Angels Canal Outflow Inflow/Runoff",
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+
+
+        {
+            "name": "Angels PH",
+            "type": "Hydropower",
+            "head": 135.3,
+            "turbine_capacity": 0.0972,
+            "flow_capacity": 0.0972,
+            "max_flows": [
+                "Angels PH/Water Demand/1"
+            ],
+            "costs": [
+                "Angels PH/Cost/1"
+            ], "nsteps":1,
+            "comment": "{\"resource_class\": \"node\"}"
+        },
+
+        {
+            "name": "Phoenix Canal Outflow",
+            "type": "Output",
+            "comment": "{\"resource_class\": \"node\"}",
+            "cost": -500
+        }
+    ],
+    "edges": [
+      ["Angels Canal Outflow Inflow","Angels PH" ], 
+      ["Angels PH","Phoenix Canal Outflow" ] 
+    ], 
+    "tables": {
+
+
+    },
+    "scenarios": [],
+    "parameters": {
+
+        "Angels Canal Outflow Inflow/Runoff": {
+            "type": "InflowDataframe",
+            "url": "/content/inflow.csv",
+            "column": "flow",
+            "index_col": 0,
+            "parse_dates": true
+        },
+
+        "Angels PH/Water Demand/1": {
+            "type": "HydropowerDemand1"
+        },
+        "Angels PH/Cost/1": {
+            "type": "HydropowerCost1"
+        }
+    },
+    "recorders": {
+              "Angels PH/flow": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Angels PH"
+        }
+    }
+}
+
