@@ -6,7 +6,7 @@
     },
     "timestepper": {
         "start": "2010-10-01",
-        "end": "2010-11-20",
+        "end": "2011-11-20",
         "timestep": 1
     },
     "solver": {
@@ -15,96 +15,74 @@
     "nodes": [
 
         {
-            "name": "Angels Canal Outflow Inflow",
+            "name": "input0",
             "type": "Catchment",
             "flow": "Angels Canal Outflow Inflow/Runoff",
             "comment": "{\"resource_class\": \"node\"}"
         },
-
         {
-            "name": "Angels PH",
+            "name": "Reservoir0",
+            "type": "Reservoir",
+            "initial_volume": 0,
+            "max_volume": 5.0
+        },
+        {
+            "name": "Hydropower0",
             "type": "Hydropower",
             "head": 135.3,
             "turbine_capacity": 0.0972,
             "flow_capacity": 0.0972,
             "max_flows": [
-                "Angels PH/Water Demand/1",
-                "Angels PH/Water Demand/2", null 
+                0.3
             ],
             "costs": [
-                "Angels PH/Cost/1",
-                "Angels PH/Cost/2",
-                "Angels PH/Cost/3"
-            ], "nsteps":3,
+               -0.1
+            ], "nsteps":1,
             "comment": "{\"resource_class\": \"node\"}"
         },
         {
-            "name": "Phoenix Canal Outflow",
+            "name": "Outflow",
             "type": "Output",
             "comment": "{\"resource_class\": \"node\"}",
-            "cost": -500
+            "cost": -1
         }
     ],
     "edges": [
-      ["Angels Canal Outflow Inflow","Angels PH" ], 
-      ["Angels PH","Phoenix Canal Outflow" ] 
+      ["input0","Reservoir0" ], 
+      ["Reservoir0","Hydropower0" ],
+      ["Hydropower0","Outflow" ]
     ], 
     "tables": {
-
-                "All Energy Price Values": {
-            "url": "/content/cen_sierra_pywr_new/data/common/energy_prices/prices_pivoted_select_years.csv",
-            "header": 0,
-            "index_col": "Date",
-            "parse_dates": false
-        },
-          "Energy Price Blocks": {
-            "url": "/content/cen_sierra_pywr_new/data/common/energy_prices/piecewise_blocks_daily.csv",
-            "header": 0,
-            "index_col": "Date",
-            "parse_dates": false
-        }
 
 
     },
     "scenarios": [],
     "parameters": {
 
-              "Price Year": {
-            "type": "Constant",
-            "value": 2009
-        },
         "Angels Canal Outflow Inflow/Runoff": {
             "type": "InflowDataframe",
-            "url": "/content/cen_sierra_pywr_new/data/Stanislaus_River/hydrology/historical/Livneh/runoff_aggregated/Angels_Canal_Outflow_Inflow_mcm.csv",
+            "url": "/content/inflow.csv",
             "column": "flow",
             "index_col": 0,
             "parse_dates": true
         },
-
-        "Angels PH/Water Demand/1": {
-            "type": "HydropowerDemand"
-        },
-        "Angels PH/Water Demand/2": {
-            "type": "HydropowerDemand"
+          "Angels PH/Water Demand/1": {
+            "type": "HydropowerDemand1"
         },
         "Angels PH/Cost/1": {
-            "type": "HydropowerCost"
-        },
-        "Angels PH/Cost/2": {
-            "type": "HydropowerCost"
-        },
-        "Angels PH/Cost/3": {
-            "type": "HydropowerCost"
+            "type": "HydropowerCost1"
         }
+
+
     },
     "recorders": {
-              "Angels PH/flow": {
+              "Hydropower0Rec": {
             "type": "NumpyArrayNodeRecorder",
-            "node": "Angels PH"
+            "node": "Hydropower0"
         },
-        "Angels PH/energy": {
-            "type": "HydropowerEnergyRecorder",
-            "node": "Angels PH"
+              "OutflowRec": {
+            "type": "NumpyArrayNodeRecorder",
+            "node": "Outflow"
         }
     }
 }
