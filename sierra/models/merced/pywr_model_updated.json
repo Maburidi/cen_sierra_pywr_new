@@ -111,9 +111,19 @@
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR at Shaffer Bridge/Min Flow Cost",
             "max_flow_cost": "IFR at Shaffer Bridge/Max Flow Cost",
+            "min_flows": "IFR at Shaffer Bridge/Min Flow",
+            "max_flows": [
+                "IFR at Shaffer Bridge/Min Flow",
+                "IFR at Shaffer Bridge/Max Flow",
+                null
+            ],
             "ifr_type": "enhanced",
-            "min_flow": "IFR at Shaffer Bridge/Min Flow",
-            "max_flow": "IFR at Shaffer Bridge/Max Flow"
+            "costs": [
+                "IFR at Shaffer Bridge/Min Flow Cost",
+                "IFR at Shaffer Bridge/Max Flow Cost",
+                "IFR at Shaffer Bridge/Max Flow Cost"
+            ],
+            "nsteps": 3
         },
         {
             "name": "Merced River Outflow",
