@@ -28,16 +28,25 @@
             "costs": [
                 -1000,
                 1
-            ], "nsteps":2
+            ],
+            "nsteps": 2
         },
         {
             "name": "IFR bl New Exchequer Dam",
             "type": "InstreamFlowRequirement",
             "min_flow_cost": "IFR bl New Exchequer Dam/Violation Cost",
             "min_flows": "IFR bl New Exchequer Dam/Min Flow",
-            "costs":[0,0,0],
-            "max_flows":[null,null,null],
-            "nsteps":3
+            "costs": [
+                0,
+                0,
+                0
+            ],
+            "max_flows": [
+                null,
+                null,
+                null
+            ],
+            "nsteps": 3
         },
         {
             "name": "Crocker-Huffman Diversion Reservoir",
@@ -76,8 +85,11 @@
                 0,
                 "McSwain PH/Excess Value"
             ],
-            "max_flows": [null, null],
-            "nsteps":2
+            "max_flows": [
+                null,
+                null
+            ],
+            "nsteps": 2
         },
         {
             "name": "Merced Falls PH",
@@ -88,8 +100,11 @@
                 "Merced Falls PH/Base Value",
                 "Merced Falls PH/Excess Value"
             ],
-            "max_flows": [null, null],
-            "nsteps":2
+            "max_flows": [
+                null,
+                null
+            ],
+            "nsteps": 2
         },
         {
             "name": "IFR at Shaffer Bridge",
@@ -97,10 +112,18 @@
             "min_flow_cost": "IFR at Shaffer Bridge/Min Flow Cost",
             "max_flow_cost": "IFR at Shaffer Bridge/Max Flow Cost",
             "min_flows": "IFR at Shaffer Bridge/Min Flow",
-            "max_flows": ["IFR at Shaffer Bridge/Max Flow"],
+            "max_flows": [
+                "IFR at Shaffer Bridge/Min Flow",
+                "IFR at Shaffer Bridge/Max Flow",
+                null
+            ],
             "ifr_type": "enhanced",
-            "costs": [0],
-            "nsteps":1
+            "costs": [
+                "IFR at Shaffer Bridge/Min Flow Cost",
+                "IFR at Shaffer Bridge/Max Flow Cost",
+                "IFR at Shaffer Bridge/Max Flow Cost"
+            ],
+            "nsteps": 3
         },
         {
             "name": "Merced River Outflow",
@@ -109,7 +132,7 @@
         {
             "name": "MID Main",
             "type": "Output",
-            "max_flow": 10,
+            "max_flow": "MID Main/Demand",
             "cost": "MID Main/Cost"
         },
         {
@@ -128,8 +151,10 @@
             "costs": [
                 -1
             ],
-            "max_flows": [null],
-            "nsteps":1 
+            "max_flows": [
+                null
+            ],
+            "nsteps": 1
         }
     ],
     "edges": [
